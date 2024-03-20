@@ -250,14 +250,51 @@ namespace Petrosik
             /// <param name="rngNum">The randomly generated number</param>
             /// <param name="lambda">How straight the curve is(bigger number straigther it is)</param>
             /// <returns></returns>
-            public static double NextExponential(int min, int max, out int rngNum, double lambda = 2f)
+            public static double NextExponential(int min, int max, out double rngNum, double lambda = 2f)
             {
                 Random r = new();
-                lambda = lambda * (max / 10);
-                rngNum = r.Next(min, max);
+                if (max > 10)
+                {
+                    lambda = lambda * (max / 10);
+                }
+                rngNum = r.Next(min, max - 1) + r.NextDouble();
                 var y = 100 * Math.Pow(2, -(rngNum / lambda));
                 y = Math.Clamp(y, 0, 100);
                 return y;
+            }
+            /// <summary>
+            /// Rolls and returns true or false if the rolled number is smaller than the chance
+            /// </summary>
+            /// <param name="chance">clmped 0 to 100</param>
+            /// <returns></returns>
+            public static bool ChanceRoll(double chance)
+            {
+                chance = Math.Clamp(chance, 0, 100);
+                Random r = new();
+                var roll = r.Next(0, 100) + r.NextDouble();
+                if (roll < chance)
+                {
+                    return true;
+                }
+                return false;
+            }
+            /// <summary>
+            /// Rolls and returns true or false if the rolled number is smaller than the maxChance and bigger than minChance
+            /// </summary>
+            /// <param name="maxChance">clmped 0 to 100</param>
+            /// <param name="minChance">clmped 0 to 100</param>
+            /// <returns></returns>
+            public static bool ChanceRoll(double minChance, double maxChance)
+            {
+                maxChance = Math.Clamp(maxChance, 0, 100);
+                minChance = Math.Clamp(minChance, 0, 100);
+                Random r = new();
+                var roll = r.Next(0, 100) + r.NextDouble();
+                if (minChance > roll && roll < maxChance)
+                {
+                    return true;
+                }
+                return false;
             }
         }
         /// <summary>
