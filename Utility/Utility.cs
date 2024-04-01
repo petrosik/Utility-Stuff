@@ -10,6 +10,7 @@ namespace Petrosik
         using System.IO.Compression;
         using System.Text;
         using System.Text.Json;
+        using Enums;
         /// <summary>
         /// Main Utility Class
         /// <para>Recommended: using Utility = Petrosik.Utility.Utility;</para>
@@ -295,6 +296,45 @@ namespace Petrosik
                     return true;
                 }
                 return false;
+            }
+            /// <summary>
+            /// Formatted log method, ie:
+            /// <para>Input: ConsoleLog("Hello World!", InfoType.Info)</para>
+            /// <para>Console: [HH:mm:ss] [i]Hello World!</para>
+            /// </summary>
+            /// <param name="text"></param>
+            /// <param name="infotype"></param>
+            public static void ConsoleLog(string text, InfoType infotype)
+            {
+                var inf = "[?]";
+                switch (infotype)
+                {
+                    case InfoType.Info:
+                        inf = "[i]";
+                        break;
+                    case InfoType.Warn:
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        inf = "[W]";
+                        break;
+                    case InfoType.Error:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        inf = "[E]";
+                        break;
+                    case InfoType.Important:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        inf = "[I]";
+                        break;
+                    default:
+                        inf = "[?]";
+                        break;
+                }
+                var message = $"[{DateTime.Now.ToString("HH:mm:ss")}] {inf}{text}";
+                Console.WriteLine(message);
+                Console.ResetColor();
+            }
+            public static void ConsoleLog(Exception e, string? AdittionalMessage = null)
+            {
+                ConsoleLog($"{e.Message} {AdittionalMessage} | {e}", InfoType.Error);
             }
         }
         /// <summary>

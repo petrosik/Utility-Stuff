@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="UnityEngine">
-      <HintPath>D:\GitHub\p02-world-creator\dlls\UnityEngine.dll</HintPath>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Unity projects\p02-world-creator\dlls\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 

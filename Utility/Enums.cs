@@ -27,5 +27,24 @@ namespace Petrosik
             Fowards = 16,
             Backwards = 32,
         }
+        [Serializable]
+        public enum SQLOptions
+        {
+            Save,
+            Load,
+            SaveAll,
+            LoadAll,
+            Delete,
+            Update,
+            Sync,
+        }
+        [Serializable]
+        public enum InfoType
+        {
+            Info,
+            Warn,
+            Error,
+            Important,
+        }
     }
 }
