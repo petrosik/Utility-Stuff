@@ -15,7 +15,7 @@ namespace Petrosik
         /// Main Utility Class
         /// <para>Recommended: using Utility = Petrosik.Utility.Utility;</para>
         /// </summary>
-        public class Utility
+        public static class Utility
         {
             public static string?[] SplitText(string message, out string? tempparam, int paramlenght = 8, char prefix = '$')
             {
@@ -493,7 +493,7 @@ namespace Petrosik
         /// <summary>
         /// Contains all unity specific utility stuff
         /// </summary>
-        public class Utility
+        public static class Utility
         {
             /// <summary>
             /// Perlin 2D, bigger scale number more detail
