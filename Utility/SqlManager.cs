@@ -10,6 +10,7 @@ namespace Petrosik
         using System.Collections.Generic;
         using System.Data;
         using System.Data.SQLite;
+        using System.IO;
         using System.Linq;
         using Utility = Utility.Utility;
         public class SqlManager
@@ -20,9 +21,9 @@ namespace Petrosik
             /// Creates new SqlManager and sets path to .db file
             /// </summary>
             /// <param name="path"></param>
-            internal SqlManager(string path)
+            internal SqlManager(string path, bool ignoreCheck = false)
             {
-                filePath = path;
+                SetPath(path,ignoreCheck);
             }
 
             private string LoadConnectionString()
@@ -33,13 +34,20 @@ namespace Petrosik
             /// Sets path to the .db file
             /// </summary>
             /// <param name="path"></param>
-            public void SetPath(string path)
+            public void SetPath(string path,bool ignoreCheck = false)
             {
-                filePath = path;
+                if (File.Exists(path) || ignoreCheck)
+                {
+                    filePath = path;
+                }
+                else
+                {
+                    throw new Exception("File does not exists");
+                }
             }
-            
+
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
+
             /// <summary>
             /// Loads entire table
             /// <para>Needs the table and the output type to have Id property!!!!</para>

@@ -138,12 +138,8 @@ namespace Petrosik
             /// <typeparam name="T"></typeparam>
             /// <returns></returns>
             /// <exception cref="Exception"></exception>
-            public static List<T> GetEnumTypes<T>()
+            public static List<T> GetEnumTypes<T>() where T : Enum
             {
-                if (!typeof(T).IsEnum)
-                {
-                    throw new Exception($"{typeof(T)} is not Enum");
-                }
                 List<T> list = new List<T>();
                 var n = Enum.GetNames(typeof(T));
                 foreach (var enu in n)
@@ -225,7 +221,6 @@ namespace Petrosik
             /// Decompresses byte array and deserializes using JsonSerializer before returning the type
             /// </summary>
             /// <typeparam name="T"></typeparam>
-            /// <param name="obj"></param>
             /// <returns></returns>
             public static T? Deserialize<T>(byte[] compressedData)
             {
