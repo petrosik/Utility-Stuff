@@ -331,6 +331,21 @@ namespace Petrosik
             {
                 ConsoleLog($"{e.Message} {AdittionalMessage} | {e}", InfoType.Error);
             }
+            /// <summary>
+            /// should blend colors additevely
+            /// </summary>
+            /// <param name="basec"></param>
+            /// <param name="additivec"></param>
+            /// <returns></returns>
+            public static Color BlendColors(Color basec, Color additivec)
+            {
+                if (additivec.A == 255) return additivec;
+                if (basec.A == 255) return additivec;
+                if (additivec.A == 0f) return basec;
+
+                var c = Color.FromArgb(basec.A + additivec.A, (basec.R + additivec.R) / 2, (basec.G + additivec.G) / 2, (basec.B + additivec.B) / 2);
+                return c;
+            }
         }
         /// <summary>
         /// All basic Modifications/Extensions
@@ -540,6 +555,21 @@ namespace Petrosik
             {
                 return Vector3.Distance(new Vector3(a.x, b.y, a.z), b);
             }
+            /// <summary>
+            /// should blend colors additevely
+            /// </summary>
+            /// <param name="basec"></param>
+            /// <param name="additivec"></param>
+            /// <returns></returns>
+            public static Color BlendColors(Color basec, Color additivec)
+            {
+                if (additivec.a == 1f) return additivec;
+                if (basec.a == 0f) return additivec;
+                if (additivec.a == 0f) return basec;
+
+                var c = new Color((basec.r + additivec.r) / 2f, (basec.g + additivec.g) / 2f, (basec.b + additivec.b) / 2f, basec.a + additivec.a);
+                return c;
+            }
         }
         /// <summary>
         /// All basic Modifications/Extensions
@@ -702,6 +732,33 @@ namespace Petrosik
             public static int Sum(this Vector2Int v)
             {
                 return v.x + v.y;
+            }
+            /// <summary>
+            /// Converts System.Drawing color to UnityEngine color
+            /// </summary>
+            /// <param name="c"></param>
+            /// <returns></returns>
+            public static Color Convert(this System.Drawing.Color c)
+            {
+                return new Color(
+                  c.R / 255f,
+                  c.G / 255f,
+                  c.B / 255f,
+                  c.A / 255f);
+
+            }
+            /// <summary>
+            /// Converts UnityEngine color to System.Drawing color
+            /// </summary>
+            /// <param name="c"></param>
+            /// <returns></returns>
+            public static System.Drawing.Color Convert(this Color c)
+            {
+                return System.Drawing.Color.FromArgb(
+                     (int)(c.a * 255),
+                     (int)(c.r * 255),
+                     (int)(c.g * 255),
+                     (int)(c.b * 255));
             }
         }
     }
