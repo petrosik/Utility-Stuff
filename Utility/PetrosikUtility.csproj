@@ -31,4 +31,8 @@
     </Reference>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /Y /I &quot;$(ProjectDir)bin\Release\petrosik.Utility.$(Version).nupkg&quot; &quot;C:\LocalNugetPackages\petrosik\&quot;" />
+  </Target>
+
 </Project>
