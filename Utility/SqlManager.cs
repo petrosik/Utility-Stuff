@@ -21,9 +21,10 @@ namespace Petrosik
             /// Creates new SqlManager and sets path to .db file
             /// </summary>
             /// <param name="path"></param>
+            /// <param name="ignoreCheck">Ignore if the .db file doesn't exist</param>
             internal SqlManager(string path, bool ignoreCheck = false)
             {
-                SetPath(path,ignoreCheck);
+                SetPath(path, ignoreCheck);
             }
 
             private string LoadConnectionString()
@@ -34,7 +35,8 @@ namespace Petrosik
             /// Sets path to the .db file
             /// </summary>
             /// <param name="path"></param>
-            public void SetPath(string path,bool ignoreCheck = false)
+            /// <param name="ignoreCheck">Ignore if the .db file doesn't exist</param>
+            public void SetPath(string path, bool ignoreCheck = false)
             {
                 if (File.Exists(path) || ignoreCheck)
                 {

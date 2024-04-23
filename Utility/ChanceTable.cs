@@ -2,11 +2,11 @@ namespace Petrosik
 {
     namespace Utility
     {
+        using Petrosik.Enums;
         using System;
         using System.Collections;
         using System.Collections.Generic;
         using System.Linq;
-        using Petrosik.Enums;
 
         [Serializable]
         public class ChanceTable<T> : IEnumerable<ChancePart<T>>, IEnumerator<ChancePart<T>>
@@ -21,6 +21,7 @@ namespace Petrosik
             /// Count of each rarity inside the table
             /// </summary>
             public Dictionary<Rarity, int> RaritysCount { get; private set; }
+            private Random r = new();
 
             public ChancePart<T> Current => Table[CurrentIndex];
             private int CurrentIndex = -1;
@@ -39,9 +40,9 @@ namespace Petrosik
             /// <summary>
             /// Returns random item from the table based on its weighted value
             /// </summary>
-            /// <param name="UseUnityRandom"></param>
+            /// <param name="RemoveAfterPull">Should the item be removed from the table after pull</param>
             /// <returns></returns>
-            public T GetItem(bool UseUnityRandom = false, bool RemoveAfterPull = false)
+            public T GetItem(bool RemoveAfterPull = false)
             {
                 T result = (T)(object)null;
                 if (Count == 1)
@@ -55,29 +56,14 @@ namespace Petrosik
                 }
 
                 float rnum = 0;
-                if (UseUnityRandom)
-                {
-                    rnum = UnityEngine.Random.Range(1f, 100f);
-                }
-                else
-                {
-                    System.Random r = new();
-                    rnum = (float)r.Next(1, 100) + (float)r.NextDouble();
-                }
+
+                rnum = (float)r.Next(1, 100) + (float)r.NextDouble();
 
                 var sorted = Table.OrderBy(num => Math.Abs(num.Chance - rnum));
                 if (sorted.ElementAt(0).Chance == sorted.ElementAt(1).Chance)
                 {
                     var multiple = sorted.Where(p => sorted.First().Chance == p.Chance);
-                    if (UseUnityRandom)
-                    {
-                        result = multiple.ElementAt(UnityEngine.Random.Range(0, multiple.Count())).Object;
-                    }
-                    else
-                    {
-                        System.Random r = new();
-                        result = multiple.ElementAt(r.Next(0, multiple.Count())).Object;
-                    }
+                    result = multiple.ElementAt(r.Next(0, multiple.Count())).Object;
                 }
                 else
                 {
@@ -90,9 +76,10 @@ namespace Petrosik
             /// <summary>
             /// Returns random item from the table that is insinde the range based on its weighted value
             /// </summary>
-            /// <param name="UseUnityRandom"></param>
+            /// <param name="Range"></param>
+            /// <param name="RemoveAfterPull">Should the item be removed from the table after pull</param>
             /// <returns></returns>
-            public T GetItemWithRarity(List<Rarity> Range, bool UseUnityRandom = false, bool RemoveAfterPull = false)
+            public T GetItemWithRarity(List<Rarity> Range, bool RemoveAfterPull = false)
             {
                 T result = (T)(object)null;
                 if (Count == 1)
@@ -105,30 +92,13 @@ namespace Petrosik
                     return result;
                 }
 
-                float rnum;
-                if (UseUnityRandom)
-                {
-                    rnum = UnityEngine.Random.Range(1f, 100f);
-                }
-                else
-                {
-                    System.Random r = new();
-                    rnum = (float)r.Next(1, 100) + (float)r.NextDouble();
-                }
+                float rnum = (float)r.Next(1, 100) + (float)r.NextDouble();
 
                 var sorted = Table.Where(it => Range.Contains(it.Rarity)).OrderBy(num => Math.Abs(num.Chance - rnum));
                 if (sorted.ElementAt(0).Chance == sorted.ElementAt(1).Chance)
                 {
                     var multiple = sorted.Where(p => sorted.First().Chance == p.Chance);
-                    if (UseUnityRandom)
-                    {
-                        result = multiple.ElementAt(UnityEngine.Random.Range(0, multiple.Count())).Object;
-                    }
-                    else
-                    {
-                        System.Random r = new();
-                        result = multiple.ElementAt(r.Next(0, multiple.Count())).Object;
-                    }
+                    result = multiple.ElementAt(r.Next(0, multiple.Count())).Object;
                 }
                 else
                 {
@@ -151,6 +121,11 @@ namespace Petrosik
                 InitRarsCount();
                 TableAvrgRarity = Rarity.None;
             }
+            /// <summary>
+            /// Adds the item with the rarity to the table
+            /// </summary>
+            /// <param name="Rarity"></param>
+            /// <param name="item"></param>
             public void Add(Rarity Rarity, T item)
             {
                 if (Rarity == Rarity.None)
@@ -161,6 +136,11 @@ namespace Petrosik
                 RaritysCount[Rarity]++;
                 RecalcChancePerc();
             }
+            /// <summary>
+            /// Removes the item from the table
+            /// </summary>
+            /// <param name="item"></param>
+            /// <returns></returns>
             public bool Remove(T item)
             {
                 if (Table.Exists(p => p.Equals(item)))

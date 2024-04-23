@@ -6,17 +6,25 @@ namespace Petrosik
 {
     namespace Utility
     {
+        using Enums;
         using System.Drawing;
         using System.IO.Compression;
         using System.Text;
         using System.Text.Json;
-        using Enums;
         /// <summary>
         /// Main Utility Class
         /// <para>Recommended: using Utility = Petrosik.Utility.Utility;</para>
         /// </summary>
         public static class Utility
         {
+            /// <summary>
+            /// Splits text based on spaces or by "
+            /// </summary>
+            /// <param name="message">Original text to split</param>
+            /// <param name="tempparam">Remaining text that couldn't fit</param>
+            /// <param name="paramlenght">How many words to split for</param>
+            /// <param name="prefix">Prefix to remove</param>
+            /// <returns></returns>
             public static string?[] SplitText(string message, out string? tempparam, int paramlenght = 8, char prefix = '$')
             {
                 int[] lenght = new int[] { 0, 1 };
@@ -77,10 +85,10 @@ namespace Petrosik
             /// <summary>
             /// Splits string into a list of strings by spaces untill it reached message limit, overridechunksize makes it ignore spaces
             /// </summary>
-            /// <param name="str"></param>
-            /// <param name="messagelimit"></param>
-            /// <param name="overhead"></param>
-            /// <param name="overridechunksize"></param>
+            /// <param name="str">Original Text</param>
+            /// <param name="messagelimit">How long should the split message be max (with overhead)</param>
+            /// <param name="overhead">How much space should be at the end of the split part</param>
+            /// <param name="overridechunksize">Set lenght how long should the messages be (ignores overhead)</param>
             /// <returns></returns>
             public static List<string> FitMessageLimit(string str, int messagelimit, int overhead = 650, int overridechunksize = 0)
             {
@@ -135,9 +143,8 @@ namespace Petrosik
             /// <summary>
             /// Returns list of all options in the enum
             /// </summary>
-            /// <typeparam name="T"></typeparam>
+            /// <typeparam name="T">Enum type</typeparam>
             /// <returns></returns>
-            /// <exception cref="Exception"></exception>
             public static List<T> GetEnumTypes<T>() where T : Enum
             {
                 List<T> list = new List<T>();
@@ -163,8 +170,8 @@ namespace Petrosik
             /// <summary>
             /// rotates vector(normalized direction) by set amount of degres
             /// </summary>
-            /// <param name="v"></param>
-            /// <param name="delta"></param>
+            /// <param name="v">Original vector</param>
+            /// <param name="delta">Degres</param>
             /// <returns></returns>
             public static PointF Rotate(PointF v, float delta)
             {
@@ -229,7 +236,7 @@ namespace Petrosik
                 return JsonSerializer.Deserialize<T>(jsonString);
             }
             /// <summary>
-            /// Returns random direction without using unity's random
+            /// Returns random direction
             /// </summary>
             /// <returns></returns>
             public static PointF GetRandomDirection()
@@ -261,7 +268,7 @@ namespace Petrosik
             /// <summary>
             /// Rolls and returns true or false if the rolled number is smaller than the chance
             /// </summary>
-            /// <param name="chance">clmped 0 to 100</param>
+            /// <param name="chance">clamped 0 to 100</param>
             /// <returns></returns>
             public static bool ChanceRoll(double chance)
             {
@@ -277,8 +284,8 @@ namespace Petrosik
             /// <summary>
             /// Rolls and returns true or false if the rolled number is smaller than the maxChance and bigger than minChance
             /// </summary>
-            /// <param name="maxChance">clmped 0 to 100</param>
-            /// <param name="minChance">clmped 0 to 100</param>
+            /// <param name="maxChance">clamped 0 to 100</param>
+            /// <param name="minChance">clamped 0 to 100</param>
             /// <returns></returns>
             public static bool ChanceRoll(double minChance, double maxChance)
             {
@@ -297,8 +304,8 @@ namespace Petrosik
             /// <para>Input: ConsoleLog("Hello World!", InfoType.Info)</para>
             /// <para>Console: [HH:mm:ss] [i]Hello World!</para>
             /// </summary>
-            /// <param name="text"></param>
-            /// <param name="infotype"></param>
+            /// <param name="text">Message</param>
+            /// <param name="infotype">Severity</param>
             public static void ConsoleLog(string text, InfoType infotype)
             {
                 var inf = "[?]";
@@ -327,6 +334,11 @@ namespace Petrosik
                 Console.WriteLine(message);
                 Console.ResetColor();
             }
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="e"></param>
+            /// <param name="AdittionalMessage">Additional message that will be shown</param>
             public static void ConsoleLog(Exception e, string? AdittionalMessage = null)
             {
                 ConsoleLog($"{e.Message} {AdittionalMessage} | {e}", InfoType.Error);
@@ -334,8 +346,8 @@ namespace Petrosik
             /// <summary>
             /// should blend colors additevely
             /// </summary>
-            /// <param name="basec"></param>
-            /// <param name="additivec"></param>
+            /// <param name="basec">Original color</param>
+            /// <param name="additivec">Color that will be added</param>
             /// <returns></returns>
             public static Color BlendColors(Color basec, Color additivec)
             {
@@ -355,8 +367,8 @@ namespace Petrosik
             /// <summary>
             /// Rotates and returns vector by set amount of degres
             /// </summary>
-            /// <param name="v"></param>
-            /// <param name="delta"></param>
+            /// <param name="v">Original Point</param>
+            /// <param name="delta">Degres</param>
             /// <returns></returns>
             public static PointF Rotate(this PointF v, float delta)
             {
@@ -424,6 +436,8 @@ namespace Petrosik
             /// Scales value between 0 and 1
             /// </summary>
             /// <param name="value"></param>
+            /// <param name="min_value"></param>
+            /// <param name="max_value"></param>
             /// <returns></returns>
             public static float Normalize(this float value, float min_value, float max_value)
             {
@@ -506,11 +520,12 @@ namespace Petrosik
         public static class Utility
         {
             /// <summary>
-            /// Perlin 2D, bigger scale number more detail
+            /// Creates a 2D perlin
             /// </summary>
             /// <param name="xsize"></param>
             /// <param name="ysize"></param>
-            /// <param name="scale"></param>
+            /// <param name="scale">bigger scale number more detail</param>
+            /// <param name="convertToPercent">Should convert the values to %</param>
             /// <returns></returns>
             public static float[,] Perlin2D(int xsize, int ysize, float scale = 6, bool convertToPercent = false)
             {
@@ -556,10 +571,10 @@ namespace Petrosik
                 return Vector3.Distance(new Vector3(a.x, b.y, a.z), b);
             }
             /// <summary>
-            /// should blend colors additevely
+            /// Should blend colors additevely
             /// </summary>
-            /// <param name="basec"></param>
-            /// <param name="additivec"></param>
+            /// <param name="basec">Original color</param>
+            /// <param name="additivec">Color that will be added</param>
             /// <returns></returns>
             public static Color BlendColors(Color basec, Color additivec)
             {
@@ -579,8 +594,8 @@ namespace Petrosik
             /// <summary>
             /// Rotates and returns vector by set amount of degres
             /// </summary>
-            /// <param name="v"></param>
-            /// <param name="delta"></param>
+            /// <param name="v">Original Vector</param>
+            /// <param name="delta">Degres</param>
             /// <returns></returns>
             public static Vector2 Rotate(this Vector2 v, float delta)
             {
@@ -646,6 +661,7 @@ namespace Petrosik
             /// <summary>
             /// Returns distance while ignoring y values
             /// </summary>
+            /// <param name="a"></param>
             /// <param name="b"></param>
             /// <returns></returns>
             public static float DistanceIY(this Vector3 a, Vector3 b)
