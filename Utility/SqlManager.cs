@@ -1,7 +1,5 @@
-﻿
-namespace Petrosik
+﻿namespace Petrosik
 {
-
     namespace Sql
     {
         using Dapper;
@@ -59,7 +57,7 @@ namespace Petrosik
             /// <param name="tableName"></param>
             /// <param name="dataConverter"></param>
             /// <returns></returns>
-            public Dictionary<TKey, TValue> LoadAll<TKey, TValue>(string tableName, Func<object, TValue> dataConverter)
+            public Dictionary<TKey, TValue>? LoadAll<TKey, TValue>(string tableName, Func<object, TValue> dataConverter)
             {
                 try
                 {
@@ -201,7 +199,7 @@ namespace Petrosik
             /// <para>Uses insert or replace as the db command</para>
             /// </summary>
             /// <typeparam name="TData"></typeparam>
-            /// <param name="user"></param>
+            /// <param name="data"></param>
             /// <param name="tableName"></param>
             public void UpdateOrUpsert<TData>(TData data, string tableName)
             {
@@ -255,7 +253,7 @@ namespace Petrosik
             /// </summary>
             /// <param name="Id"></param>
             /// <param name="tableName"></param>
-            public void Remove(ulong Id, string tableName)
+            public void Remove<Tkey>(Tkey Id, string tableName)
             {
                 try
                 {
@@ -269,6 +267,66 @@ namespace Petrosik
                 {
                     Utility.ConsoleLog(ex, $"SqlManager.Remove {tableName} failed");
                 }
+            }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            /// <summary>
+            /// Basic SqlManager,while it should be functional, it is mainly an EXAMPLE and it probably shoulnd NOT be used!!!
+            /// </summary>
+            /// <typeparam name="Tkey">Key in the db</typeparam>
+            /// <typeparam name="TValue">Data</typeparam>
+            /// <typeparam name="TDBValue">DB friendly data</typeparam>
+            /// <param name="opt"></param>
+            /// <param name="tableName"></param>
+            /// <param name="Id"></param>
+            /// <param name="data"></param>
+            /// <param name="datalist"></param>
+            /// <param name="converter">converts from db object to <typeparamref name="TValue"/></param>
+            /// <param name="converterToDB">converts from <typeparamref name="TValue"/> to db object</param>
+            /// <returns></returns>
+            public IEnumerable<TValue>? SqlMainManager<Tkey, TValue, TDBValue>(SQLOptions opt, string tableName, Tkey? Id = default, TValue? data = default, IEnumerable<TValue> datalist = null, Func<object, TValue>? converter = null, Func<TValue, TDBValue>? converterToDB = null)
+            {
+                switch (opt)
+                {
+                    case SQLOptions.Save:
+                        Save<TValue>(data, tableName);
+                        break;
+                    case SQLOptions.Load:
+                        data = Load(Id, tableName, converter);
+                        List<TValue> result = new List<TValue>();
+                        if (data != null)
+                        {
+                            result.Add(data);
+                        }
+                        return result;
+                    case SQLOptions.SaveAll:
+                        if (datalist != null)
+                        {
+                            var r1 = datalist.Select(x => converterToDB.Invoke(x));
+                            SaveAll(r1, tableName);
+                        }
+                        break;
+                    case SQLOptions.LoadAll:
+                        var rr = LoadAll<Tkey, TValue>(tableName, converter);
+                        return rr.Select(x => x.Value);
+                    case SQLOptions.Delete:
+                        if (Id != null)
+                        {
+                            Remove(Id, tableName);
+                        }
+                        break;
+                    case SQLOptions.Update:
+                        Update(data, tableName);
+                        break;
+                    case SQLOptions.Sync:
+                        var r = datalist.Select(x => converterToDB.Invoke(x));
+                        UpdateOrUpsertList(r, tableName);
+                        break;
+                    default:
+                        break;
+                }
+                return null;
             }
         }
     }

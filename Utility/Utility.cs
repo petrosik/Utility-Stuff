@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-
-namespace Petrosik
+﻿namespace Petrosik
 {
     namespace Utility
     {
+        using System;
+        using System.Collections.Generic;
+        using System.IO;
         using Enums;
         using System.Drawing;
         using System.IO.Compression;
@@ -513,6 +512,8 @@ namespace Petrosik
     }
     namespace UnityUtility
     {
+        using System;
+        using System.Collections.Generic;
         using UnityEngine;
         /// <summary>
         /// Contains all unity specific utility stuff
@@ -656,7 +657,7 @@ namespace Petrosik
             /// <returns></returns>
             public static bool IsUnityNull(this object obj)
             {
-                return obj == null || ((obj is Object) && ((Object)obj) == null);
+                return obj == null || ((obj is UnityEngine.Object) && ((UnityEngine.Object)obj) == null);
             }
             /// <summary>
             /// Returns distance while ignoring y values

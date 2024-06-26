@@ -1,9 +1,12 @@
-﻿using System;
-
-namespace Petrosik
+﻿namespace Petrosik
 {
     namespace Enums
     {
+        using System;
+
+        /// <summary>
+        /// More common bigger number
+        /// </summary>
         [Serializable]
         public enum Rarity
         {
@@ -45,6 +48,18 @@ namespace Petrosik
             Warn,
             Error,
             Important,
+        }
+        public enum VersioningActionType
+        {
+            None = -1,
+            ModifyValue,
+            AddProperty,
+            RemoveProperty,
+            ModifyProperty,
+            //not implemented
+            AddMethod,
+            RemoveMethod,
+            ModifyMethod,
         }
     }
 }

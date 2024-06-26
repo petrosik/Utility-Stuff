@@ -9,20 +9,24 @@ namespace Petrosik
         using System.Linq;
         using UnityEngine;
 
+        /// <summary>
+        /// Chance table or loot table allows to add and then pull items with rarities, the items are weighted and have calculated pull values based on the amount of items in the pool + it's rarity
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         [Serializable]
-        public class ChanceTable<T> : IEnumerable<ChancePart<T>>, IEnumerator<ChancePart<T>>
+        public class ChanceTable<T> : IEnumerable<ChancePart<T>>, IEnumerator<ChancePart<T>> where T : notnull
         {
             private List<ChancePart<T>> Table = new();
             public int Count => Table.Count;
             /// <summary>
             /// Average rarity of the table
             /// </summary>
-            public Rarity TableAvrgRarity { get; private set; }
+            public Rarity TableAvrgRarity { get; private set; } = Rarity.None;
             /// <summary>
             /// Count of each rarity inside the table
             /// </summary>
             public Dictionary<Rarity, int> RaritysCount { get; private set; }
-            private System.Random r = new();
+            private readonly System.Random r = new();
             public ChancePart<T> Current => Table[CurrentIndex];
             private int CurrentIndex = -1;
             object IEnumerator.Current => Current;
@@ -43,9 +47,11 @@ namespace Petrosik
             /// <param name="UseUnityRandom">Should the method use system random or unity random</param>
             /// <param name="RemoveAfterPull">Should the item be removed from the table after pull</param>
             /// <returns></returns>
-            public T GetItem(bool UseUnityRandom = false, bool RemoveAfterPull = false)
+            public T? GetItem(bool UseUnityRandom = false, bool RemoveAfterPull = false)
             {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 T result = (T)(object)null;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                 if (Count == 1)
                 {
                     return Table[0].Object;
@@ -94,9 +100,11 @@ namespace Petrosik
             /// <param name="UseUnityRandom">Should the method use system random or unity random</param>
             /// <param name="RemoveAfterPull">Should the item be removed from the table after pull</param>
             /// <returns></returns>
-            public T GetItemWithRarity(List<Rarity> Range, bool UseUnityRandom = false, bool RemoveAfterPull = false)
+            public T? GetItemWithRarity(List<Rarity> Range, bool UseUnityRandom = false, bool RemoveAfterPull = false)
             {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 T result = (T)(object)null;
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                 if (Count == 1)
                 {
                     return Table[0].Object;
@@ -177,7 +185,7 @@ namespace Petrosik
                 if (Table.Exists(p => p.Equals(item)))
                 {
                     var it = Table.Find(p => p.Object.Equals(item));
-                    RaritysCount[it.Rarity]--;
+                    RaritysCount[it!.Rarity]--;
                     Table.Remove(it);
                     RecalcChancePerc();
                     return true;
@@ -246,7 +254,7 @@ namespace Petrosik
         }
 
         [Serializable]
-        public class ChancePart<T>
+        public class ChancePart<T> where T : notnull
         {
             public Rarity Rarity;
             public T Object;
@@ -266,8 +274,12 @@ namespace Petrosik
             {
                 return $"{Chance} - {Object}";
             }
-            public override bool Equals(object obj)
+            public override bool Equals(object? obj)
             {
+                if (obj is null)
+                {
+                    return false;
+                }
                 return Object.Equals(obj);
             }
             public override int GetHashCode()
