@@ -10,6 +10,8 @@
         using System.IO.Compression;
         using System.Text;
         using System.Text.Json;
+        using System.Numerics;
+
         /// <summary>
         /// Main Utility Class
         /// <para>Recommended: using Utility = Petrosik.Utility.Utility;</para>
@@ -507,6 +509,17 @@
             public static float Sum(this PointF v)
             {
                 return v.X + v.Y;
+            }
+            /// <summary>
+            /// Creates string similar to debbuger display if the number is too big
+            /// </summary>
+            /// <param name="val"></param>
+            /// <param name="digits">How many digits to show</param>
+            /// <param name="cutoff">Number bigger than this is gonna get converted to the shorter version</param>
+            /// <returns></returns>
+            public static string ToShortString(this BigInteger val, int digits = 8,int cutoff = 99999999)
+            {
+                return (val > cutoff ? $"{val.ToString($"E{digits}")}" : $"{val}");
             }
         }
     }
