@@ -46,9 +46,38 @@
             /// <param name="color"></param>
             /// <param name="weight">0 to 1, 0 original color only, 1 tint color only</param>
             /// <returns></returns>
-            public static Image Tint(this Image img, Rgba32 color, float weight = 1f)
+            public static Image Tint1(this Image img, Rgba32 color, float weight = 1f)
             {
                 return ImageSharp.Tint((Image<Rgba32>)img, color, weight);
+            }
+            /// <summary>
+            /// Tints the image to the color, weight cannot be more than 1 otherwise it inverses the colors
+            /// </summary>
+            /// <param name="context"></param>
+            /// <param name="color"></param>
+            /// <param name="weight">0 to 1, 0 original color only, 1 tint color only</param>
+            /// <returns></returns>
+            public static IImageProcessingContext Tint(this IImageProcessingContext context, Rgba32 color, float weight = 1f)
+            {
+                Size size = context.GetCurrentSize();
+                var pcolor = color.ToScaledVector4();
+                context.ProcessPixelRowsAsVector4(row =>
+                {
+                    for (int i = 0; i < size.Height; i++)
+                    {
+                        var pixel = row[i];
+                        pixel = 
+                        new(
+                            pcolor[0] * weight + pixel[0] * Math.Abs(1f - weight),
+                            pcolor[1] * weight + pixel[1] * Math.Abs(1f - weight),
+                            pcolor[2] * weight + pixel[2] * Math.Abs(1f - weight),
+                            pixel.W
+                           );
+                        row[i] = pixel;
+                    }
+                });
+
+                return context;
             }
             /// <summary>
             /// Rounds off edges of the image

@@ -19,7 +19,7 @@
             /// Creates new SqlManager and sets path to .db file
             /// </summary>
             /// <param name="path"></param>
-            /// <param name="ignoreCheck">Ignore if the .db file doesn't exist</param>
+            /// <param name="ignoreCheck">Ignore if the .db file doesn't exist at creation</param>
             internal SqlManager(string path, bool ignoreCheck = false)
             {
                 SetPath(path, ignoreCheck);
@@ -48,6 +48,50 @@
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            /// <summary>
+            /// Tries to execute the Command with the params
+            /// </summary>
+            /// <param name="Command"></param>
+            /// <param name="param"></param>
+            /// <returns></returns>
+            public int? ExecuteCommand(string Command, object? param)
+            {
+                try
+                {
+                    using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+                    {
+                        return connection.Execute(Command, param);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Utility.ConsoleLog(ex, $"SqlManager.ExecuteCommand failed");
+                    return null;
+                }
+            }
+            /// <summary>
+            /// Tries to execute the QuarryCommand with the params
+            /// </summary>
+            /// <typeparam name="TKey"></typeparam>
+            /// <typeparam name="TValue"></typeparam>
+            /// <param name="Command"></param>
+            /// <param name="param"></param>
+            /// <returns></returns>
+            public IEnumerable<object> ExecuteQuarry<TKey, TValue>(string Command, object? param)
+            {
+                try
+                {
+                    using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+                    {
+                        return connection.Query<object>(Command, param);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Utility.ConsoleLog(ex, $"SqlManager.ExecuteQuarry failed");
+                    return null;
+                }
+            }
             /// <summary>
             /// Loads entire table
             /// <para>Needs the table and the output type to have Id property!!!!</para>
