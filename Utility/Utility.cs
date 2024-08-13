@@ -517,10 +517,22 @@
             /// <param name="digits">How many digits to show</param>
             /// <param name="cutoff">Number bigger than this is gonna get converted to the shorter version</param>
             /// <returns></returns>
-            public static string ToShortString(this BigInteger val, int digits = 8,int cutoff = 99999999)
+            public static string ToShortString(this BigInteger val, int digits = 8, int cutoff = 99999999)
             {
                 return (val > cutoff ? $"{val.ToString($"E{digits}")}" : $"{val}");
             }
+            /// <summary>
+            /// Returns distance from v1 to v2
+            /// </summary>
+            /// <param name="v1"></param> 
+            /// <param name="v2"></param>
+            /// <returns></returns>
+            public static float Distance(this PointF v1, PointF v2)
+            {
+                float num = v1.X - v2.X;
+                float num2 = v1.Y - v2.Y;
+                return (float)Math.Sqrt(num * num + num2 * num2);
+            } 
         }
     }
     namespace UnityUtility
