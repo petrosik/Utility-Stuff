@@ -384,7 +384,7 @@
             /// <returns></returns>
             public static PointF Direction(this PointF v1, PointF v2)
             {
-                return new PointF(Math.Abs(v1.X - v2.X), Math.Abs(v1.Y - v2.Y)).Normalize();
+                return new PointF(Math.Abs(v1.X) - Math.Abs(v2.X), Math.Abs(v1.Y) - Math.Abs(v2.Y)).Normalize(); 
             }
             /// <summary>
             /// Merges Arrays into one
