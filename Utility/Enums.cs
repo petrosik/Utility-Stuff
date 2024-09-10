@@ -61,5 +61,15 @@
             RemoveMethod,
             ModifyMethod,
         }
+        [Serializable]
+        public enum PathOccupancy
+        {
+            Blocked = 0,
+            Clear = 1,
+            LowP = 2,
+            MediumP = 4,
+            HighP = 8,
+            Path = 128,
+        }
     }
 }
