@@ -307,7 +307,7 @@
             /// </summary>
             /// <param name="text">Message</param>
             /// <param name="infotype">Severity</param>
-            public static void ConsoleLog(string text, InfoType infotype)
+            public static void ConsoleLog(string text, InfoType infotype = InfoType.Info)
             {
                 var inf = "[?]";
                 switch (infotype)
@@ -336,7 +336,15 @@
                 Console.ResetColor();
             }
             /// <summary>
-            /// 
+            /// Formatted log method, simplified version for quicker use
+            /// </summary>
+            /// <param name="obj"></param>
+            public static void ConsoleLog(object obj)
+            {
+                ConsoleLog($"{obj}", InfoType.Info);
+            }
+            /// <summary>
+            /// Formatted log method based on exception with additional message
             /// </summary>
             /// <param name="e"></param>
             /// <param name="AdittionalMessage">Additional message that will be shown</param>

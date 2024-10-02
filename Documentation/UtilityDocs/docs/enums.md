@@ -60,7 +60,7 @@ AddMethod
 RemoveMethod
 ModifyMethod
 ```
-!!! note
+!!! warning
     These are not implemented:
     
     - AddMethod  

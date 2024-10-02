@@ -2,7 +2,7 @@
 
 
 ### string?[] SplitText(...)
-Splits text based on spaces or by `'"'`  
+Splits text based on spaces or by `"`  
 
 >**Method:**  
 >string?[] SplitText(string message, out string? tempparam, int paramlenght = 8, char prefix = '$')  

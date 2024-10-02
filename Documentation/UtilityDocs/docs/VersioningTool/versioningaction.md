@@ -19,7 +19,7 @@ Class that contains actions that specify what needs to be done.
 - **Func&lt;object, object>? ValueConverter { get; set; }**  
     This can be value converter or value modifer  
 - **public bool IsField { get; set; }**  
-!!! note
+!!! note "IsField"
     Only applies for field/property changes  
     true = field, false = property  
 - **FieldAttributes FAttributes { get; set; }**  

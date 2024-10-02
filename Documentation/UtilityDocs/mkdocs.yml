@@ -34,19 +34,15 @@ nav:
     - Pseudo A*:
         - Introduction: Pathfinding/PseudoAStar/introduction.md
         - Methods: Pathfinding/PseudoAStar/methods.md
-theme: readthedocs
-# theme:
+theme: 
+    name: readthedocs
 #   name: null
 #   custom_dir: docs/theme/material
 extra_css:
     - stylesheets/custom.css 
-    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css
 # extra_javascript:
-    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js
+#     - javascripts/custom.js
 # extra:
 #   footer: "© sdcs2024 My Custom Footer Text"
 markdown_extensions:
     - admonition
-#   - codehilite:
-#         pygments_style: vs  
-#         guess_lang: false

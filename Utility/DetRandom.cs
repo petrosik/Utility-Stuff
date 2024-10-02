@@ -6,7 +6,7 @@
         /// <summary>
         /// (deterministic friendly) Random with exposed Seed and number of actions(Pulls) taken.
         /// </summary>
-        internal class DetRandom
+        public class DetRandom
         {
             private readonly Random r;
             public int Pulls { get; private set; }
@@ -37,6 +37,29 @@
                 this.Seed = Seed;
             }
             /// <summary>
+            /// Creates new random from string with exported information
+            /// </summary>
+            /// <param name="ExportedString"></param>
+            /// <exception cref="Exception"></exception>
+            internal DetRandom(string ExportedString)
+            {
+                try
+                {
+                    var it = ExportedString.Split(',');
+                    Seed = int.Parse(it[0]);
+                    Pulls = int.Parse(it[1]);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"String \"{ExportedString}\" is not in the correct format for inporting", ex);
+                }
+                r = new(Seed);
+                for (int i = 0; i < Pulls; i++)
+                {
+                    r.Next();
+                }
+            }
+            /// <summary>
             /// Creates new random
             /// </summary>
             internal DetRandom()
@@ -45,7 +68,6 @@
                 Seed = r.Next(int.MinValue, int.MaxValue);
                 r = new(Seed);
                 Pulls = 0;
-
             }
             public int Next(int minValue, int maxValue)
             {
@@ -89,8 +111,20 @@
             }
             public void NextBytes(byte[] buffer)
             {
-                Pulls++;
+                Pulls += buffer.Length;
                 r.NextBytes(buffer);
+            }
+            /// <summary>
+            /// Exports string that can be inported
+            /// </summary>
+            /// <returns></returns>
+            public string Export()
+            {
+                return $"{Seed},{Pulls}";
+            }
+            public override string ToString()
+            {
+                return $"Seed: {Seed}, Pulls: {Pulls}x";
             }
         }
     }
