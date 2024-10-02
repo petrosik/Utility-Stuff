@@ -1,0 +1,52 @@
+site_name: petrosik.Utility Documentation
+nav:
+ - Home: index.md
+ - Utility:
+    - Introduction: Utility/introduction.md 
+    - Methods: Utility/methods.md
+    - DetRandom: 
+        - Introduction: Utility/DetRandom/introduction.md
+        - Methods: Utility/DetRandom/methods.md
+    - ChanceTable: 
+        - Introduction: Utility/ChanceTable/introduction.md
+        - Methods: Utility/ChanceTable/methods.md    
+    - Versioning Tool: 
+        - Introduction: VersioningTool/introduction.md
+        - Methods: VersioningTool/methods.md
+        - Versioning Action: VersioningTool/versioningaction.md 
+    - Enums: enums.md
+ - Unity Utility:
+    - Introduction: UnityUtility/introduction.md 
+    - Methods: UnityUtility/methods.md 
+ - Image Sharp Utility:
+    - Introduction: ImageSharpUtility/introduction.md 
+    - Methods: ImageSharpUtility/methods.md 
+ - Sql Manager: 
+    - Introduction: SqlManager/introduction.md
+    - Methods: SqlManager/methods.md
+ - Pathfinding:
+    - GridBase: 
+        - Introduction: Pathfinding/GridBase/introduction.md
+        - Methods: Pathfinding/GridBase/methods.md
+    - A*:
+        - Introduction: Pathfinding/AStar/introduction.md
+        - Methods: Pathfinding/AStar/methods.md
+    - Pseudo A*:
+        - Introduction: Pathfinding/PseudoAStar/introduction.md
+        - Methods: Pathfinding/PseudoAStar/methods.md
+theme: readthedocs
+# theme:
+#   name: null
+#   custom_dir: docs/theme/material
+extra_css:
+    - stylesheets/custom.css 
+    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css
+# extra_javascript:
+    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js
+# extra:
+#   footer: "© sdcs2024 My Custom Footer Text"
+markdown_extensions:
+    - admonition
+#   - codehilite:
+#         pygments_style: vs  
+#         guess_lang: false

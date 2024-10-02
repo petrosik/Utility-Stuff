@@ -362,4 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Utility/nuget.config
-/Utility/nuget.config
+/Documentation/UtilityDocs/site
+/Documentation/mkdocs-material

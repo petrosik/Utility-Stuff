@@ -1,0 +1,54 @@
+h6 
+{
+    margin-bottom: 0 !important
+}
+
+blockquote
+{
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-left: 4px solid #ccc;
+}
+
+blockquote p
+{
+    margin: 0;
+}
+
+.wy-nav-content
+{
+max-width: 100%;
+}
+
+footer *
+{
+    display: none;
+}
+
+footer
+{
+    /* font-size: 0; */
+    color: transparent;
+    max-height: 35px;
+    overflow: hidden;
+}
+
+footer .rst-footer-buttons
+{
+    display: block;
+    font-size: 100% !important;
+    
+}
+
+/* code, pre {
+    /* background-color: #1e1e1e; Visual Studio dark background 
+    color: #d4d4d4; /* Default text color 
+} */
+
+/* .hljs-keyword { color: 	#569cd6;  }   Keyword  */
+/* .highlight .s { color: #d69d85; }   String */
+/* .highlight .c { color: #608b4e; }   Comment */
+/* .highlight .n { color: #9cdcfe; }   Name (identifiers, functions) */
+/* .highlight .o { color: #b4b4b4; }   Operators */
+/* .hljs-number { color: #1486ff; }   Numbers */
+/* .highlight .p { color: #d4d4d4; }   Punctuation */
