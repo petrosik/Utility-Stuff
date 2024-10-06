@@ -1,18 +1,24 @@
 # Methods
 
 
-### string?[] SplitText(...)
-Splits text based on spaces or by `"`  
+### SplitText
+Splits text based on spaces abd/or by `"`  
 
->**Method:**  
->string?[] SplitText(string message, out string? tempparam, int paramlenght = 8, char prefix = '$')  
+**Example:**  
+Input:  `Hi, world. "This is a example"`  
+Output: [`Hi,`,`world.`,`"This is a example"`]
 
+**The Method:** 
+``` 
+string?[] SplitText(string message, out string? tempparam, int paramlenght = 8, char prefix = '$')  
+```
 `message` - Original text to split  
 `tempparam` - Remaining text that couldn't fit  
 `paramlenght` (default: 8) - How many words to split for  
 `prefix` (default: $) - Prefix to remove  
 
-```csharp
+<details> <summary><b>Raw Code:</b></summary>
+```csharp 
 int[] lenght = new int[] { 0, 1 };
 string mainmessage = message;
 string?[] param = new string[paramlenght];
@@ -66,8 +72,9 @@ if (++lenght[0] != message.Length)
     }
 }
 return param;
-``` 
-
+```
+</details>
+---
 <!-- /// <summary>
 /// Splits string into a list of strings by spaces untill it reached message limit, overridechunksize makes it ignore spaces
 /// </summary>

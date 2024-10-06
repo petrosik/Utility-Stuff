@@ -9,7 +9,10 @@
         public class DetRandom
         {
             private readonly Random r;
-            public int Pulls { get; private set; }
+            /// <summary>
+            /// The number of actions taken from the creation of the random
+            /// </summary>
+            public uint Pulls { get; private set; }
             public int Seed { get; private set; }
             /// <summary>
             /// Creates new random with the <paramref name="Seed"/>
@@ -26,7 +29,7 @@
             /// </summary>
             /// <param name="Seed"></param>
             /// <param name="Pulls"></param>
-            internal DetRandom(int Seed, int Pulls)
+            internal DetRandom(int Seed, uint Pulls)
             {
                 r = new(Seed);
                 for (int i = 0; i < Pulls; i++)
@@ -47,7 +50,7 @@
                 {
                     var it = ExportedString.Split(',');
                     Seed = int.Parse(it[0]);
-                    Pulls = int.Parse(it[1]);
+                    Pulls = uint.Parse(it[1]);
                 }
                 catch (Exception ex)
                 {
@@ -111,7 +114,7 @@
             }
             public void NextBytes(byte[] buffer)
             {
-                Pulls += buffer.Length;
+                Pulls += (uint)buffer.Length;
                 r.NextBytes(buffer);
             }
             /// <summary>

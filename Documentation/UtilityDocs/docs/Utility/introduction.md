@@ -1,14 +1,20 @@
 # Utility 
+Contains lot of different utility methods
 
-<!-- md:option type:note -->
+!!! tip
+    Recommended when using:  
+    `using Utility = Petrosik.Utility.Utility;`
 
-!!! note
+## Methods overview
+
+
+<!-- !!! note
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:abstract -->
+
 
 !!! abstract
 
@@ -16,7 +22,7 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:info -->
+
 
 !!! info
 
@@ -24,7 +30,7 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:tip -->
+
 
 !!! tip
 
@@ -32,7 +38,7 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:success -->
+
 
 !!! success
 
@@ -40,7 +46,7 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:question -->
+
 
 !!! question
 
@@ -48,7 +54,7 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:warning -->
+
 
 !!! warning
 
@@ -56,7 +62,7 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:failure -->
+
 
 !!! failure
 
@@ -64,7 +70,7 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:danger -->
+
 
 !!! danger
 
@@ -72,7 +78,7 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:bug -->
+
 
 !!! bug
 
@@ -80,7 +86,6 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:example -->
 
 !!! example
 
@@ -88,10 +93,10 @@
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
         purus auctor massa, nec semper lorem quam in massa.
 
-<!-- md:option type:quote -->
+
 
 !!! quote
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
         euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
-        purus auctor massa, nec semper lorem quam in massa.
+        purus auctor massa, nec semper lorem quam in massa. -->

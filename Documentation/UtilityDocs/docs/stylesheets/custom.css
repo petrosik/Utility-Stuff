@@ -25,7 +25,6 @@ footer *
     display: none;
 }
 
-
 footer
 {
     /* font-size: 0; */
@@ -40,6 +39,39 @@ footer .rst-footer-buttons
     font-size: 100% !important;
     
 } 
+
+.admonition 
+{
+    width: fit-content;
+    padding-right: 100px !important;
+}
+.admonition-title
+{
+    margin-right: -100px !important;
+}
+
+.hljs
+{
+    width: 50vw;
+}
+
+details > summary {
+    cursor: pointer;
+}
+details > summary {
+    list-style: none;
+}
+details > summary::after {
+    content: "▼";  /* Unicode arrow down */
+    display: inline-block;
+    margin-left: 5px;  /* Adjust the space between text and arrow */
+    font-size: 17px;
+    transform: rotate(-90deg);  /* Default position (down) */
+    transition: transform 0.3s ease;  /* Smooth rotation */
+}
+details[open] > summary::after {
+    transform: rotate(0deg);  /* Rotate to point upwards when open */
+}
 
 .admonition.note .admonition-title::before {
     content: "\f05a"; /* FontAwesome icon code */

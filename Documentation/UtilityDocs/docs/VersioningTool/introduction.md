@@ -2,42 +2,42 @@
 Tool for automaticly updating classes and structs from some state to other. In future they will also be able to update methods.
 
 ## Fields
-- IReadOnlyDictionary&lt;Version, [VersioningAction](./versioningaction.md)> Actions
-
+- **IReadOnlyDictionary&lt;[Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0), [VersioningAction](./versioningaction.md)> Actions**
+    Contains all actions that 
 
 ## Methods overview
-- **Add(Version, [VersioningAction](./versioningaction.md))**  
+- **[Add](./methods.md#add)([Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0), [VersioningAction](./versioningaction.md))**  
     Adds Action
-<br><br>
+    <br><br>
 
-- **Remove(Version)**  
+- **[Remove](./methods.md#remove)([Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0))**  
     Removes Action
     <br><br>
 
-- **Modify(Version, [VersioningAction](./versioningaction.md))**  
+- **[Modify](./methods.md#modify)([Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0), [VersioningAction](./versioningaction.md))**  
     Modifies Action specified by VersioningAction
     <br><br>
 
-- **Insert(Version, [VersioningAction](./versioningaction.md))**  
+- **[Insert](./methods.md#insert)([Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0), [VersioningAction](./versioningaction.md))**  
     Insesrts VersioningAction into the list. If the version is already inside it shifts it and all after that conflicts
     <br><br>
 
-- **Shift(Version, Version)**  
+- **[Shift](./methods.md#shift)([Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0), [Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0))**  
     Moves the action on version to the version
     <br><br>
 
-- **Clear()**  
+- **[Clear](./methods.md#clear)()**  
     Removes all Actions
     <br><br>
 
-- **CompleteUpdate(TIn, Version, Version)**  
+- **[CompleteUpdate](./methods.md#completeupdate)(TIn, [Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0), [Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0))**  
     Applies the updates to the object that are > than version and < than version and tries to convert it to the output type
     <br><br>
 
-- **SimpleUpdate(object, Version, Version)**  
+- **[SimpleUpdate](./methods.md#simpleupdate)(object, [Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0), [Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0))**  
     Applies the updates to the object that are > than version and < than version
     <br><br>
 
-- **AutoGenerateVersions(object, object, Version?, Version?)**  
+- **[AutoGenerateVersions](./methods.md#autogenerateversions)(object, object, [Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0)?, [Version](https://learn.microsoft.com/en-us/dotnet/api/system.version?view=net-8.0)?)**  
     Tries to generate actions that will change the current object into the target. Additionally you can specify what version they will start and tries to fit into the version
     <br><br>

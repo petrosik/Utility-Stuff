@@ -36,6 +36,7 @@ nav:
         - Methods: Pathfinding/PseudoAStar/methods.md
 theme: 
     name: readthedocs
+    highlightjs: true
 #   name: null
 #   custom_dir: docs/theme/material
 extra_css:
@@ -46,3 +47,5 @@ extra_css:
 #   footer: "© sdcs2024 My Custom Footer Text"
 markdown_extensions:
     - admonition
+    - codehilite:
+        pygments_style: dark_modern.DarkModern
