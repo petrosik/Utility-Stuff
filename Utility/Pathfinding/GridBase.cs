@@ -62,12 +62,13 @@
                 this.SearchRange = SearchRange;
                 this.MaxSegmentCount = MaxSegmentCount;
                 var bounds = BaseClearArea.GetBounds();
-                GridSize = new((int)Math.Ceiling(bounds.Width * this.GridScale), (int)Math.Ceiling(bounds.Height * this.GridScale));
                 AddObstacle(new(PathOccupancy.Clear, BaseClearArea));
             }
             private GridBase() { }
             private void BuildGrid()
             {
+                GridSize = new(loadedObstacles.ConvertAll(x => (int)Math.Ceiling(x.Shape.GetBounds().Width)).OrderByDescending(x => x).First() * this.GridScale,
+                               loadedObstacles.ConvertAll(x => (int)Math.Ceiling(x.Shape.GetBounds().Height)).OrderByDescending(x => x).First() * this.GridScale);
                 Grid = new PathOccupancy[GridSize.Width, GridSize.Height];
                 for (int i = 0; i < loadedObstacles.Count; i++)
                 {

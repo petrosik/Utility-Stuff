@@ -28,6 +28,7 @@ nav:
     - GridBase: 
         - Introduction: Pathfinding/GridBase/introduction.md
         - Methods: Pathfinding/GridBase/methods.md
+    - ObstacleObject: Pathfinding/GridBase/obstacleobject.md
     - A*:
         - Introduction: Pathfinding/AStar/introduction.md
         - Methods: Pathfinding/AStar/methods.md
@@ -48,4 +49,4 @@ extra_css:
 markdown_extensions:
     - admonition
     - codehilite:
-        pygments_style: dark_modern.DarkModern
+        pygments_style: vs
