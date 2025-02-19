@@ -11,7 +11,7 @@ namespace Petrosik
         /// </summary>
         /// <typeparam name="TKey"></typeparam>
         /// <typeparam name="TValue"></typeparam>
-        internal class BiDictionary<TKey, TValue> : IDictionary<TKey, TValue> where TKey : notnull where TValue : notnull
+        public class BiDictionary<TKey, TValue> : IDictionary<TKey, TValue> where TKey : notnull where TValue : notnull
         {
             private Dictionary<TKey, TValue> Normal;
             private Dictionary<TValue, TKey> Reverse = new();
