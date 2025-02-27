@@ -66,7 +66,7 @@
                     for (int i = 0; i < size.Height; i++)
                     {
                         var pixel = row[i];
-                        pixel = 
+                        pixel =
                         new(
                             pcolor[0] * weight + pixel[0] * Math.Abs(1f - weight),
                             pcolor[1] * weight + pixel[1] * Math.Abs(1f - weight),

@@ -25,19 +25,19 @@ namespace Petrosik
             /// Copies all values in <paramref name="Dictionary"/> and makes them listable
             /// </summary>
             /// <param name="Dictionary"></param>
-            public BiDictionary(Dictionary<TKey,TValue> Dictionary)
+            public BiDictionary(Dictionary<TKey, TValue> Dictionary)
             {
                 Normal = Dictionary;
                 foreach (var item in Dictionary)
                 {
-                    Reverse.Add(item.Value,item.Key);
+                    Reverse.Add(item.Value, item.Key);
                 }
             }
 
             public TValue this[TKey key]
             {
                 get => Normal[key];
-                set { Reverse.Remove(Normal[key]);Reverse.Add(value,key); Normal[key] = value; }
+                set { Reverse.Remove(Normal[key]); Reverse.Add(value, key); Normal[key] = value; }
             }
 
             public TKey this[TValue key]
