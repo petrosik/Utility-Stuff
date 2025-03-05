@@ -2,15 +2,15 @@
 {
     namespace Utility
     {
+        using Enums;
         using System;
         using System.Collections.Generic;
-        using System.IO;
-        using Enums;
         using System.Drawing;
+        using System.IO;
         using System.IO.Compression;
+        using System.Numerics;
         using System.Text;
         using System.Text.Json;
-        using System.Numerics;
 
         /// <summary>
         /// Main Utility Class
@@ -392,7 +392,7 @@
             /// <returns></returns>
             public static PointF Direction(this PointF v1, PointF v2)
             {
-                return new PointF(Math.Abs(v1.X) - Math.Abs(v2.X), Math.Abs(v1.Y) - Math.Abs(v2.Y)).Normalize(); 
+                return new PointF(Math.Abs(v1.X) - Math.Abs(v2.X), Math.Abs(v1.Y) - Math.Abs(v2.Y)).Normalize();
             }
             /// <summary>
             /// Merges Arrays into one
@@ -540,7 +540,7 @@
                 float num = v1.X - v2.X;
                 float num2 = v1.Y - v2.Y;
                 return (float)Math.Sqrt(num * num + num2 * num2);
-            } 
+            }
         }
     }
     namespace UnityUtility
@@ -810,13 +810,57 @@
                      (int)(c.g * 255),
                      (int)(c.b * 255));
             }
+            public static float Sum(this Vector3 v)
+            {
+                return v.x + v.y + v.z;
+            }
+            public static float Sum(this Vector2 v)
+            {
+                return v.x + v.y;
+            }
+            /// <summary>
+            /// Takes all values from <paramref name="v"/> sum's them up and divides them by 3
+            /// </summary>
+            /// <param name="v"></param>
+            /// <returns></returns>
+            public static float Average(this Vector3 v)
+            {
+                return v.Sum() / 3f;
+            }
+            /// <summary>
+            /// Takes all values from <paramref name="v"/> sum's them up and divides them by 2
+            /// </summary>
+            /// <param name="v"></param>
+            /// <returns></returns>
+            public static float Average(this Vector2 v)
+            {
+                return v.Sum() / 2f;
+            }
+            /// <summary>
+            /// Takes all values from <paramref name="v"/> sum's them up and divides them by 3
+            /// </summary>
+            /// <param name="v"></param>
+            /// <returns></returns>
+            public static float Average(this Vector3Int v)
+            {
+                return v.Sum() / 3f;
+            }
+            /// <summary>
+            /// Takes all values from <paramref name="v"/> sum's them up and divides them by 2
+            /// </summary>
+            /// <param name="v"></param>
+            /// <returns></returns>
+            public static float Average(this Vector2Int v)
+            {
+                return v.Sum() / 2f;
+            }
             /// <summary>
             /// Returns true if <paramref name="v"/>.x &amp;&amp; <paramref name="v"/>.y &amp;&amp; <paramref name="v"/>.z &lt; num
             /// </summary>
             /// <param name="v"></param>
             /// <param name="num"></param>
             /// <returns></returns>
-            public static bool Less(this Vector3 v,float num)
+            public static bool Less(this Vector3 v, float num)
             {
                 if (v.x < num && v.y < num && v.z < num)
                 {
@@ -835,7 +879,7 @@
                 if (v.x > num && v.y > num && v.z > num)
                 {
                     return true;
-                } 
+                }
                 return false;
             }
         }
