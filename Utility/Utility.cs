@@ -810,6 +810,34 @@
                      (int)(c.g * 255),
                      (int)(c.b * 255));
             }
+            /// <summary>
+            /// Returns true if <paramref name="v"/>.x &amp;&amp; <paramref name="v"/>.y &amp;&amp; <paramref name="v"/>.z &lt; num
+            /// </summary>
+            /// <param name="v"></param>
+            /// <param name="num"></param>
+            /// <returns></returns>
+            public static bool Less(this Vector3 v,float num)
+            {
+                if (v.x < num && v.y < num && v.z < num)
+                {
+                    return true;
+                }
+                return false;
+            }
+            /// <summary>
+            /// Returns true if <paramref name="v"/>.x &amp;&amp; <paramref name="v"/>.y &amp;&amp; <paramref name="v"/>.z &gt; num
+            /// </summary>
+            /// <param name="v"></param>
+            /// <param name="num"></param>
+            /// <returns></returns>
+            public static bool More(this Vector3 v, float num)
+            {
+                if (v.x > num && v.y > num && v.z > num)
+                {
+                    return true;
+                } 
+                return false;
+            }
         }
     }
 }
