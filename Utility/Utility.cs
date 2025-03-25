@@ -783,34 +783,6 @@
             {
                 return v.x + v.y;
             }
-            /// <summary>
-            /// Converts System.Drawing color to UnityEngine color
-            /// </summary>
-            /// <param name="c"></param>
-            /// <returns></returns>
-            public static Color Convert(this System.Drawing.Color c)
-            {
-                return new Color(
-                  c.R / 255f,
-                  c.G / 255f,
-                  c.B / 255f,
-                  c.A / 255f);
-
-            }
-            /// <summary>
-            /// Converts UnityEngine color to System.Drawing color
-            /// </summary>
-            /// <param name="c"></param>
-            /// <returns></returns>
-            public static System.Drawing.Color Convert(this Color c)
-            {
-                return System.Drawing.Color.FromArgb(
-                     (int)(c.a * 255),
-                     (int)(c.r * 255),
-                     (int)(c.g * 255),
-                     (int)(c.b * 255));
-            }
-
             public static float Sum(this Vector3 v)
             {
                 return v.x + v.y + v.z;
@@ -854,6 +826,91 @@
             public static float Average(this Vector2Int v)
             {
                 return v.Sum() / 2f;
+            }
+            /// <summary>
+            /// Clamps all axis to between min and max, same as Mathf.Clamp()
+            /// </summary>
+            /// <param name="v"></param>
+            /// <param name="min"></param>
+            /// <param name="max"></param>
+            /// <returns></returns>
+            public static Vector3 Clamp(this Vector3 v,  float min, float max)
+            {
+                return new Vector3(
+                           Mathf.Clamp(v.x, min, max),
+                           Mathf.Clamp(v.y, min, max),
+                           Mathf.Clamp(v.z, min, max));
+            }
+            /// <summary>
+            /// Clamps all axis to between min and max, same as Mathf.Clamp()
+            /// </summary>
+            /// <param name="v"></param>
+            /// <param name="min"></param>
+            /// <param name="max"></param>
+            /// <returns></returns>
+            public static Vector2 Clamp(this Vector2 v, float min, float max)
+            {
+                return new Vector2(
+                           Mathf.Clamp(v.x, min, max),
+                           Mathf.Clamp(v.y, min, max));
+            }
+            /// <summary>
+            /// Aligns vector <paramref name="v"/> to be either 1,0,-1 on either axis if the axis is &gt;= 0.5f
+            /// <para>Multiple Axis can have values (ie [1,-1,0]) </para>
+            /// </summary>
+            /// <param name="v"></param>
+            /// <returns></returns>
+            public static Vector3 AlignToAxis(this Vector3 v)
+            {
+                return new Vector3(
+                           Mathf.Abs(v.x) >= 0.5f ? Mathf.Sign(v.x) : 0f,
+                           Mathf.Abs(v.y) >= 0.5f ? Mathf.Sign(v.y) : 0f,
+                           Mathf.Abs(v.z) >= 0.5f ? Mathf.Sign(v.z) : 0f);
+            }
+            /// <summary>
+            /// Aligns vector <paramref name="v"/> to be either 1,0,-1 on either axis if the axis is &gt;= 0.5f
+            /// <para>Multiple Axis can have values (ie [1,-1,0]) </para>
+            /// </summary>
+            /// <param name="v"></param>
+            /// <returns></returns>
+            public static Vector2 AlignToAxis(this Vector2 v)
+            {
+                return new Vector2(
+                           Mathf.Abs(v.x) >= 0.5f ? Mathf.Sign(v.x) : 0f,
+                           Mathf.Abs(v.y) >= 0.5f ? Mathf.Sign(v.y) : 0f);
+            }
+        }
+        namespace ColorConvert
+        {
+            public static class Extensions
+            {
+                /// <summary>
+                /// Converts System.Drawing color to UnityEngine color
+                /// </summary>
+                /// <param name="c"></param>
+                /// <returns></returns>
+                public static Color Convert(this System.Drawing.Color c)
+                {
+                    return new Color(
+                      c.R / 255f,
+                      c.G / 255f,
+                      c.B / 255f,
+                      c.A / 255f);
+
+                }
+                /// <summary>
+                /// Converts UnityEngine color to System.Drawing color
+                /// </summary>
+                /// <param name="c"></param>
+                /// <returns></returns>
+                public static System.Drawing.Color Convert(this Color c)
+                {
+                    return System.Drawing.Color.FromArgb(
+                         (int)(c.a * 255),
+                         (int)(c.r * 255),
+                         (int)(c.g * 255),
+                         (int)(c.b * 255));
+                }
             }
         }
     }
