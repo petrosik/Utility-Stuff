@@ -9,7 +9,7 @@
         using System.Linq;
         using System.Reflection;
         using System.Reflection.Emit;
-        using Utility = Petrosik.Utility.Utility;
+        using Utility = Utility.Utility;
 
         internal class VersioningTool<TIn, TOut> : IEnumerable<VersioningAction> where TIn : notnull where TOut : notnull
         {

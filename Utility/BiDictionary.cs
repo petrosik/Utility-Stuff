@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-
+﻿
 namespace Petrosik
 {
     namespace Utility
     {
+        using System.Collections;
+        using System.Collections.Generic;
+        using System.Diagnostics.CodeAnalysis;
+
         /// <summary>
         /// Wrapper for dictionary making it able to list by either key or value in O(1) time, it's possible because it contains two dictionaries that stores both pair versions
         /// </summary>
