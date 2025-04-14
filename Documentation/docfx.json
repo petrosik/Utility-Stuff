@@ -46,6 +46,7 @@
 	  "csprojFolder": "../Utility",
 	  "EnumOrder": "123",
 	  "RenderTestTag": false,
+	  "ReplaceDuplicateDesc": true,
     }
   }
 }
