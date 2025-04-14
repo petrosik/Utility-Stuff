@@ -208,6 +208,9 @@
         /// <typeparam name="T"></typeparam>
         public class Save<T>
         {
+            /// <summary>
+            /// Limited to 64 characters
+            /// </summary>
             [JsonIgnore]
             public string Name
             {
@@ -228,12 +231,15 @@
                     }
                 }
             }
-            [JsonProperty] 
+            [JsonProperty]
             private string _Name = "";
 
-            [JsonIgnore] 
+            /// <summary>
+            /// Limited to 1024 characters
+            /// </summary>
+            [JsonIgnore]
             public string Description { get => _Description; set { _Description = _Description = value?.Length > 1024 ? value.Substring(0, 1024) : value ?? ""; } }
-            [JsonProperty] 
+            [JsonProperty]
             private string _Description = "";
             public DateTime Created = DateTime.UtcNow;
             public DateTime LastUpdated = DateTime.UtcNow;

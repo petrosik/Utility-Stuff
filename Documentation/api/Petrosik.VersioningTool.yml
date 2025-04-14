@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.VersioningTool
+  commentId: N:Petrosik.VersioningTool
+  id: Petrosik.VersioningTool
+  children:
+  - Petrosik.VersioningTool.VersioningAction
+  - Petrosik.VersioningTool.VersioningTool`2
+  langs:
+  - csharp
+  - vb
+  name: Petrosik.VersioningTool
+  nameWithType: Petrosik.VersioningTool
+  fullName: Petrosik.VersioningTool
+  type: Namespace
+  assemblies:
+  - PetrosikUtility
+references:
+- uid: Petrosik.VersioningTool.VersioningTool`2
+  commentId: T:Petrosik.VersioningTool.VersioningTool`2
+  href: Petrosik.VersioningTool.VersioningTool-2.html
+  name: VersioningTool<TIn, TOut>
+  nameWithType: VersioningTool<TIn, TOut>
+  fullName: Petrosik.VersioningTool.VersioningTool<TIn, TOut>
+  nameWithType.vb: VersioningTool(Of TIn, TOut)
+  fullName.vb: Petrosik.VersioningTool.VersioningTool(Of TIn, TOut)
+  name.vb: VersioningTool(Of TIn, TOut)
+  spec.csharp:
+  - uid: Petrosik.VersioningTool.VersioningTool`2
+    name: VersioningTool
+    href: Petrosik.VersioningTool.VersioningTool-2.html
+  - name: <
+  - name: TIn
+  - name: ','
+  - name: " "
+  - name: TOut
+  - name: '>'
+  spec.vb:
+  - uid: Petrosik.VersioningTool.VersioningTool`2
+    name: VersioningTool
+    href: Petrosik.VersioningTool.VersioningTool-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TIn
+  - name: ','
+  - name: " "
+  - name: TOut
+  - name: )
+- uid: Petrosik.VersioningTool.VersioningAction
+  commentId: T:Petrosik.VersioningTool.VersioningAction
+  parent: Petrosik.VersioningTool
+  href: Petrosik.VersioningTool.VersioningAction.html
+  name: VersioningAction
+  nameWithType: VersioningAction
+  fullName: Petrosik.VersioningTool.VersioningAction
+- uid: Petrosik.VersioningTool
+  commentId: N:Petrosik.VersioningTool
+  href: Petrosik.html
+  name: Petrosik.VersioningTool
+  nameWithType: Petrosik.VersioningTool
+  fullName: Petrosik.VersioningTool
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.VersioningTool
+    name: VersioningTool
+    href: Petrosik.VersioningTool.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.VersioningTool
+    name: VersioningTool
+    href: Petrosik.VersioningTool.html

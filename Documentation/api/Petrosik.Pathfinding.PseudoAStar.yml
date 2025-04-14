@@ -1,0 +1,1351 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.Pathfinding.PseudoAStar
+  commentId: T:Petrosik.Pathfinding.PseudoAStar
+  id: PseudoAStar
+  parent: Petrosik.Pathfinding
+  children:
+  - Petrosik.Pathfinding.PseudoAStar.CheckDirectPath(System.Drawing.PointF,System.Drawing.PointF)
+  - Petrosik.Pathfinding.PseudoAStar.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+  - Petrosik.Pathfinding.PseudoAStar.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+  - Petrosik.Pathfinding.PseudoAStar.PrefDirCheck(System.Drawing.PointF,System.Drawing.PointF,System.Int32[0:,0:],System.Drawing.PointF@)
+  langs:
+  - csharp
+  - vb
+  name: PseudoAStar
+  nameWithType: PseudoAStar
+  fullName: Petrosik.Pathfinding.PseudoAStar
+  type: Class
+  source:
+    remote:
+      path: Utility/Pathfinding/PseudoAStar.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: PseudoAStar
+    path: ../Utility/Pathfinding/PseudoAStar.cs
+    startLine: 16
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Pathfinding
+  summary: >-
+    Modified A* algorithm, faster in some cases but unstable and sometimes doesn't return any path. Good for open space not mazes
+
+    <p>Cardinal directions only, no diagonals</p>
+
+    <p>Desn't support pathfinding for tile traversability</p>
+  example: []
+  syntax:
+    content: 'public class PseudoAStar : GridBase'
+    content.vb: Public Class PseudoAStar Inherits GridBase
+  inheritance:
+  - System.Object
+  - Petrosik.Pathfinding.GridBase
+  inheritedMembers:
+  - Petrosik.Pathfinding.GridBase.GridScale
+  - Petrosik.Pathfinding.GridBase.SearchRange
+  - Petrosik.Pathfinding.GridBase.MaxSegmentCount
+  - Petrosik.Pathfinding.GridBase.GridSize
+  - Petrosik.Pathfinding.GridBase.Grid
+  - Petrosik.Pathfinding.GridBase.LoadedObstacles
+  - Petrosik.Pathfinding.GridBase.AddObstacle(Petrosik.Pathfinding.ObstacleObject)
+  - Petrosik.Pathfinding.GridBase.RemoveObstacle(Petrosik.Pathfinding.ObstacleObject)
+  - Petrosik.Pathfinding.GridBase.RemoveObstacleAt(System.Int32)
+  - Petrosik.Pathfinding.GridBase.ClearObstalces
+  - Petrosik.Pathfinding.GridBase.MoveObstalce(System.Int32,System.Int32)
+  - Petrosik.Pathfinding.GridBase.AddSingle(System.Int32,System.Int32,Petrosik.Enums.PathOccupancy)
+  - Petrosik.Pathfinding.GridBase.GetPathColor(Petrosik.Enums.PathOccupancy)
+  - Petrosik.Pathfinding.GridBase.GetGridPosition(System.Drawing.PointF)
+  - Petrosik.Pathfinding.GridBase.GetWorldPosition(System.Drawing.PointF)
+  - Petrosik.Pathfinding.GridBase.ExportPaths
+  - Petrosik.Pathfinding.GridBase.InportPaths(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+- uid: Petrosik.Pathfinding.PseudoAStar.CheckDirectPath(System.Drawing.PointF,System.Drawing.PointF)
+  commentId: M:Petrosik.Pathfinding.PseudoAStar.CheckDirectPath(System.Drawing.PointF,System.Drawing.PointF)
+  id: CheckDirectPath(System.Drawing.PointF,System.Drawing.PointF)
+  parent: Petrosik.Pathfinding.PseudoAStar
+  langs:
+  - csharp
+  - vb
+  name: CheckDirectPath(PointF, PointF)
+  nameWithType: PseudoAStar.CheckDirectPath(PointF, PointF)
+  fullName: Petrosik.Pathfinding.PseudoAStar.CheckDirectPath(System.Drawing.PointF, System.Drawing.PointF)
+  type: Method
+  source:
+    remote:
+      path: Utility/Pathfinding/PseudoAStar.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: CheckDirectPath
+    path: ../Utility/Pathfinding/PseudoAStar.cs
+    startLine: 32
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Pathfinding
+  summary: Checks path in direct line if it's acessible
+  example: []
+  syntax:
+    content: public bool CheckDirectPath(PointF from, PointF to)
+    parameters:
+    - id: from
+      type: System.Drawing.PointF
+      description: ''
+    - id: to
+      type: System.Drawing.PointF
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Function CheckDirectPath(from As PointF, [to] As PointF) As Boolean
+  overload: Petrosik.Pathfinding.PseudoAStar.CheckDirectPath*
+- uid: Petrosik.Pathfinding.PseudoAStar.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+  commentId: M:Petrosik.Pathfinding.PseudoAStar.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+  id: GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+  parent: Petrosik.Pathfinding.PseudoAStar
+  langs:
+  - csharp
+  - vb
+  name: GetPath(PointF, PointF, float)
+  nameWithType: PseudoAStar.GetPath(PointF, PointF, float)
+  fullName: Petrosik.Pathfinding.PseudoAStar.GetPath(System.Drawing.PointF, System.Drawing.PointF, float)
+  type: Method
+  source:
+    remote:
+      path: Utility/Pathfinding/PseudoAStar.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: GetPath
+    path: ../Utility/Pathfinding/PseudoAStar.cs
+    startLine: 56
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Pathfinding
+  summary: Returns List of coordinates for path to target, searchrange is
+  example: []
+  syntax:
+    content: public override List<PointF>? GetPath(PointF from, PointF to, float searchrange = 0)
+    parameters:
+    - id: from
+      type: System.Drawing.PointF
+    - id: to
+      type: System.Drawing.PointF
+    - id: searchrange
+      type: System.Single
+    return:
+      type: System.Collections.Generic.List{System.Drawing.PointF}
+      description: ''
+    content.vb: Public Overrides Function GetPath(from As PointF, [to] As PointF, searchrange As Single = 0) As List(Of PointF)
+  overridden: Petrosik.Pathfinding.GridBase.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+  overload: Petrosik.Pathfinding.PseudoAStar.GetPath*
+  nameWithType.vb: PseudoAStar.GetPath(PointF, PointF, Single)
+  fullName.vb: Petrosik.Pathfinding.PseudoAStar.GetPath(System.Drawing.PointF, System.Drawing.PointF, Single)
+  name.vb: GetPath(PointF, PointF, Single)
+- uid: Petrosik.Pathfinding.PseudoAStar.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+  commentId: M:Petrosik.Pathfinding.PseudoAStar.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+  id: GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+  parent: Petrosik.Pathfinding.PseudoAStar
+  langs:
+  - csharp
+  - vb
+  name: GetRawPath(PointF, PointF, float, bool)
+  nameWithType: PseudoAStar.GetRawPath(PointF, PointF, float, bool)
+  fullName: Petrosik.Pathfinding.PseudoAStar.GetRawPath(System.Drawing.PointF, System.Drawing.PointF, float, bool)
+  type: Method
+  source:
+    remote:
+      path: Utility/Pathfinding/PseudoAStar.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: GetRawPath
+    path: ../Utility/Pathfinding/PseudoAStar.cs
+    startLine: 251
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Pathfinding
+  summary: Simple Raw Pathing method
+  example: []
+  syntax:
+    content: public override LinkedList<PointF>? GetRawPath(PointF from, PointF to, float searchrange, bool WorldSpace = true)
+    parameters:
+    - id: from
+      type: System.Drawing.PointF
+    - id: to
+      type: System.Drawing.PointF
+    - id: searchrange
+      type: System.Single
+    - id: WorldSpace
+      type: System.Boolean
+      description: Should the positions be converted to world positions
+    return:
+      type: System.Collections.Generic.LinkedList{System.Drawing.PointF}
+      description: ''
+    content.vb: Public Overrides Function GetRawPath(from As PointF, [to] As PointF, searchrange As Single, WorldSpace As Boolean = True) As LinkedList(Of PointF)
+  overridden: Petrosik.Pathfinding.GridBase.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+  overload: Petrosik.Pathfinding.PseudoAStar.GetRawPath*
+  nameWithType.vb: PseudoAStar.GetRawPath(PointF, PointF, Single, Boolean)
+  fullName.vb: Petrosik.Pathfinding.PseudoAStar.GetRawPath(System.Drawing.PointF, System.Drawing.PointF, Single, Boolean)
+  name.vb: GetRawPath(PointF, PointF, Single, Boolean)
+- uid: Petrosik.Pathfinding.PseudoAStar.PrefDirCheck(System.Drawing.PointF,System.Drawing.PointF,System.Int32[0:,0:],System.Drawing.PointF@)
+  commentId: M:Petrosik.Pathfinding.PseudoAStar.PrefDirCheck(System.Drawing.PointF,System.Drawing.PointF,System.Int32[0:,0:],System.Drawing.PointF@)
+  id: PrefDirCheck(System.Drawing.PointF,System.Drawing.PointF,System.Int32[0:,0:],System.Drawing.PointF@)
+  parent: Petrosik.Pathfinding.PseudoAStar
+  langs:
+  - csharp
+  - vb
+  name: PrefDirCheck(PointF, PointF, int[,], out PointF)
+  nameWithType: PseudoAStar.PrefDirCheck(PointF, PointF, int[,], out PointF)
+  fullName: Petrosik.Pathfinding.PseudoAStar.PrefDirCheck(System.Drawing.PointF, System.Drawing.PointF, int[,], out System.Drawing.PointF)
+  type: Method
+  source:
+    remote:
+      path: Utility/Pathfinding/PseudoAStar.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: PrefDirCheck
+    path: ../Utility/Pathfinding/PseudoAStar.cs
+    startLine: 375
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Pathfinding
+  syntax:
+    content: public bool PrefDirCheck(PointF currentpos, PointF to, int[,] numberpath, out PointF prefdir)
+    parameters:
+    - id: currentpos
+      type: System.Drawing.PointF
+    - id: to
+      type: System.Drawing.PointF
+    - id: numberpath
+      type: System.Int32[,]
+    - id: prefdir
+      type: System.Drawing.PointF
+    return:
+      type: System.Boolean
+    content.vb: Public Function PrefDirCheck(currentpos As PointF, [to] As PointF, numberpath As Integer(,), prefdir As PointF) As Boolean
+  overload: Petrosik.Pathfinding.PseudoAStar.PrefDirCheck*
+  nameWithType.vb: PseudoAStar.PrefDirCheck(PointF, PointF, Integer(,), PointF)
+  fullName.vb: Petrosik.Pathfinding.PseudoAStar.PrefDirCheck(System.Drawing.PointF, System.Drawing.PointF, Integer(,), System.Drawing.PointF)
+  name.vb: PrefDirCheck(PointF, PointF, Integer(,), PointF)
+references:
+- uid: Petrosik.Pathfinding
+  commentId: N:Petrosik.Pathfinding
+  href: Petrosik.html
+  name: Petrosik.Pathfinding
+  nameWithType: Petrosik.Pathfinding
+  fullName: Petrosik.Pathfinding
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Pathfinding
+    name: Pathfinding
+    href: Petrosik.Pathfinding.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Pathfinding
+    name: Pathfinding
+    href: Petrosik.Pathfinding.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Petrosik.Pathfinding.GridBase
+  commentId: T:Petrosik.Pathfinding.GridBase
+  parent: Petrosik.Pathfinding
+  href: Petrosik.Pathfinding.GridBase.html
+  name: GridBase
+  nameWithType: GridBase
+  fullName: Petrosik.Pathfinding.GridBase
+- uid: Petrosik.Pathfinding.GridBase.GridScale
+  commentId: F:Petrosik.Pathfinding.GridBase.GridScale
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GridScale
+  name: GridScale
+  nameWithType: GridBase.GridScale
+  fullName: Petrosik.Pathfinding.GridBase.GridScale
+- uid: Petrosik.Pathfinding.GridBase.SearchRange
+  commentId: F:Petrosik.Pathfinding.GridBase.SearchRange
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_SearchRange
+  name: SearchRange
+  nameWithType: GridBase.SearchRange
+  fullName: Petrosik.Pathfinding.GridBase.SearchRange
+- uid: Petrosik.Pathfinding.GridBase.MaxSegmentCount
+  commentId: F:Petrosik.Pathfinding.GridBase.MaxSegmentCount
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_MaxSegmentCount
+  name: MaxSegmentCount
+  nameWithType: GridBase.MaxSegmentCount
+  fullName: Petrosik.Pathfinding.GridBase.MaxSegmentCount
+- uid: Petrosik.Pathfinding.GridBase.GridSize
+  commentId: P:Petrosik.Pathfinding.GridBase.GridSize
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GridSize
+  name: GridSize
+  nameWithType: GridBase.GridSize
+  fullName: Petrosik.Pathfinding.GridBase.GridSize
+- uid: Petrosik.Pathfinding.GridBase.Grid
+  commentId: F:Petrosik.Pathfinding.GridBase.Grid
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_Grid
+  name: Grid
+  nameWithType: GridBase.Grid
+  fullName: Petrosik.Pathfinding.GridBase.Grid
+- uid: Petrosik.Pathfinding.GridBase.LoadedObstacles
+  commentId: P:Petrosik.Pathfinding.GridBase.LoadedObstacles
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_LoadedObstacles
+  name: LoadedObstacles
+  nameWithType: GridBase.LoadedObstacles
+  fullName: Petrosik.Pathfinding.GridBase.LoadedObstacles
+- uid: Petrosik.Pathfinding.GridBase.AddObstacle(Petrosik.Pathfinding.ObstacleObject)
+  commentId: M:Petrosik.Pathfinding.GridBase.AddObstacle(Petrosik.Pathfinding.ObstacleObject)
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_AddObstacle_Petrosik_Pathfinding_ObstacleObject_
+  name: AddObstacle(ObstacleObject)
+  nameWithType: GridBase.AddObstacle(ObstacleObject)
+  fullName: Petrosik.Pathfinding.GridBase.AddObstacle(Petrosik.Pathfinding.ObstacleObject)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.AddObstacle(Petrosik.Pathfinding.ObstacleObject)
+    name: AddObstacle
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_AddObstacle_Petrosik_Pathfinding_ObstacleObject_
+  - name: (
+  - uid: Petrosik.Pathfinding.ObstacleObject
+    name: ObstacleObject
+    href: Petrosik.Pathfinding.ObstacleObject.html
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.AddObstacle(Petrosik.Pathfinding.ObstacleObject)
+    name: AddObstacle
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_AddObstacle_Petrosik_Pathfinding_ObstacleObject_
+  - name: (
+  - uid: Petrosik.Pathfinding.ObstacleObject
+    name: ObstacleObject
+    href: Petrosik.Pathfinding.ObstacleObject.html
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.RemoveObstacle(Petrosik.Pathfinding.ObstacleObject)
+  commentId: M:Petrosik.Pathfinding.GridBase.RemoveObstacle(Petrosik.Pathfinding.ObstacleObject)
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_RemoveObstacle_Petrosik_Pathfinding_ObstacleObject_
+  name: RemoveObstacle(ObstacleObject)
+  nameWithType: GridBase.RemoveObstacle(ObstacleObject)
+  fullName: Petrosik.Pathfinding.GridBase.RemoveObstacle(Petrosik.Pathfinding.ObstacleObject)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.RemoveObstacle(Petrosik.Pathfinding.ObstacleObject)
+    name: RemoveObstacle
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_RemoveObstacle_Petrosik_Pathfinding_ObstacleObject_
+  - name: (
+  - uid: Petrosik.Pathfinding.ObstacleObject
+    name: ObstacleObject
+    href: Petrosik.Pathfinding.ObstacleObject.html
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.RemoveObstacle(Petrosik.Pathfinding.ObstacleObject)
+    name: RemoveObstacle
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_RemoveObstacle_Petrosik_Pathfinding_ObstacleObject_
+  - name: (
+  - uid: Petrosik.Pathfinding.ObstacleObject
+    name: ObstacleObject
+    href: Petrosik.Pathfinding.ObstacleObject.html
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.RemoveObstacleAt(System.Int32)
+  commentId: M:Petrosik.Pathfinding.GridBase.RemoveObstacleAt(System.Int32)
+  parent: Petrosik.Pathfinding.GridBase
+  isExternal: true
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_RemoveObstacleAt_System_Int32_
+  name: RemoveObstacleAt(int)
+  nameWithType: GridBase.RemoveObstacleAt(int)
+  fullName: Petrosik.Pathfinding.GridBase.RemoveObstacleAt(int)
+  nameWithType.vb: GridBase.RemoveObstacleAt(Integer)
+  fullName.vb: Petrosik.Pathfinding.GridBase.RemoveObstacleAt(Integer)
+  name.vb: RemoveObstacleAt(Integer)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.RemoveObstacleAt(System.Int32)
+    name: RemoveObstacleAt
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_RemoveObstacleAt_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.RemoveObstacleAt(System.Int32)
+    name: RemoveObstacleAt
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_RemoveObstacleAt_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.ClearObstalces
+  commentId: M:Petrosik.Pathfinding.GridBase.ClearObstalces
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_ClearObstalces
+  name: ClearObstalces()
+  nameWithType: GridBase.ClearObstalces()
+  fullName: Petrosik.Pathfinding.GridBase.ClearObstalces()
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.ClearObstalces
+    name: ClearObstalces
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_ClearObstalces
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.ClearObstalces
+    name: ClearObstalces
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_ClearObstalces
+  - name: (
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.MoveObstalce(System.Int32,System.Int32)
+  commentId: M:Petrosik.Pathfinding.GridBase.MoveObstalce(System.Int32,System.Int32)
+  parent: Petrosik.Pathfinding.GridBase
+  isExternal: true
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_MoveObstalce_System_Int32_System_Int32_
+  name: MoveObstalce(int, int)
+  nameWithType: GridBase.MoveObstalce(int, int)
+  fullName: Petrosik.Pathfinding.GridBase.MoveObstalce(int, int)
+  nameWithType.vb: GridBase.MoveObstalce(Integer, Integer)
+  fullName.vb: Petrosik.Pathfinding.GridBase.MoveObstalce(Integer, Integer)
+  name.vb: MoveObstalce(Integer, Integer)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.MoveObstalce(System.Int32,System.Int32)
+    name: MoveObstalce
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_MoveObstalce_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.MoveObstalce(System.Int32,System.Int32)
+    name: MoveObstalce
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_MoveObstalce_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.AddSingle(System.Int32,System.Int32,Petrosik.Enums.PathOccupancy)
+  commentId: M:Petrosik.Pathfinding.GridBase.AddSingle(System.Int32,System.Int32,Petrosik.Enums.PathOccupancy)
+  parent: Petrosik.Pathfinding.GridBase
+  isExternal: true
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_AddSingle_System_Int32_System_Int32_Petrosik_Enums_PathOccupancy_
+  name: AddSingle(int, int, PathOccupancy)
+  nameWithType: GridBase.AddSingle(int, int, PathOccupancy)
+  fullName: Petrosik.Pathfinding.GridBase.AddSingle(int, int, Petrosik.Enums.PathOccupancy)
+  nameWithType.vb: GridBase.AddSingle(Integer, Integer, PathOccupancy)
+  fullName.vb: Petrosik.Pathfinding.GridBase.AddSingle(Integer, Integer, Petrosik.Enums.PathOccupancy)
+  name.vb: AddSingle(Integer, Integer, PathOccupancy)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.AddSingle(System.Int32,System.Int32,Petrosik.Enums.PathOccupancy)
+    name: AddSingle
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_AddSingle_System_Int32_System_Int32_Petrosik_Enums_PathOccupancy_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Petrosik.Enums.PathOccupancy
+    name: PathOccupancy
+    href: Petrosik.Enums.PathOccupancy.html
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.AddSingle(System.Int32,System.Int32,Petrosik.Enums.PathOccupancy)
+    name: AddSingle
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_AddSingle_System_Int32_System_Int32_Petrosik_Enums_PathOccupancy_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Petrosik.Enums.PathOccupancy
+    name: PathOccupancy
+    href: Petrosik.Enums.PathOccupancy.html
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.GetPathColor(Petrosik.Enums.PathOccupancy)
+  commentId: M:Petrosik.Pathfinding.GridBase.GetPathColor(Petrosik.Enums.PathOccupancy)
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetPathColor_Petrosik_Enums_PathOccupancy_
+  name: GetPathColor(PathOccupancy)
+  nameWithType: GridBase.GetPathColor(PathOccupancy)
+  fullName: Petrosik.Pathfinding.GridBase.GetPathColor(Petrosik.Enums.PathOccupancy)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.GetPathColor(Petrosik.Enums.PathOccupancy)
+    name: GetPathColor
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetPathColor_Petrosik_Enums_PathOccupancy_
+  - name: (
+  - uid: Petrosik.Enums.PathOccupancy
+    name: PathOccupancy
+    href: Petrosik.Enums.PathOccupancy.html
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.GetPathColor(Petrosik.Enums.PathOccupancy)
+    name: GetPathColor
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetPathColor_Petrosik_Enums_PathOccupancy_
+  - name: (
+  - uid: Petrosik.Enums.PathOccupancy
+    name: PathOccupancy
+    href: Petrosik.Enums.PathOccupancy.html
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.GetGridPosition(System.Drawing.PointF)
+  commentId: M:Petrosik.Pathfinding.GridBase.GetGridPosition(System.Drawing.PointF)
+  parent: Petrosik.Pathfinding.GridBase
+  isExternal: true
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetGridPosition_System_Drawing_PointF_
+  name: GetGridPosition(PointF)
+  nameWithType: GridBase.GetGridPosition(PointF)
+  fullName: Petrosik.Pathfinding.GridBase.GetGridPosition(System.Drawing.PointF)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.GetGridPosition(System.Drawing.PointF)
+    name: GetGridPosition
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetGridPosition_System_Drawing_PointF_
+  - name: (
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.GetGridPosition(System.Drawing.PointF)
+    name: GetGridPosition
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetGridPosition_System_Drawing_PointF_
+  - name: (
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.GetWorldPosition(System.Drawing.PointF)
+  commentId: M:Petrosik.Pathfinding.GridBase.GetWorldPosition(System.Drawing.PointF)
+  parent: Petrosik.Pathfinding.GridBase
+  isExternal: true
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetWorldPosition_System_Drawing_PointF_
+  name: GetWorldPosition(PointF)
+  nameWithType: GridBase.GetWorldPosition(PointF)
+  fullName: Petrosik.Pathfinding.GridBase.GetWorldPosition(System.Drawing.PointF)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.GetWorldPosition(System.Drawing.PointF)
+    name: GetWorldPosition
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetWorldPosition_System_Drawing_PointF_
+  - name: (
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.GetWorldPosition(System.Drawing.PointF)
+    name: GetWorldPosition
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetWorldPosition_System_Drawing_PointF_
+  - name: (
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.ExportPaths
+  commentId: M:Petrosik.Pathfinding.GridBase.ExportPaths
+  parent: Petrosik.Pathfinding.GridBase
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_ExportPaths
+  name: ExportPaths()
+  nameWithType: GridBase.ExportPaths()
+  fullName: Petrosik.Pathfinding.GridBase.ExportPaths()
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.ExportPaths
+    name: ExportPaths
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_ExportPaths
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.ExportPaths
+    name: ExportPaths
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_ExportPaths
+  - name: (
+  - name: )
+- uid: Petrosik.Pathfinding.GridBase.InportPaths(System.String)
+  commentId: M:Petrosik.Pathfinding.GridBase.InportPaths(System.String)
+  parent: Petrosik.Pathfinding.GridBase
+  isExternal: true
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_InportPaths_System_String_
+  name: InportPaths(string)
+  nameWithType: GridBase.InportPaths(string)
+  fullName: Petrosik.Pathfinding.GridBase.InportPaths(string)
+  nameWithType.vb: GridBase.InportPaths(String)
+  fullName.vb: Petrosik.Pathfinding.GridBase.InportPaths(String)
+  name.vb: InportPaths(String)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.InportPaths(System.String)
+    name: InportPaths
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_InportPaths_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.InportPaths(System.String)
+    name: InportPaths
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_InportPaths_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  parent: Petrosik.UnityUtility.Extensions
+  definition: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  isExternal: true
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions
+  commentId: T:Petrosik.UnityUtility.Extensions
+  parent: Petrosik.UnityUtility
+  href: Petrosik.UnityUtility.Extensions.html
+  name: Extensions
+  nameWithType: Extensions
+  fullName: Petrosik.UnityUtility.Extensions
+- uid: Petrosik.UnityUtility
+  commentId: N:Petrosik.UnityUtility
+  href: Petrosik.html
+  name: Petrosik.UnityUtility
+  nameWithType: Petrosik.UnityUtility
+  fullName: Petrosik.UnityUtility
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+- uid: Petrosik.Pathfinding.PseudoAStar.CheckDirectPath*
+  commentId: Overload:Petrosik.Pathfinding.PseudoAStar.CheckDirectPath
+  href: Petrosik.Pathfinding.PseudoAStar.html#Petrosik_Pathfinding_PseudoAStar_CheckDirectPath_System_Drawing_PointF_System_Drawing_PointF_
+  name: CheckDirectPath
+  nameWithType: PseudoAStar.CheckDirectPath
+  fullName: Petrosik.Pathfinding.PseudoAStar.CheckDirectPath
+- uid: System.Drawing.PointF
+  commentId: T:System.Drawing.PointF
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  name: PointF
+  nameWithType: PointF
+  fullName: System.Drawing.PointF
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Petrosik.Pathfinding.GridBase.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+  commentId: M:Petrosik.Pathfinding.GridBase.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+  parent: Petrosik.Pathfinding.GridBase
+  isExternal: true
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_
+  name: GetPath(PointF, PointF, float)
+  nameWithType: GridBase.GetPath(PointF, PointF, float)
+  fullName: Petrosik.Pathfinding.GridBase.GetPath(System.Drawing.PointF, System.Drawing.PointF, float)
+  nameWithType.vb: GridBase.GetPath(PointF, PointF, Single)
+  fullName.vb: Petrosik.Pathfinding.GridBase.GetPath(System.Drawing.PointF, System.Drawing.PointF, Single)
+  name.vb: GetPath(PointF, PointF, Single)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+    name: GetPath
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_
+  - name: (
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)
+    name: GetPath
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_
+  - name: (
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Petrosik.Pathfinding.PseudoAStar.GetPath*
+  commentId: Overload:Petrosik.Pathfinding.PseudoAStar.GetPath
+  href: Petrosik.Pathfinding.PseudoAStar.html#Petrosik_Pathfinding_PseudoAStar_GetPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_
+  name: GetPath
+  nameWithType: PseudoAStar.GetPath
+  fullName: Petrosik.Pathfinding.PseudoAStar.GetPath
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Collections.Generic.List{System.Drawing.PointF}
+  commentId: T:System.Collections.Generic.List{System.Drawing.PointF}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<PointF>
+  nameWithType: List<PointF>
+  fullName: System.Collections.Generic.List<System.Drawing.PointF>
+  nameWithType.vb: List(Of PointF)
+  fullName.vb: System.Collections.Generic.List(Of System.Drawing.PointF)
+  name.vb: List(Of PointF)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Petrosik.Pathfinding.GridBase.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+  commentId: M:Petrosik.Pathfinding.GridBase.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+  parent: Petrosik.Pathfinding.GridBase
+  isExternal: true
+  href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetRawPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_System_Boolean_
+  name: GetRawPath(PointF, PointF, float, bool)
+  nameWithType: GridBase.GetRawPath(PointF, PointF, float, bool)
+  fullName: Petrosik.Pathfinding.GridBase.GetRawPath(System.Drawing.PointF, System.Drawing.PointF, float, bool)
+  nameWithType.vb: GridBase.GetRawPath(PointF, PointF, Single, Boolean)
+  fullName.vb: Petrosik.Pathfinding.GridBase.GetRawPath(System.Drawing.PointF, System.Drawing.PointF, Single, Boolean)
+  name.vb: GetRawPath(PointF, PointF, Single, Boolean)
+  spec.csharp:
+  - uid: Petrosik.Pathfinding.GridBase.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+    name: GetRawPath
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetRawPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_System_Boolean_
+  - name: (
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Petrosik.Pathfinding.GridBase.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)
+    name: GetRawPath
+    href: Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetRawPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_System_Boolean_
+  - name: (
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Petrosik.Pathfinding.PseudoAStar.GetRawPath*
+  commentId: Overload:Petrosik.Pathfinding.PseudoAStar.GetRawPath
+  href: Petrosik.Pathfinding.PseudoAStar.html#Petrosik_Pathfinding_PseudoAStar_GetRawPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_System_Boolean_
+  name: GetRawPath
+  nameWithType: PseudoAStar.GetRawPath
+  fullName: Petrosik.Pathfinding.PseudoAStar.GetRawPath
+- uid: System.Collections.Generic.LinkedList{System.Drawing.PointF}
+  commentId: T:System.Collections.Generic.LinkedList{System.Drawing.PointF}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.LinkedList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.linkedlist-1
+  name: LinkedList<PointF>
+  nameWithType: LinkedList<PointF>
+  fullName: System.Collections.Generic.LinkedList<System.Drawing.PointF>
+  nameWithType.vb: LinkedList(Of PointF)
+  fullName.vb: System.Collections.Generic.LinkedList(Of System.Drawing.PointF)
+  name.vb: LinkedList(Of PointF)
+  spec.csharp:
+  - uid: System.Collections.Generic.LinkedList`1
+    name: LinkedList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.linkedlist-1
+  - name: <
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.LinkedList`1
+    name: LinkedList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.linkedlist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Drawing.PointF
+    name: PointF
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.pointf
+  - name: )
+- uid: System.Collections.Generic.LinkedList`1
+  commentId: T:System.Collections.Generic.LinkedList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.linkedlist-1
+  name: LinkedList<T>
+  nameWithType: LinkedList<T>
+  fullName: System.Collections.Generic.LinkedList<T>
+  nameWithType.vb: LinkedList(Of T)
+  fullName.vb: System.Collections.Generic.LinkedList(Of T)
+  name.vb: LinkedList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.LinkedList`1
+    name: LinkedList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.linkedlist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.LinkedList`1
+    name: LinkedList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.linkedlist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Petrosik.Pathfinding.PseudoAStar.PrefDirCheck*
+  commentId: Overload:Petrosik.Pathfinding.PseudoAStar.PrefDirCheck
+  href: Petrosik.Pathfinding.PseudoAStar.html#Petrosik_Pathfinding_PseudoAStar_PrefDirCheck_System_Drawing_PointF_System_Drawing_PointF_System_Int32_0
+  name: PrefDirCheck
+  nameWithType: PseudoAStar.PrefDirCheck
+  fullName: Petrosik.Pathfinding.PseudoAStar.PrefDirCheck
+- uid: System.Int32[,]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[,]
+  nameWithType: int[,]
+  fullName: int[,]
+  nameWithType.vb: Integer(,)
+  fullName.vb: Integer(,)
+  name.vb: Integer(,)
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ','
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: ','
+  - name: )

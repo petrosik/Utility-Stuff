@@ -5,7 +5,7 @@
         using System;
 
         /// <summary>
-        /// More common bigger number
+        /// More common = bigger number
         /// </summary>
         [Serializable]
         public enum Rarity
@@ -49,6 +49,7 @@
             Error,
             Important,
         }
+        /// <warning>AddMethod, RemoveMethod, ModifyMethod are not implemented!</warning>
         public enum VersioningActionType
         {
             None = -1,

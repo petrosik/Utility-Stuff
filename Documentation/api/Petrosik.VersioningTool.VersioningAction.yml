@@ -1,0 +1,1028 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.VersioningTool.VersioningAction
+  commentId: T:Petrosik.VersioningTool.VersioningAction
+  id: VersioningAction
+  parent: Petrosik.VersioningTool
+  children:
+  - Petrosik.VersioningTool.VersioningAction.FAttributes
+  - Petrosik.VersioningTool.VersioningAction.GetHashCode
+  - Petrosik.VersioningTool.VersioningAction.IsField
+  - Petrosik.VersioningTool.VersioningAction.OriginName
+  - Petrosik.VersioningTool.VersioningAction.OriginType
+  - Petrosik.VersioningTool.VersioningAction.PAttributes
+  - Petrosik.VersioningTool.VersioningAction.TargetName
+  - Petrosik.VersioningTool.VersioningAction.TargetType
+  - Petrosik.VersioningTool.VersioningAction.ToString
+  - Petrosik.VersioningTool.VersioningAction.Type
+  - Petrosik.VersioningTool.VersioningAction.Value
+  - Petrosik.VersioningTool.VersioningAction.ValueConverter
+  langs:
+  - csharp
+  - vb
+  name: VersioningAction
+  nameWithType: VersioningAction
+  fullName: Petrosik.VersioningTool.VersioningAction
+  type: Class
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: VersioningAction
+    path: ../Utility/VersioningTool.cs
+    startLine: 601
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  example: []
+  syntax:
+    content: public class VersioningAction
+    content.vb: Public Class VersioningAction
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+- uid: Petrosik.VersioningTool.VersioningAction.Type
+  commentId: P:Petrosik.VersioningTool.VersioningAction.Type
+  id: Type
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: VersioningAction.Type
+  fullName: Petrosik.VersioningTool.VersioningAction.Type
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Type
+    path: ../Utility/VersioningTool.cs
+    startLine: 603
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  syntax:
+    content: public VersioningActionType Type { get; set; }
+    parameters: []
+    return:
+      type: Petrosik.Enums.VersioningActionType
+    content.vb: Public Property Type As VersioningActionType
+  overload: Petrosik.VersioningTool.VersioningAction.Type*
+- uid: Petrosik.VersioningTool.VersioningAction.OriginName
+  commentId: P:Petrosik.VersioningTool.VersioningAction.OriginName
+  id: OriginName
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: OriginName
+  nameWithType: VersioningAction.OriginName
+  fullName: Petrosik.VersioningTool.VersioningAction.OriginName
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: OriginName
+    path: ../Utility/VersioningTool.cs
+    startLine: 604
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  syntax:
+    content: public string? OriginName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OriginName As String
+  overload: Petrosik.VersioningTool.VersioningAction.OriginName*
+- uid: Petrosik.VersioningTool.VersioningAction.OriginType
+  commentId: P:Petrosik.VersioningTool.VersioningAction.OriginType
+  id: OriginType
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: OriginType
+  nameWithType: VersioningAction.OriginType
+  fullName: Petrosik.VersioningTool.VersioningAction.OriginType
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: OriginType
+    path: ../Utility/VersioningTool.cs
+    startLine: 605
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  syntax:
+    content: public Type? OriginType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property OriginType As Type
+  overload: Petrosik.VersioningTool.VersioningAction.OriginType*
+- uid: Petrosik.VersioningTool.VersioningAction.TargetName
+  commentId: P:Petrosik.VersioningTool.VersioningAction.TargetName
+  id: TargetName
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: TargetName
+  nameWithType: VersioningAction.TargetName
+  fullName: Petrosik.VersioningTool.VersioningAction.TargetName
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: TargetName
+    path: ../Utility/VersioningTool.cs
+    startLine: 606
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  syntax:
+    content: public string? TargetName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TargetName As String
+  overload: Petrosik.VersioningTool.VersioningAction.TargetName*
+- uid: Petrosik.VersioningTool.VersioningAction.TargetType
+  commentId: P:Petrosik.VersioningTool.VersioningAction.TargetType
+  id: TargetType
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: TargetType
+  nameWithType: VersioningAction.TargetType
+  fullName: Petrosik.VersioningTool.VersioningAction.TargetType
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: TargetType
+    path: ../Utility/VersioningTool.cs
+    startLine: 607
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  syntax:
+    content: public Type? TargetType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property TargetType As Type
+  overload: Petrosik.VersioningTool.VersioningAction.TargetType*
+- uid: Petrosik.VersioningTool.VersioningAction.Value
+  commentId: P:Petrosik.VersioningTool.VersioningAction.Value
+  id: Value
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: VersioningAction.Value
+  fullName: Petrosik.VersioningTool.VersioningAction.Value
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Value
+    path: ../Utility/VersioningTool.cs
+    startLine: 608
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  syntax:
+    content: public object? Value { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Property Value As Object
+  overload: Petrosik.VersioningTool.VersioningAction.Value*
+- uid: Petrosik.VersioningTool.VersioningAction.ValueConverter
+  commentId: P:Petrosik.VersioningTool.VersioningAction.ValueConverter
+  id: ValueConverter
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: ValueConverter
+  nameWithType: VersioningAction.ValueConverter
+  fullName: Petrosik.VersioningTool.VersioningAction.ValueConverter
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: ValueConverter
+    path: ../Utility/VersioningTool.cs
+    startLine: 612
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  summary: this can be value converter or value modifer
+  example: []
+  syntax:
+    content: public Func<object, object>? ValueConverter { get; set; }
+    parameters: []
+    return:
+      type: System.Func{System.Object,System.Object}
+    content.vb: Public Property ValueConverter As Func(Of Object, Object)
+  overload: Petrosik.VersioningTool.VersioningAction.ValueConverter*
+- uid: Petrosik.VersioningTool.VersioningAction.IsField
+  commentId: P:Petrosik.VersioningTool.VersioningAction.IsField
+  id: IsField
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: IsField
+  nameWithType: VersioningAction.IsField
+  fullName: Petrosik.VersioningTool.VersioningAction.IsField
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: IsField
+    path: ../Utility/VersioningTool.cs
+    startLine: 617
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  summary: >-
+    only applies for field/property changes
+
+    <p>true = field, false = property</p>
+  example: []
+  syntax:
+    content: public bool IsField { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsField As Boolean
+  overload: Petrosik.VersioningTool.VersioningAction.IsField*
+- uid: Petrosik.VersioningTool.VersioningAction.FAttributes
+  commentId: P:Petrosik.VersioningTool.VersioningAction.FAttributes
+  id: FAttributes
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: FAttributes
+  nameWithType: VersioningAction.FAttributes
+  fullName: Petrosik.VersioningTool.VersioningAction.FAttributes
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: FAttributes
+    path: ../Utility/VersioningTool.cs
+    startLine: 618
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  syntax:
+    content: public FieldAttributes FAttributes { get; set; }
+    parameters: []
+    return:
+      type: System.Reflection.FieldAttributes
+    content.vb: Public Property FAttributes As FieldAttributes
+  overload: Petrosik.VersioningTool.VersioningAction.FAttributes*
+- uid: Petrosik.VersioningTool.VersioningAction.PAttributes
+  commentId: P:Petrosik.VersioningTool.VersioningAction.PAttributes
+  id: PAttributes
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: PAttributes
+  nameWithType: VersioningAction.PAttributes
+  fullName: Petrosik.VersioningTool.VersioningAction.PAttributes
+  type: Property
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: PAttributes
+    path: ../Utility/VersioningTool.cs
+    startLine: 619
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  syntax:
+    content: public PropertyAttributes PAttributes { get; set; }
+    parameters: []
+    return:
+      type: System.Reflection.PropertyAttributes
+    content.vb: Public Property PAttributes As PropertyAttributes
+  overload: Petrosik.VersioningTool.VersioningAction.PAttributes*
+- uid: Petrosik.VersioningTool.VersioningAction.ToString
+  commentId: M:Petrosik.VersioningTool.VersioningAction.ToString
+  id: ToString
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: VersioningAction.ToString()
+  fullName: Petrosik.VersioningTool.VersioningAction.ToString()
+  type: Method
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: ToString
+    path: ../Utility/VersioningTool.cs
+    startLine: 686
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  summary: Returns a string that represents the current object.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string that represents the current object.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: Petrosik.VersioningTool.VersioningAction.ToString*
+- uid: Petrosik.VersioningTool.VersioningAction.GetHashCode
+  commentId: M:Petrosik.VersioningTool.VersioningAction.GetHashCode
+  id: GetHashCode
+  parent: Petrosik.VersioningTool.VersioningAction
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: VersioningAction.GetHashCode()
+  fullName: Petrosik.VersioningTool.VersioningAction.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: Utility/VersioningTool.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: GetHashCode
+    path: ../Utility/VersioningTool.cs
+    startLine: 697
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.VersioningTool
+  summary: Serves as the default hash function.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A hash code for the current object.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: Petrosik.VersioningTool.VersioningAction.GetHashCode*
+references:
+- uid: Petrosik.VersioningTool
+  commentId: N:Petrosik.VersioningTool
+  href: Petrosik.html
+  name: Petrosik.VersioningTool
+  nameWithType: Petrosik.VersioningTool
+  fullName: Petrosik.VersioningTool
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.VersioningTool
+    name: VersioningTool
+    href: Petrosik.VersioningTool.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.VersioningTool
+    name: VersioningTool
+    href: Petrosik.VersioningTool.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  parent: Petrosik.UnityUtility.Extensions
+  definition: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  isExternal: true
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions
+  commentId: T:Petrosik.UnityUtility.Extensions
+  parent: Petrosik.UnityUtility
+  href: Petrosik.UnityUtility.Extensions.html
+  name: Extensions
+  nameWithType: Extensions
+  fullName: Petrosik.UnityUtility.Extensions
+- uid: Petrosik.UnityUtility
+  commentId: N:Petrosik.UnityUtility
+  href: Petrosik.html
+  name: Petrosik.UnityUtility
+  nameWithType: Petrosik.UnityUtility
+  fullName: Petrosik.UnityUtility
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+- uid: Petrosik.VersioningTool.VersioningAction.Type*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.Type
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_Type
+  name: Type
+  nameWithType: VersioningAction.Type
+  fullName: Petrosik.VersioningTool.VersioningAction.Type
+- uid: Petrosik.Enums.VersioningActionType
+  commentId: T:Petrosik.Enums.VersioningActionType
+  parent: Petrosik.Enums
+  href: Petrosik.Enums.VersioningActionType.html
+  name: VersioningActionType
+  nameWithType: VersioningActionType
+  fullName: Petrosik.Enums.VersioningActionType
+- uid: Petrosik.Enums
+  commentId: N:Petrosik.Enums
+  href: Petrosik.html
+  name: Petrosik.Enums
+  nameWithType: Petrosik.Enums
+  fullName: Petrosik.Enums
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+- uid: Petrosik.VersioningTool.VersioningAction.OriginName*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.OriginName
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_OriginName
+  name: OriginName
+  nameWithType: VersioningAction.OriginName
+  fullName: Petrosik.VersioningTool.VersioningAction.OriginName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Petrosik.VersioningTool.VersioningAction.OriginType*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.OriginType
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_OriginType
+  name: OriginType
+  nameWithType: VersioningAction.OriginType
+  fullName: Petrosik.VersioningTool.VersioningAction.OriginType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: Petrosik.VersioningTool.VersioningAction.TargetName*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.TargetName
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_TargetName
+  name: TargetName
+  nameWithType: VersioningAction.TargetName
+  fullName: Petrosik.VersioningTool.VersioningAction.TargetName
+- uid: Petrosik.VersioningTool.VersioningAction.TargetType*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.TargetType
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_TargetType
+  name: TargetType
+  nameWithType: VersioningAction.TargetType
+  fullName: Petrosik.VersioningTool.VersioningAction.TargetType
+- uid: Petrosik.VersioningTool.VersioningAction.Value*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.Value
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_Value
+  name: Value
+  nameWithType: VersioningAction.Value
+  fullName: Petrosik.VersioningTool.VersioningAction.Value
+- uid: Petrosik.VersioningTool.VersioningAction.ValueConverter*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.ValueConverter
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_ValueConverter
+  name: ValueConverter
+  nameWithType: VersioningAction.ValueConverter
+  fullName: Petrosik.VersioningTool.VersioningAction.ValueConverter
+- uid: System.Func{System.Object,System.Object}
+  commentId: T:System.Func{System.Object,System.Object}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<object, object>
+  nameWithType: Func<object, object>
+  fullName: System.Func<object, object>
+  nameWithType.vb: Func(Of Object, Object)
+  fullName.vb: System.Func(Of Object, Object)
+  name.vb: Func(Of Object, Object)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: Petrosik.VersioningTool.VersioningAction.IsField*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.IsField
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_IsField
+  name: IsField
+  nameWithType: VersioningAction.IsField
+  fullName: Petrosik.VersioningTool.VersioningAction.IsField
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Petrosik.VersioningTool.VersioningAction.FAttributes*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.FAttributes
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_FAttributes
+  name: FAttributes
+  nameWithType: VersioningAction.FAttributes
+  fullName: Petrosik.VersioningTool.VersioningAction.FAttributes
+- uid: System.Reflection.FieldAttributes
+  commentId: T:System.Reflection.FieldAttributes
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.fieldattributes
+  name: FieldAttributes
+  nameWithType: FieldAttributes
+  fullName: System.Reflection.FieldAttributes
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: Petrosik.VersioningTool.VersioningAction.PAttributes*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.PAttributes
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_PAttributes
+  name: PAttributes
+  nameWithType: VersioningAction.PAttributes
+  fullName: Petrosik.VersioningTool.VersioningAction.PAttributes
+- uid: System.Reflection.PropertyAttributes
+  commentId: T:System.Reflection.PropertyAttributes
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.propertyattributes
+  name: PropertyAttributes
+  nameWithType: PropertyAttributes
+  fullName: System.Reflection.PropertyAttributes
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Petrosik.VersioningTool.VersioningAction.ToString*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.ToString
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_ToString
+  name: ToString
+  nameWithType: VersioningAction.ToString
+  fullName: Petrosik.VersioningTool.VersioningAction.ToString
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: Petrosik.VersioningTool.VersioningAction.GetHashCode*
+  commentId: Overload:Petrosik.VersioningTool.VersioningAction.GetHashCode
+  href: Petrosik.VersioningTool.VersioningAction.html#Petrosik_VersioningTool_VersioningAction_GetHashCode
+  name: GetHashCode
+  nameWithType: VersioningAction.GetHashCode
+  fullName: Petrosik.VersioningTool.VersioningAction.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

@@ -1,0 +1,1700 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.Utility.ChanceTable`1
+  commentId: T:Petrosik.Utility.ChanceTable`1
+  id: ChanceTable`1
+  parent: Petrosik.Utility
+  children:
+  - Petrosik.Utility.ChanceTable`1.Add(Petrosik.Enums.Rarity,`0)
+  - Petrosik.Utility.ChanceTable`1.Clear
+  - Petrosik.Utility.ChanceTable`1.Count
+  - Petrosik.Utility.ChanceTable`1.Current
+  - Petrosik.Utility.ChanceTable`1.Dispose
+  - Petrosik.Utility.ChanceTable`1.Exists(`0)
+  - Petrosik.Utility.ChanceTable`1.GetEnumerator
+  - Petrosik.Utility.ChanceTable`1.GetItem(System.Boolean)
+  - Petrosik.Utility.ChanceTable`1.GetItemWithRarity(System.Collections.Generic.List{Petrosik.Enums.Rarity},System.Boolean)
+  - Petrosik.Utility.ChanceTable`1.MoveNext
+  - Petrosik.Utility.ChanceTable`1.RaritysCount
+  - Petrosik.Utility.ChanceTable`1.Remove(`0)
+  - Petrosik.Utility.ChanceTable`1.RemoveAt(System.Int32)
+  - Petrosik.Utility.ChanceTable`1.Reset
+  - Petrosik.Utility.ChanceTable`1.TableAvrgRarity
+  langs:
+  - csharp
+  - vb
+  name: ChanceTable<T>
+  nameWithType: ChanceTable<T>
+  fullName: Petrosik.Utility.ChanceTable<T>
+  type: Class
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: ChanceTable
+    path: ../Utility/ChanceTable.cs
+    startLine: 14
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Chance table or loot table allows to add and then pull items with rarities, the items are weighted and have calculated pull values based on the amount of items in the pool + it's rarity
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class ChanceTable<T> : IEnumerable<ChancePart<T>>, IEnumerable, IEnumerator<ChancePart<T>>, IEnumerator, IDisposable where T : notnull
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: >-
+      <Serializable>
+
+      Public Class ChanceTable(Of T) Implements IEnumerable(Of ChancePart(Of T)), IEnumerable, IEnumerator(Of ChancePart(Of T)), IEnumerator, IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{{T}}}
+  - System.Collections.IEnumerable
+  - System.Collections.Generic.IEnumerator{Petrosik.Utility.ChancePart{{T}}}
+  - System.Collections.IEnumerator
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  nameWithType.vb: ChanceTable(Of T)
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T)
+  name.vb: ChanceTable(Of T)
+- uid: Petrosik.Utility.ChanceTable`1.Count
+  commentId: P:Petrosik.Utility.ChanceTable`1.Count
+  id: Count
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: ChanceTable<T>.Count
+  fullName: Petrosik.Utility.ChanceTable<T>.Count
+  type: Property
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Count
+    path: ../Utility/ChanceTable.cs
+    startLine: 18
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: Petrosik.Utility.ChanceTable`1.Count*
+  nameWithType.vb: ChanceTable(Of T).Count
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Count
+- uid: Petrosik.Utility.ChanceTable`1.TableAvrgRarity
+  commentId: P:Petrosik.Utility.ChanceTable`1.TableAvrgRarity
+  id: TableAvrgRarity
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: TableAvrgRarity
+  nameWithType: ChanceTable<T>.TableAvrgRarity
+  fullName: Petrosik.Utility.ChanceTable<T>.TableAvrgRarity
+  type: Property
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: TableAvrgRarity
+    path: ../Utility/ChanceTable.cs
+    startLine: 22
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Average rarity of the table
+  example: []
+  syntax:
+    content: public Rarity TableAvrgRarity { get; }
+    parameters: []
+    return:
+      type: Petrosik.Enums.Rarity
+    content.vb: Public Property TableAvrgRarity As Rarity
+  overload: Petrosik.Utility.ChanceTable`1.TableAvrgRarity*
+  nameWithType.vb: ChanceTable(Of T).TableAvrgRarity
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).TableAvrgRarity
+- uid: Petrosik.Utility.ChanceTable`1.RaritysCount
+  commentId: P:Petrosik.Utility.ChanceTable`1.RaritysCount
+  id: RaritysCount
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: RaritysCount
+  nameWithType: ChanceTable<T>.RaritysCount
+  fullName: Petrosik.Utility.ChanceTable<T>.RaritysCount
+  type: Property
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: RaritysCount
+    path: ../Utility/ChanceTable.cs
+    startLine: 26
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Count of each rarity inside the table
+  example: []
+  syntax:
+    content: public Dictionary<Rarity, int> RaritysCount { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{Petrosik.Enums.Rarity,System.Int32}
+    content.vb: Public Property RaritysCount As Dictionary(Of Rarity, Integer)
+  overload: Petrosik.Utility.ChanceTable`1.RaritysCount*
+  nameWithType.vb: ChanceTable(Of T).RaritysCount
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).RaritysCount
+- uid: Petrosik.Utility.ChanceTable`1.Current
+  commentId: P:Petrosik.Utility.ChanceTable`1.Current
+  id: Current
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: ChanceTable<T>.Current
+  fullName: Petrosik.Utility.ChanceTable<T>.Current
+  type: Property
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Current
+    path: ../Utility/ChanceTable.cs
+    startLine: 29
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Gets the element in the collection at the current position of the enumerator.
+  example: []
+  syntax:
+    content: public ChancePart<T> Current { get; }
+    parameters: []
+    return:
+      type: Petrosik.Utility.ChancePart{{T}}
+      description: The element in the collection at the current position of the enumerator.
+    content.vb: Public ReadOnly Property Current As ChancePart(Of T)
+  overload: Petrosik.Utility.ChanceTable`1.Current*
+  implements:
+  - System.Collections.Generic.IEnumerator{Petrosik.Utility.ChancePart{{T}}}.Current
+  nameWithType.vb: ChanceTable(Of T).Current
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Current
+- uid: Petrosik.Utility.ChanceTable`1.GetItem(System.Boolean)
+  commentId: M:Petrosik.Utility.ChanceTable`1.GetItem(System.Boolean)
+  id: GetItem(System.Boolean)
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetItem(bool)
+  nameWithType: ChanceTable<T>.GetItem(bool)
+  fullName: Petrosik.Utility.ChanceTable<T>.GetItem(bool)
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: GetItem
+    path: ../Utility/ChanceTable.cs
+    startLine: 48
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Returns random item from the table based on its weighted value
+  example: []
+  syntax:
+    content: public T? GetItem(bool RemoveAfterPull = false)
+    parameters:
+    - id: RemoveAfterPull
+      type: System.Boolean
+      description: Should the item be removed from the table after pull
+    return:
+      type: '{T}'
+      description: ''
+    content.vb: Public Function GetItem(RemoveAfterPull As Boolean = False) As T
+  overload: Petrosik.Utility.ChanceTable`1.GetItem*
+  nameWithType.vb: ChanceTable(Of T).GetItem(Boolean)
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).GetItem(Boolean)
+  name.vb: GetItem(Boolean)
+- uid: Petrosik.Utility.ChanceTable`1.GetItemWithRarity(System.Collections.Generic.List{Petrosik.Enums.Rarity},System.Boolean)
+  commentId: M:Petrosik.Utility.ChanceTable`1.GetItemWithRarity(System.Collections.Generic.List{Petrosik.Enums.Rarity},System.Boolean)
+  id: GetItemWithRarity(System.Collections.Generic.List{Petrosik.Enums.Rarity},System.Boolean)
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetItemWithRarity(List<Rarity>, bool)
+  nameWithType: ChanceTable<T>.GetItemWithRarity(List<Rarity>, bool)
+  fullName: Petrosik.Utility.ChanceTable<T>.GetItemWithRarity(System.Collections.Generic.List<Petrosik.Enums.Rarity>, bool)
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: GetItemWithRarity
+    path: ../Utility/ChanceTable.cs
+    startLine: 87
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Returns random item from the table that is insinde the range based on its weighted value
+  example: []
+  syntax:
+    content: public T? GetItemWithRarity(List<Rarity> Range, bool RemoveAfterPull = false)
+    parameters:
+    - id: Range
+      type: System.Collections.Generic.List{Petrosik.Enums.Rarity}
+      description: ''
+    - id: RemoveAfterPull
+      type: System.Boolean
+      description: Should the item be removed from the table after pull
+    return:
+      type: '{T}'
+      description: ''
+    content.vb: Public Function GetItemWithRarity(Range As List(Of Rarity), RemoveAfterPull As Boolean = False) As T
+  overload: Petrosik.Utility.ChanceTable`1.GetItemWithRarity*
+  nameWithType.vb: ChanceTable(Of T).GetItemWithRarity(List(Of Rarity), Boolean)
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).GetItemWithRarity(System.Collections.Generic.List(Of Petrosik.Enums.Rarity), Boolean)
+  name.vb: GetItemWithRarity(List(Of Rarity), Boolean)
+- uid: Petrosik.Utility.ChanceTable`1.Exists(`0)
+  commentId: M:Petrosik.Utility.ChanceTable`1.Exists(`0)
+  id: Exists(`0)
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: Exists(T)
+  nameWithType: ChanceTable<T>.Exists(T)
+  fullName: Petrosik.Utility.ChanceTable<T>.Exists(T)
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Exists
+    path: ../Utility/ChanceTable.cs
+    startLine: 118
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  syntax:
+    content: public bool Exists(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Exists(item As T) As Boolean
+  overload: Petrosik.Utility.ChanceTable`1.Exists*
+  nameWithType.vb: ChanceTable(Of T).Exists(T)
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Exists(T)
+- uid: Petrosik.Utility.ChanceTable`1.Clear
+  commentId: M:Petrosik.Utility.ChanceTable`1.Clear
+  id: Clear
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: ChanceTable<T>.Clear()
+  fullName: Petrosik.Utility.ChanceTable<T>.Clear()
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Clear
+    path: ../Utility/ChanceTable.cs
+    startLine: 125
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Clears the table
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear()
+  overload: Petrosik.Utility.ChanceTable`1.Clear*
+  nameWithType.vb: ChanceTable(Of T).Clear()
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Clear()
+- uid: Petrosik.Utility.ChanceTable`1.Add(Petrosik.Enums.Rarity,`0)
+  commentId: M:Petrosik.Utility.ChanceTable`1.Add(Petrosik.Enums.Rarity,`0)
+  id: Add(Petrosik.Enums.Rarity,`0)
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: Add(Rarity, T)
+  nameWithType: ChanceTable<T>.Add(Rarity, T)
+  fullName: Petrosik.Utility.ChanceTable<T>.Add(Petrosik.Enums.Rarity, T)
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Add
+    path: ../Utility/ChanceTable.cs
+    startLine: 136
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Adds the item with the rarity to the table
+  example: []
+  syntax:
+    content: public void Add(Rarity Rarity, T item)
+    parameters:
+    - id: Rarity
+      type: Petrosik.Enums.Rarity
+      description: ''
+    - id: item
+      type: '{T}'
+      description: ''
+    content.vb: Public Sub Add(Rarity As Rarity, item As T)
+  overload: Petrosik.Utility.ChanceTable`1.Add*
+  nameWithType.vb: ChanceTable(Of T).Add(Rarity, T)
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Add(Petrosik.Enums.Rarity, T)
+- uid: Petrosik.Utility.ChanceTable`1.Remove(`0)
+  commentId: M:Petrosik.Utility.ChanceTable`1.Remove(`0)
+  id: Remove(`0)
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T)
+  nameWithType: ChanceTable<T>.Remove(T)
+  fullName: Petrosik.Utility.ChanceTable<T>.Remove(T)
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Remove
+    path: ../Utility/ChanceTable.cs
+    startLine: 151
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Removes the item from the table
+  example: []
+  syntax:
+    content: public bool Remove(T item)
+    parameters:
+    - id: item
+      type: '{T}'
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Function Remove(item As T) As Boolean
+  overload: Petrosik.Utility.ChanceTable`1.Remove*
+  nameWithType.vb: ChanceTable(Of T).Remove(T)
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Remove(T)
+- uid: Petrosik.Utility.ChanceTable`1.RemoveAt(System.Int32)
+  commentId: M:Petrosik.Utility.ChanceTable`1.RemoveAt(System.Int32)
+  id: RemoveAt(System.Int32)
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAt(int)
+  nameWithType: ChanceTable<T>.RemoveAt(int)
+  fullName: Petrosik.Utility.ChanceTable<T>.RemoveAt(int)
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: RemoveAt
+    path: ../Utility/ChanceTable.cs
+    startLine: 166
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  syntax:
+    content: public void RemoveAt(int i)
+    parameters:
+    - id: i
+      type: System.Int32
+    content.vb: Public Sub RemoveAt(i As Integer)
+  overload: Petrosik.Utility.ChanceTable`1.RemoveAt*
+  nameWithType.vb: ChanceTable(Of T).RemoveAt(Integer)
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).RemoveAt(Integer)
+  name.vb: RemoveAt(Integer)
+- uid: Petrosik.Utility.ChanceTable`1.GetEnumerator
+  commentId: M:Petrosik.Utility.ChanceTable`1.GetEnumerator
+  id: GetEnumerator
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: ChanceTable<T>.GetEnumerator()
+  fullName: Petrosik.Utility.ChanceTable<T>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: GetEnumerator
+    path: ../Utility/ChanceTable.cs
+    startLine: 197
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Returns an enumerator that iterates through the collection.
+  example: []
+  syntax:
+    content: public IEnumerator<ChancePart<T>> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{Petrosik.Utility.ChancePart{{T}}}
+      description: An enumerator that can be used to iterate through the collection.
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of ChancePart(Of T))
+  overload: Petrosik.Utility.ChanceTable`1.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{{T}}}.GetEnumerator
+  nameWithType.vb: ChanceTable(Of T).GetEnumerator()
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).GetEnumerator()
+- uid: Petrosik.Utility.ChanceTable`1.MoveNext
+  commentId: M:Petrosik.Utility.ChanceTable`1.MoveNext
+  id: MoveNext
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: MoveNext()
+  nameWithType: ChanceTable<T>.MoveNext()
+  fullName: Petrosik.Utility.ChanceTable<T>.MoveNext()
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: MoveNext
+    path: ../Utility/ChanceTable.cs
+    startLine: 207
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Advances the enumerator to the next element of the collection.
+  example: []
+  syntax:
+    content: public bool MoveNext()
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the enumerator was successfully advanced to the next element; <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if the enumerator has passed the end of the collection.
+    content.vb: Public Function MoveNext() As Boolean
+  overload: Petrosik.Utility.ChanceTable`1.MoveNext*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: The collection was modified after the enumerator was created.
+  implements:
+  - System.Collections.IEnumerator.MoveNext
+  nameWithType.vb: ChanceTable(Of T).MoveNext()
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).MoveNext()
+- uid: Petrosik.Utility.ChanceTable`1.Reset
+  commentId: M:Petrosik.Utility.ChanceTable`1.Reset
+  id: Reset
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: ChanceTable<T>.Reset()
+  fullName: Petrosik.Utility.ChanceTable<T>.Reset()
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Reset
+    path: ../Utility/ChanceTable.cs
+    startLine: 213
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Sets the enumerator to its initial position, which is before the first element in the collection.
+  example: []
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset()
+  overload: Petrosik.Utility.ChanceTable`1.Reset*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: The collection was modified after the enumerator was created.
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: The enumerator does not support being reset.
+  implements:
+  - System.Collections.IEnumerator.Reset
+  nameWithType.vb: ChanceTable(Of T).Reset()
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Reset()
+- uid: Petrosik.Utility.ChanceTable`1.Dispose
+  commentId: M:Petrosik.Utility.ChanceTable`1.Dispose
+  id: Dispose
+  parent: Petrosik.Utility.ChanceTable`1
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ChanceTable<T>.Dispose()
+  fullName: Petrosik.Utility.ChanceTable<T>.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Utility/ChanceTable.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Dispose
+    path: ../Utility/ChanceTable.cs
+    startLine: 218
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Utility
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: Petrosik.Utility.ChanceTable`1.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  nameWithType.vb: ChanceTable(Of T).Dispose()
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Dispose()
+references:
+- uid: Petrosik.Utility
+  commentId: N:Petrosik.Utility
+  href: Petrosik.html
+  name: Petrosik.Utility
+  nameWithType: Petrosik.Utility
+  fullName: Petrosik.Utility
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Utility
+    name: Utility
+    href: Petrosik.Utility.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Utility
+    name: Utility
+    href: Petrosik.Utility.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{{T}}}
+  commentId: T:System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{`0}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<ChancePart<T>>
+  nameWithType: IEnumerable<ChancePart<T>>
+  fullName: System.Collections.Generic.IEnumerable<Petrosik.Utility.ChancePart<T>>
+  nameWithType.vb: IEnumerable(Of ChancePart(Of T))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Petrosik.Utility.ChancePart(Of T))
+  name.vb: IEnumerable(Of ChancePart(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: Petrosik.Utility.ChancePart`1
+    name: ChancePart
+    href: Petrosik.Utility.ChancePart-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Petrosik.Utility.ChancePart`1
+    name: ChancePart
+    href: Petrosik.Utility.ChancePart-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Collections.Generic.IEnumerator{Petrosik.Utility.ChancePart{{T}}}
+  commentId: T:System.Collections.Generic.IEnumerator{Petrosik.Utility.ChancePart{`0}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<ChancePart<T>>
+  nameWithType: IEnumerator<ChancePart<T>>
+  fullName: System.Collections.Generic.IEnumerator<Petrosik.Utility.ChancePart<T>>
+  nameWithType.vb: IEnumerator(Of ChancePart(Of T))
+  fullName.vb: System.Collections.Generic.IEnumerator(Of Petrosik.Utility.ChancePart(Of T))
+  name.vb: IEnumerator(Of ChancePart(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - uid: Petrosik.Utility.ChancePart`1
+    name: ChancePart
+    href: Petrosik.Utility.ChancePart-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Petrosik.Utility.ChancePart`1
+    name: ChancePart
+    href: Petrosik.Utility.ChancePart-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  parent: Petrosik.UnityUtility.Extensions
+  definition: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  isExternal: true
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions
+  commentId: T:Petrosik.UnityUtility.Extensions
+  parent: Petrosik.UnityUtility
+  href: Petrosik.UnityUtility.Extensions.html
+  name: Extensions
+  nameWithType: Extensions
+  fullName: Petrosik.UnityUtility.Extensions
+- uid: Petrosik.UnityUtility
+  commentId: N:Petrosik.UnityUtility
+  href: Petrosik.html
+  name: Petrosik.UnityUtility
+  nameWithType: Petrosik.UnityUtility
+  fullName: Petrosik.UnityUtility
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+- uid: Petrosik.Utility.ChanceTable`1.Count*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.Count
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_Count
+  name: Count
+  nameWithType: ChanceTable<T>.Count
+  fullName: Petrosik.Utility.ChanceTable<T>.Count
+  nameWithType.vb: ChanceTable(Of T).Count
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Count
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Petrosik.Utility.ChanceTable`1.TableAvrgRarity*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.TableAvrgRarity
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_TableAvrgRarity
+  name: TableAvrgRarity
+  nameWithType: ChanceTable<T>.TableAvrgRarity
+  fullName: Petrosik.Utility.ChanceTable<T>.TableAvrgRarity
+  nameWithType.vb: ChanceTable(Of T).TableAvrgRarity
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).TableAvrgRarity
+- uid: Petrosik.Enums.Rarity
+  commentId: T:Petrosik.Enums.Rarity
+  parent: Petrosik.Enums
+  href: Petrosik.Enums.Rarity.html
+  name: Rarity
+  nameWithType: Rarity
+  fullName: Petrosik.Enums.Rarity
+- uid: Petrosik.Enums
+  commentId: N:Petrosik.Enums
+  href: Petrosik.html
+  name: Petrosik.Enums
+  nameWithType: Petrosik.Enums
+  fullName: Petrosik.Enums
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+- uid: Petrosik.Utility.ChanceTable`1.RaritysCount*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.RaritysCount
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_RaritysCount
+  name: RaritysCount
+  nameWithType: ChanceTable<T>.RaritysCount
+  fullName: Petrosik.Utility.ChanceTable<T>.RaritysCount
+  nameWithType.vb: ChanceTable(Of T).RaritysCount
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).RaritysCount
+- uid: System.Collections.Generic.Dictionary{Petrosik.Enums.Rarity,System.Int32}
+  commentId: T:System.Collections.Generic.Dictionary{Petrosik.Enums.Rarity,System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<Rarity, int>
+  nameWithType: Dictionary<Rarity, int>
+  fullName: System.Collections.Generic.Dictionary<Petrosik.Enums.Rarity, int>
+  nameWithType.vb: Dictionary(Of Rarity, Integer)
+  fullName.vb: System.Collections.Generic.Dictionary(Of Petrosik.Enums.Rarity, Integer)
+  name.vb: Dictionary(Of Rarity, Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: Petrosik.Enums.Rarity
+    name: Rarity
+    href: Petrosik.Enums.Rarity.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Petrosik.Enums.Rarity
+    name: Rarity
+    href: Petrosik.Enums.Rarity.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: Petrosik.Utility.ChanceTable`1.Current*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.Current
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_Current
+  name: Current
+  nameWithType: ChanceTable<T>.Current
+  fullName: Petrosik.Utility.ChanceTable<T>.Current
+  nameWithType.vb: ChanceTable(Of T).Current
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Current
+- uid: System.Collections.Generic.IEnumerator{Petrosik.Utility.ChancePart{{T}}}.Current
+  commentId: P:System.Collections.Generic.IEnumerator{Petrosik.Utility.ChancePart{`0}}.Current
+  parent: System.Collections.Generic.IEnumerator{Petrosik.Utility.ChancePart{{T}}}
+  definition: System.Collections.Generic.IEnumerator`1.Current
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1.current
+  name: Current
+  nameWithType: IEnumerator<ChancePart<T>>.Current
+  fullName: System.Collections.Generic.IEnumerator<Petrosik.Utility.ChancePart<T>>.Current
+  nameWithType.vb: IEnumerator(Of ChancePart(Of T)).Current
+  fullName.vb: System.Collections.Generic.IEnumerator(Of Petrosik.Utility.ChancePart(Of T)).Current
+- uid: Petrosik.Utility.ChancePart{{T}}
+  commentId: T:Petrosik.Utility.ChancePart{`0}
+  parent: Petrosik.Utility
+  definition: Petrosik.Utility.ChancePart`1
+  href: Petrosik.Utility.ChancePart-1.html
+  name: ChancePart<T>
+  nameWithType: ChancePart<T>
+  fullName: Petrosik.Utility.ChancePart<T>
+  nameWithType.vb: ChancePart(Of T)
+  fullName.vb: Petrosik.Utility.ChancePart(Of T)
+  name.vb: ChancePart(Of T)
+  spec.csharp:
+  - uid: Petrosik.Utility.ChancePart`1
+    name: ChancePart
+    href: Petrosik.Utility.ChancePart-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Petrosik.Utility.ChancePart`1
+    name: ChancePart
+    href: Petrosik.Utility.ChancePart-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IEnumerator`1.Current
+  commentId: P:System.Collections.Generic.IEnumerator`1.Current
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1.current
+  name: Current
+  nameWithType: IEnumerator<T>.Current
+  fullName: System.Collections.Generic.IEnumerator<T>.Current
+  nameWithType.vb: IEnumerator(Of T).Current
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T).Current
+- uid: Petrosik.Utility.ChancePart`1
+  commentId: T:Petrosik.Utility.ChancePart`1
+  href: Petrosik.Utility.ChancePart-1.html
+  name: ChancePart<T>
+  nameWithType: ChancePart<T>
+  fullName: Petrosik.Utility.ChancePart<T>
+  nameWithType.vb: ChancePart(Of T)
+  fullName.vb: Petrosik.Utility.ChancePart(Of T)
+  name.vb: ChancePart(Of T)
+  spec.csharp:
+  - uid: Petrosik.Utility.ChancePart`1
+    name: ChancePart
+    href: Petrosik.Utility.ChancePart-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Petrosik.Utility.ChancePart`1
+    name: ChancePart
+    href: Petrosik.Utility.ChancePart-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Petrosik.Utility.ChanceTable`1.GetItem*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.GetItem
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_GetItem_System_Boolean_
+  name: GetItem
+  nameWithType: ChanceTable<T>.GetItem
+  fullName: Petrosik.Utility.ChanceTable<T>.GetItem
+  nameWithType.vb: ChanceTable(Of T).GetItem
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).GetItem
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Petrosik.Utility.ChanceTable`1.GetItemWithRarity*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.GetItemWithRarity
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_GetItemWithRarity_System_Collections_Generic_List_Petrosik_Enums_Rarity__System_Boolean_
+  name: GetItemWithRarity
+  nameWithType: ChanceTable<T>.GetItemWithRarity
+  fullName: Petrosik.Utility.ChanceTable<T>.GetItemWithRarity
+  nameWithType.vb: ChanceTable(Of T).GetItemWithRarity
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).GetItemWithRarity
+- uid: System.Collections.Generic.List{Petrosik.Enums.Rarity}
+  commentId: T:System.Collections.Generic.List{Petrosik.Enums.Rarity}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Rarity>
+  nameWithType: List<Rarity>
+  fullName: System.Collections.Generic.List<Petrosik.Enums.Rarity>
+  nameWithType.vb: List(Of Rarity)
+  fullName.vb: System.Collections.Generic.List(Of Petrosik.Enums.Rarity)
+  name.vb: List(Of Rarity)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Petrosik.Enums.Rarity
+    name: Rarity
+    href: Petrosik.Enums.Rarity.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Petrosik.Enums.Rarity
+    name: Rarity
+    href: Petrosik.Enums.Rarity.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Petrosik.Utility.ChanceTable`1.Exists*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.Exists
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_Exists__0_
+  name: Exists
+  nameWithType: ChanceTable<T>.Exists
+  fullName: Petrosik.Utility.ChanceTable<T>.Exists
+  nameWithType.vb: ChanceTable(Of T).Exists
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Exists
+- uid: Petrosik.Utility.ChanceTable`1.Clear*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.Clear
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_Clear
+  name: Clear
+  nameWithType: ChanceTable<T>.Clear
+  fullName: Petrosik.Utility.ChanceTable<T>.Clear
+  nameWithType.vb: ChanceTable(Of T).Clear
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Clear
+- uid: Petrosik.Utility.ChanceTable`1.Add*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.Add
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_Add_Petrosik_Enums_Rarity__0_
+  name: Add
+  nameWithType: ChanceTable<T>.Add
+  fullName: Petrosik.Utility.ChanceTable<T>.Add
+  nameWithType.vb: ChanceTable(Of T).Add
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Add
+- uid: Petrosik.Utility.ChanceTable`1.Remove*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.Remove
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_Remove__0_
+  name: Remove
+  nameWithType: ChanceTable<T>.Remove
+  fullName: Petrosik.Utility.ChanceTable<T>.Remove
+  nameWithType.vb: ChanceTable(Of T).Remove
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Remove
+- uid: Petrosik.Utility.ChanceTable`1.RemoveAt*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.RemoveAt
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_RemoveAt_System_Int32_
+  name: RemoveAt
+  nameWithType: ChanceTable<T>.RemoveAt
+  fullName: Petrosik.Utility.ChanceTable<T>.RemoveAt
+  nameWithType.vb: ChanceTable(Of T).RemoveAt
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).RemoveAt
+- uid: Petrosik.Utility.ChanceTable`1.GetEnumerator*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.GetEnumerator
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_GetEnumerator
+  name: GetEnumerator
+  nameWithType: ChanceTable<T>.GetEnumerator
+  fullName: Petrosik.Utility.ChanceTable<T>.GetEnumerator
+  nameWithType.vb: ChanceTable(Of T).GetEnumerator
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{{T}}}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{`0}}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{{T}}}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<ChancePart<T>>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<Petrosik.Utility.ChancePart<T>>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of ChancePart(Of T)).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Petrosik.Utility.ChancePart(Of T)).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{`0}}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable{Petrosik.Utility.ChancePart{`0}}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: Petrosik.Utility.ChanceTable`1.MoveNext*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.MoveNext
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_MoveNext
+  name: MoveNext
+  nameWithType: ChanceTable<T>.MoveNext
+  fullName: Petrosik.Utility.ChanceTable<T>.MoveNext
+  nameWithType.vb: ChanceTable(Of T).MoveNext
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).MoveNext
+- uid: System.Collections.IEnumerator.MoveNext
+  commentId: M:System.Collections.IEnumerator.MoveNext
+  parent: System.Collections.IEnumerator
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator.movenext
+  name: MoveNext()
+  nameWithType: IEnumerator.MoveNext()
+  fullName: System.Collections.IEnumerator.MoveNext()
+  spec.csharp:
+  - uid: System.Collections.IEnumerator.MoveNext
+    name: MoveNext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator.movenext
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.IEnumerator.MoveNext
+    name: MoveNext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator.movenext
+  - name: (
+  - name: )
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
+- uid: Petrosik.Utility.ChanceTable`1.Reset*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.Reset
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_Reset
+  name: Reset
+  nameWithType: ChanceTable<T>.Reset
+  fullName: Petrosik.Utility.ChanceTable<T>.Reset
+  nameWithType.vb: ChanceTable(Of T).Reset
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Reset
+- uid: System.Collections.IEnumerator.Reset
+  commentId: M:System.Collections.IEnumerator.Reset
+  parent: System.Collections.IEnumerator
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator.reset
+  name: Reset()
+  nameWithType: IEnumerator.Reset()
+  fullName: System.Collections.IEnumerator.Reset()
+  spec.csharp:
+  - uid: System.Collections.IEnumerator.Reset
+    name: Reset
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator.reset
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.IEnumerator.Reset
+    name: Reset
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator.reset
+  - name: (
+  - name: )
+- uid: Petrosik.Utility.ChanceTable`1.Dispose*
+  commentId: Overload:Petrosik.Utility.ChanceTable`1.Dispose
+  href: Petrosik.Utility.ChanceTable-1.html#Petrosik_Utility_ChanceTable_1_Dispose
+  name: Dispose
+  nameWithType: ChanceTable<T>.Dispose
+  fullName: Petrosik.Utility.ChanceTable<T>.Dispose
+  nameWithType.vb: ChanceTable(Of T).Dispose
+  fullName.vb: Petrosik.Utility.ChanceTable(Of T).Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

@@ -364,3 +364,5 @@ FodyWeavers.xsd
 /Utility/nuget.config
 /Documentation/UtilityDocs/site
 /Documentation/mkdocs-material
+
+*/_site

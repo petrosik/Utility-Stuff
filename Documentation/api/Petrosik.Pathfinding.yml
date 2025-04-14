@@ -1,0 +1,68 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.Pathfinding
+  commentId: N:Petrosik.Pathfinding
+  id: Petrosik.Pathfinding
+  children:
+  - Petrosik.Pathfinding.AStar
+  - Petrosik.Pathfinding.GridBase
+  - Petrosik.Pathfinding.ObstacleObject
+  - Petrosik.Pathfinding.PseudoAStar
+  langs:
+  - csharp
+  - vb
+  name: Petrosik.Pathfinding
+  nameWithType: Petrosik.Pathfinding
+  fullName: Petrosik.Pathfinding
+  type: Namespace
+  assemblies:
+  - PetrosikUtility
+references:
+- uid: Petrosik.Pathfinding.AStar
+  commentId: T:Petrosik.Pathfinding.AStar
+  href: Petrosik.Pathfinding.AStar.html
+  name: AStar
+  nameWithType: AStar
+  fullName: Petrosik.Pathfinding.AStar
+- uid: Petrosik.Pathfinding.GridBase
+  commentId: T:Petrosik.Pathfinding.GridBase
+  parent: Petrosik.Pathfinding
+  href: Petrosik.Pathfinding.GridBase.html
+  name: GridBase
+  nameWithType: GridBase
+  fullName: Petrosik.Pathfinding.GridBase
+- uid: Petrosik.Pathfinding.ObstacleObject
+  commentId: T:Petrosik.Pathfinding.ObstacleObject
+  parent: Petrosik.Pathfinding
+  href: Petrosik.Pathfinding.ObstacleObject.html
+  name: ObstacleObject
+  nameWithType: ObstacleObject
+  fullName: Petrosik.Pathfinding.ObstacleObject
+- uid: Petrosik.Pathfinding.PseudoAStar
+  commentId: T:Petrosik.Pathfinding.PseudoAStar
+  href: Petrosik.Pathfinding.PseudoAStar.html
+  name: PseudoAStar
+  nameWithType: PseudoAStar
+  fullName: Petrosik.Pathfinding.PseudoAStar
+- uid: Petrosik.Pathfinding
+  commentId: N:Petrosik.Pathfinding
+  href: Petrosik.html
+  name: Petrosik.Pathfinding
+  nameWithType: Petrosik.Pathfinding
+  fullName: Petrosik.Pathfinding
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Pathfinding
+    name: Pathfinding
+    href: Petrosik.Pathfinding.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Pathfinding
+    name: Pathfinding
+    href: Petrosik.Pathfinding.html

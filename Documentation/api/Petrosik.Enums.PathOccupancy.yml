@@ -1,0 +1,322 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.Enums.PathOccupancy
+  commentId: T:Petrosik.Enums.PathOccupancy
+  id: PathOccupancy
+  parent: Petrosik.Enums
+  children:
+  - Petrosik.Enums.PathOccupancy.Blocked
+  - Petrosik.Enums.PathOccupancy.Clear
+  - Petrosik.Enums.PathOccupancy.HighP
+  - Petrosik.Enums.PathOccupancy.LowP
+  - Petrosik.Enums.PathOccupancy.MediumP
+  - Petrosik.Enums.PathOccupancy.Path
+  langs:
+  - csharp
+  - vb
+  name: PathOccupancy
+  nameWithType: PathOccupancy
+  fullName: Petrosik.Enums.PathOccupancy
+  type: Enum
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: PathOccupancy
+    path: ../Utility/Enums.cs
+    startLine: 64
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: >-
+      [Serializable]
+
+      public enum PathOccupancy
+    content.vb: >-
+      <Serializable>
+
+      Public Enum PathOccupancy
+  extensionMethods:
+  - System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Petrosik.Enums.PathOccupancy.Blocked
+  commentId: F:Petrosik.Enums.PathOccupancy.Blocked
+  id: Blocked
+  parent: Petrosik.Enums.PathOccupancy
+  langs:
+  - csharp
+  - vb
+  name: Blocked
+  nameWithType: PathOccupancy.Blocked
+  fullName: Petrosik.Enums.PathOccupancy.Blocked
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Blocked
+    path: ../Utility/Enums.cs
+    startLine: 67
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Blocked = 0
+    return:
+      type: Petrosik.Enums.PathOccupancy
+- uid: Petrosik.Enums.PathOccupancy.Clear
+  commentId: F:Petrosik.Enums.PathOccupancy.Clear
+  id: Clear
+  parent: Petrosik.Enums.PathOccupancy
+  langs:
+  - csharp
+  - vb
+  name: Clear
+  nameWithType: PathOccupancy.Clear
+  fullName: Petrosik.Enums.PathOccupancy.Clear
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Clear
+    path: ../Utility/Enums.cs
+    startLine: 68
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Clear = 1
+    return:
+      type: Petrosik.Enums.PathOccupancy
+- uid: Petrosik.Enums.PathOccupancy.LowP
+  commentId: F:Petrosik.Enums.PathOccupancy.LowP
+  id: LowP
+  parent: Petrosik.Enums.PathOccupancy
+  langs:
+  - csharp
+  - vb
+  name: LowP
+  nameWithType: PathOccupancy.LowP
+  fullName: Petrosik.Enums.PathOccupancy.LowP
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: LowP
+    path: ../Utility/Enums.cs
+    startLine: 69
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: LowP = 2
+    return:
+      type: Petrosik.Enums.PathOccupancy
+- uid: Petrosik.Enums.PathOccupancy.MediumP
+  commentId: F:Petrosik.Enums.PathOccupancy.MediumP
+  id: MediumP
+  parent: Petrosik.Enums.PathOccupancy
+  langs:
+  - csharp
+  - vb
+  name: MediumP
+  nameWithType: PathOccupancy.MediumP
+  fullName: Petrosik.Enums.PathOccupancy.MediumP
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: MediumP
+    path: ../Utility/Enums.cs
+    startLine: 70
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: MediumP = 4
+    return:
+      type: Petrosik.Enums.PathOccupancy
+- uid: Petrosik.Enums.PathOccupancy.HighP
+  commentId: F:Petrosik.Enums.PathOccupancy.HighP
+  id: HighP
+  parent: Petrosik.Enums.PathOccupancy
+  langs:
+  - csharp
+  - vb
+  name: HighP
+  nameWithType: PathOccupancy.HighP
+  fullName: Petrosik.Enums.PathOccupancy.HighP
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: HighP
+    path: ../Utility/Enums.cs
+    startLine: 71
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: HighP = 8
+    return:
+      type: Petrosik.Enums.PathOccupancy
+- uid: Petrosik.Enums.PathOccupancy.Path
+  commentId: F:Petrosik.Enums.PathOccupancy.Path
+  id: Path
+  parent: Petrosik.Enums.PathOccupancy
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: PathOccupancy.Path
+  fullName: Petrosik.Enums.PathOccupancy.Path
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Path
+    path: ../Utility/Enums.cs
+    startLine: 72
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Path = 128
+    return:
+      type: Petrosik.Enums.PathOccupancy
+references:
+- uid: Petrosik.Enums
+  commentId: N:Petrosik.Enums
+  href: Petrosik.html
+  name: Petrosik.Enums
+  nameWithType: Petrosik.Enums
+  fullName: Petrosik.Enums
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+- uid: System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  parent: Petrosik.UnityUtility.Extensions
+  definition: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  isExternal: true
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions
+  commentId: T:Petrosik.UnityUtility.Extensions
+  parent: Petrosik.UnityUtility
+  href: Petrosik.UnityUtility.Extensions.html
+  name: Extensions
+  nameWithType: Extensions
+  fullName: Petrosik.UnityUtility.Extensions
+- uid: Petrosik.UnityUtility
+  commentId: N:Petrosik.UnityUtility
+  href: Petrosik.html
+  name: Petrosik.UnityUtility
+  nameWithType: Petrosik.UnityUtility
+  fullName: Petrosik.UnityUtility
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+- uid: Petrosik.Enums.PathOccupancy
+  commentId: T:Petrosik.Enums.PathOccupancy
+  parent: Petrosik.Enums
+  href: Petrosik.Enums.PathOccupancy.html
+  name: PathOccupancy
+  nameWithType: PathOccupancy
+  fullName: Petrosik.Enums.PathOccupancy

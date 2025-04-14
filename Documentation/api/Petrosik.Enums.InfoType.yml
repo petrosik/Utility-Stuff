@@ -1,0 +1,268 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.Enums.InfoType
+  commentId: T:Petrosik.Enums.InfoType
+  id: InfoType
+  parent: Petrosik.Enums
+  children:
+  - Petrosik.Enums.InfoType.Error
+  - Petrosik.Enums.InfoType.Important
+  - Petrosik.Enums.InfoType.Info
+  - Petrosik.Enums.InfoType.Warn
+  langs:
+  - csharp
+  - vb
+  name: InfoType
+  nameWithType: InfoType
+  fullName: Petrosik.Enums.InfoType
+  type: Enum
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: InfoType
+    path: ../Utility/Enums.cs
+    startLine: 43
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: >-
+      [Serializable]
+
+      public enum InfoType
+    content.vb: >-
+      <Serializable>
+
+      Public Enum InfoType
+  extensionMethods:
+  - System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+- uid: Petrosik.Enums.InfoType.Info
+  commentId: F:Petrosik.Enums.InfoType.Info
+  id: Info
+  parent: Petrosik.Enums.InfoType
+  langs:
+  - csharp
+  - vb
+  name: Info
+  nameWithType: InfoType.Info
+  fullName: Petrosik.Enums.InfoType.Info
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Info
+    path: ../Utility/Enums.cs
+    startLine: 46
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Info = 0
+    return:
+      type: Petrosik.Enums.InfoType
+- uid: Petrosik.Enums.InfoType.Warn
+  commentId: F:Petrosik.Enums.InfoType.Warn
+  id: Warn
+  parent: Petrosik.Enums.InfoType
+  langs:
+  - csharp
+  - vb
+  name: Warn
+  nameWithType: InfoType.Warn
+  fullName: Petrosik.Enums.InfoType.Warn
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Warn
+    path: ../Utility/Enums.cs
+    startLine: 47
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Warn = 1
+    return:
+      type: Petrosik.Enums.InfoType
+- uid: Petrosik.Enums.InfoType.Error
+  commentId: F:Petrosik.Enums.InfoType.Error
+  id: Error
+  parent: Petrosik.Enums.InfoType
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: InfoType.Error
+  fullName: Petrosik.Enums.InfoType.Error
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Error
+    path: ../Utility/Enums.cs
+    startLine: 48
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Error = 2
+    return:
+      type: Petrosik.Enums.InfoType
+- uid: Petrosik.Enums.InfoType.Important
+  commentId: F:Petrosik.Enums.InfoType.Important
+  id: Important
+  parent: Petrosik.Enums.InfoType
+  langs:
+  - csharp
+  - vb
+  name: Important
+  nameWithType: InfoType.Important
+  fullName: Petrosik.Enums.InfoType.Important
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Important
+    path: ../Utility/Enums.cs
+    startLine: 49
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Important = 3
+    return:
+      type: Petrosik.Enums.InfoType
+references:
+- uid: Petrosik.Enums
+  commentId: N:Petrosik.Enums
+  href: Petrosik.html
+  name: Petrosik.Enums
+  nameWithType: Petrosik.Enums
+  fullName: Petrosik.Enums
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+- uid: System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  parent: Petrosik.UnityUtility.Extensions
+  definition: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  isExternal: true
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions
+  commentId: T:Petrosik.UnityUtility.Extensions
+  parent: Petrosik.UnityUtility
+  href: Petrosik.UnityUtility.Extensions.html
+  name: Extensions
+  nameWithType: Extensions
+  fullName: Petrosik.UnityUtility.Extensions
+- uid: Petrosik.UnityUtility
+  commentId: N:Petrosik.UnityUtility
+  href: Petrosik.html
+  name: Petrosik.UnityUtility
+  nameWithType: Petrosik.UnityUtility
+  fullName: Petrosik.UnityUtility
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+- uid: Petrosik.Enums.InfoType
+  commentId: T:Petrosik.Enums.InfoType
+  parent: Petrosik.Enums
+  href: Petrosik.Enums.InfoType.html
+  name: InfoType
+  nameWithType: InfoType
+  fullName: Petrosik.Enums.InfoType

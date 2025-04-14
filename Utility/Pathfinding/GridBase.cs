@@ -84,6 +84,10 @@
                     }
                 }
             }
+            /// <summary>
+            /// Adds obstacle object to the list that creates the grid
+            /// </summary>
+            /// <param name="Obstacle"></param>
             public void AddObstacle(ObstacleObject Obstacle)
             {
                 var scalematrix = new Matrix();
@@ -92,11 +96,19 @@
                 loadedObstacles.Add(Obstacle);
                 BuildGrid();
             }
+            /// <summary>
+            /// Removes obstacle object from the list that creates the grid
+            /// </summary>
+            /// <param name="Obstacle"></param>
             public void RemoveObstacle(ObstacleObject Obstacle)
             {
                 loadedObstacles.Remove(Obstacle);
                 BuildGrid();
             }
+            /// <summary>
+            /// Removes obstacle object at position on the list that creates the grid
+            /// </summary>
+            /// <param name="Index"></param>
             public void RemoveObstacleAt(int Index)
             {
                 loadedObstacles.RemoveAt(Index);
@@ -106,6 +118,7 @@
             /// Clears all obstacles
             /// <para>Also removes what you set as BaseClearArea when creating this GridBase</para>
             /// </summary>
+            /// <warning>Also removes what you set as BaseClearArea when creating this GridBase</warning>
             public void ClearObstalces()
             {
                 loadedObstacles.Clear();
@@ -114,6 +127,7 @@
             /// <summary>
             /// Moves obstacle on <paramref name="Index"/> Up or Down in the list based on <paramref name="Offset"/>
             /// </summary>
+            /// <tip>+ Moves Down, - Moves Up</tip>
             /// <param name="Index"></param>
             /// <param name="Offset">+ Moves Down, - Moves Up</param>
             /// <exception cref="IndexOutOfRangeException">Occurs when Index + Offset is outside of range of the obstacle list</exception>
@@ -130,6 +144,7 @@
             /// Adds single pixel worth obstacle
             /// <para>Use Sparingly, will slow down grid building</para>
             /// </summary>
+            /// <warning>Use Sparingly, will slow down grid building</warning>
             /// <param name="X"></param>
             /// <param name="Y"></param>
             /// <param name="Type"></param>
@@ -142,6 +157,14 @@
             /// <summary>
             /// Returns color interpretation of the tile
             /// </summary>
+            /// <tip>
+            /// PathOccupancy.Blocked => Color.Red &lt;span style="background-color:#FF0000; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;">&lt;/span>&lt;br/>
+            /// PathOccupancy.Clear => Color.DarkGreen &lt;span style="background-color:#006400; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;">&lt;/span>&lt;br/>
+            /// PathOccupancy.LowP => Color.Green &lt;span style="background-color:#006400; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;">&lt;/span>&lt;br/>
+            /// PathOccupancy.MediumP => Color.Yellow &lt;span style="background-color:#FFFF00; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;">&lt;/span>&lt;br/>
+            /// PathOccupancy.HighP => Color.Magenta &lt;span style="background-color:#FF00FF; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;">&lt;/span>&lt;br/>
+            /// PathOccupancy.Path => Color.White &lt;span style="background-color:#FFFFFF; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;">&lt;/span>
+            /// </tip>
             /// <param name="Tile"></param>
             /// <returns></returns>
             public Color GetPathColor(PathOccupancy Tile)
@@ -236,6 +259,9 @@
                 throw new NotImplementedException("Someone didn't implemented this");
             }
         }
+        /// <summary>
+        /// Simple struct that exists only to hold info about PathOccupancy type and GraphicsPath shape. This gets later converted into the Grid in GridBase
+        /// </summary>
         public struct ObstacleObject
         {
             public PathOccupancy Type;

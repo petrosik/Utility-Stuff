@@ -16,16 +16,23 @@
         /// Main Utility Class
         /// <para>Recommended: using Utility = Petrosik.Utility.Utility;</para>
         /// </summary>
+        /// <tip>
+        /// Recommended when using:  
+        /// `using Utility = Petrosik.Utility.Utility;`
+        /// </tip>
         public static class Utility
         {
             /// <summary>
-            /// Splits text based on spaces or by "
+            /// Splits text based on spaces or by `"`
             /// </summary>
             /// <param name="message">Original text to split</param>
             /// <param name="tempparam">Remaining text that couldn't fit</param>
             /// <param name="paramlenght">How many words to split for</param>
             /// <param name="prefix">Prefix to remove</param>
-            /// <returns></returns>
+            /// <returns>
+            /// Input:  `Hi, world. "This is a example"`  
+            /// Output: [`Hi,`,`world.`,`"This is a example"`]
+            /// </returns>
             public static string?[] SplitText(string message, out string? tempparam, int paramlenght = 8, char prefix = '$')
             {
                 int[] lenght = new int[] { 0, 1 };

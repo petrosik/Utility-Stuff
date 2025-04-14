@@ -6,6 +6,7 @@
         /// <summary>
         /// (deterministic friendly) Random with exposed Seed and number of actions(Pulls) taken.
         /// </summary>
+        /// <tip>Works very similar to normal Random</tip>
         public class DetRandom
         {
             private readonly Random r;
@@ -120,7 +121,7 @@
             /// <summary>
             /// Exports string that can be inported
             /// </summary>
-            /// <returns></returns>
+            /// <returns>string formated: '$"{Seed},{Pulls}"'</returns>
             public string Export()
             {
                 return $"{Seed},{Pulls}";

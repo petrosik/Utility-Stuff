@@ -11,7 +11,7 @@
         using System.Reflection.Emit;
         using Utility = Utility.Utility;
 
-        internal class VersioningTool<TIn, TOut> : IEnumerable<VersioningAction> where TIn : notnull where TOut : notnull
+        public class VersioningTool<TIn, TOut> : IEnumerable<VersioningAction> where TIn : notnull where TOut : notnull
         {
             private Dictionary<Version, VersioningAction> VersioningActions = new();
             public IReadOnlyDictionary<Version, VersioningAction> Actions
@@ -402,9 +402,9 @@
             }
             /// <summary>
             /// Tries to generate actions that will change the current object into the target. Additionally you can specify what version they will start and tries to fit into the <paramref name="maxv"></paramref> version
-            /// <para>Deletes all current actions!</para>
-            /// <para>I give up on trying to also get difference between values. mby in the future(prob not)</para>
             /// </summary>
+            /// <warning>Deletes all current actions!</warning>
+            /// <note>I give up on trying to also get difference between values. mby in the future(prob not)</note>
             /// <param name="current"></param>
             /// <param name="target"></param>
             /// <param name="currentv"></param>
@@ -592,7 +592,14 @@
                 return actionhash;
             }
         }
-        internal class VersioningAction
+        /// <param></param>
+        /// <note>OriginName and OriginType are pairs you need to fill out both. Same with target.</note>
+        /// <methods></methods>
+        /// <tip>
+        /// Make sure to use correct constructor if you don't know what you are doing.
+        /// There are multiple preset constructors that you can use, and for the most part it's all you need.
+        /// </tip>
+        public class VersioningAction
         {
             public VersioningActionType Type { get; set; } = VersioningActionType.None;
             public string? OriginName { get; set; } = null;

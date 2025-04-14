@@ -1,0 +1,434 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.UnityUtility.ColorConvert.Extensions
+  commentId: T:Petrosik.UnityUtility.ColorConvert.Extensions
+  id: Extensions
+  parent: Petrosik.UnityUtility.ColorConvert
+  children:
+  - Petrosik.UnityUtility.ColorConvert.Extensions.Convert(System.Drawing.Color)
+  - Petrosik.UnityUtility.ColorConvert.Extensions.Convert(UnityEngine.Color)
+  langs:
+  - csharp
+  - vb
+  name: Extensions
+  nameWithType: Extensions
+  fullName: Petrosik.UnityUtility.ColorConvert.Extensions
+  type: Class
+  source:
+    remote:
+      path: Utility/Utility.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Extensions
+    path: ../Utility/Utility.cs
+    startLine: 891
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.UnityUtility.ColorConvert
+  syntax:
+    content: public static class Extensions
+    content.vb: Public Module Extensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Petrosik.UnityUtility.ColorConvert.Extensions.Convert(System.Drawing.Color)
+  commentId: M:Petrosik.UnityUtility.ColorConvert.Extensions.Convert(System.Drawing.Color)
+  id: Convert(System.Drawing.Color)
+  isExtensionMethod: true
+  parent: Petrosik.UnityUtility.ColorConvert.Extensions
+  langs:
+  - csharp
+  - vb
+  name: Convert(Color)
+  nameWithType: Extensions.Convert(Color)
+  fullName: Petrosik.UnityUtility.ColorConvert.Extensions.Convert(System.Drawing.Color)
+  type: Method
+  source:
+    remote:
+      path: Utility/Utility.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Convert
+    path: ../Utility/Utility.cs
+    startLine: 898
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.UnityUtility.ColorConvert
+  summary: Converts System.Drawing color to UnityEngine color
+  example: []
+  syntax:
+    content: public static Color Convert(this Color c)
+    parameters:
+    - id: c
+      type: System.Drawing.Color
+      description: ''
+    return:
+      type: UnityEngine.Color
+      description: ''
+    content.vb: Public Shared Function Convert(c As Color) As Color
+  overload: Petrosik.UnityUtility.ColorConvert.Extensions.Convert*
+- uid: Petrosik.UnityUtility.ColorConvert.Extensions.Convert(UnityEngine.Color)
+  commentId: M:Petrosik.UnityUtility.ColorConvert.Extensions.Convert(UnityEngine.Color)
+  id: Convert(UnityEngine.Color)
+  isExtensionMethod: true
+  parent: Petrosik.UnityUtility.ColorConvert.Extensions
+  langs:
+  - csharp
+  - vb
+  name: Convert(Color)
+  nameWithType: Extensions.Convert(Color)
+  fullName: Petrosik.UnityUtility.ColorConvert.Extensions.Convert(UnityEngine.Color)
+  type: Method
+  source:
+    remote:
+      path: Utility/Utility.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Convert
+    path: ../Utility/Utility.cs
+    startLine: 912
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.UnityUtility.ColorConvert
+  summary: Converts UnityEngine color to System.Drawing color
+  example: []
+  syntax:
+    content: public static Color Convert(this Color c)
+    parameters:
+    - id: c
+      type: UnityEngine.Color
+      description: ''
+    return:
+      type: System.Drawing.Color
+      description: ''
+    content.vb: Public Shared Function Convert(c As Color) As Color
+  overload: Petrosik.UnityUtility.ColorConvert.Extensions.Convert*
+references:
+- uid: Petrosik.UnityUtility.ColorConvert
+  commentId: N:Petrosik.UnityUtility.ColorConvert
+  href: Petrosik.html
+  name: Petrosik.UnityUtility.ColorConvert
+  nameWithType: Petrosik.UnityUtility.ColorConvert
+  fullName: Petrosik.UnityUtility.ColorConvert
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+  - name: .
+  - uid: Petrosik.UnityUtility.ColorConvert
+    name: ColorConvert
+    href: Petrosik.UnityUtility.ColorConvert.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+  - name: .
+  - uid: Petrosik.UnityUtility.ColorConvert
+    name: ColorConvert
+    href: Petrosik.UnityUtility.ColorConvert.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Petrosik.UnityUtility.ColorConvert.Extensions.Convert*
+  commentId: Overload:Petrosik.UnityUtility.ColorConvert.Extensions.Convert
+  href: Petrosik.UnityUtility.ColorConvert.Extensions.html#Petrosik_UnityUtility_ColorConvert_Extensions_Convert_System_Drawing_Color_
+  name: Convert
+  nameWithType: Extensions.Convert
+  fullName: Petrosik.UnityUtility.ColorConvert.Extensions.Convert
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: UnityEngine.Color
+  commentId: T:UnityEngine.Color
+  parent: UnityEngine
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: UnityEngine.Color
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

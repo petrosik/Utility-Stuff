@@ -1,0 +1,356 @@
+### YamlMime:ManagedReference
+items:
+- uid: Petrosik.Enums.GeneralDirections
+  commentId: T:Petrosik.Enums.GeneralDirections
+  id: GeneralDirections
+  parent: Petrosik.Enums
+  children:
+  - Petrosik.Enums.GeneralDirections.Backwards
+  - Petrosik.Enums.GeneralDirections.Down
+  - Petrosik.Enums.GeneralDirections.Fowards
+  - Petrosik.Enums.GeneralDirections.Left
+  - Petrosik.Enums.GeneralDirections.None
+  - Petrosik.Enums.GeneralDirections.Right
+  - Petrosik.Enums.GeneralDirections.Up
+  langs:
+  - csharp
+  - vb
+  name: GeneralDirections
+  nameWithType: GeneralDirections
+  fullName: Petrosik.Enums.GeneralDirections
+  type: Enum
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: GeneralDirections
+    path: ../Utility/Enums.cs
+    startLine: 20
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: >-
+      [Serializable]
+
+      [Flags]
+
+      public enum GeneralDirections
+    content.vb: >-
+      <Serializable>
+
+      <Flags>
+
+      Public Enum GeneralDirections
+  extensionMethods:
+  - System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: Petrosik.Enums.GeneralDirections.None
+  commentId: F:Petrosik.Enums.GeneralDirections.None
+  id: None
+  parent: Petrosik.Enums.GeneralDirections
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: GeneralDirections.None
+  fullName: Petrosik.Enums.GeneralDirections.None
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: None
+    path: ../Utility/Enums.cs
+    startLine: 24
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: None = 0
+    return:
+      type: Petrosik.Enums.GeneralDirections
+- uid: Petrosik.Enums.GeneralDirections.Up
+  commentId: F:Petrosik.Enums.GeneralDirections.Up
+  id: Up
+  parent: Petrosik.Enums.GeneralDirections
+  langs:
+  - csharp
+  - vb
+  name: Up
+  nameWithType: GeneralDirections.Up
+  fullName: Petrosik.Enums.GeneralDirections.Up
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Up
+    path: ../Utility/Enums.cs
+    startLine: 25
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Up = 1
+    return:
+      type: Petrosik.Enums.GeneralDirections
+- uid: Petrosik.Enums.GeneralDirections.Down
+  commentId: F:Petrosik.Enums.GeneralDirections.Down
+  id: Down
+  parent: Petrosik.Enums.GeneralDirections
+  langs:
+  - csharp
+  - vb
+  name: Down
+  nameWithType: GeneralDirections.Down
+  fullName: Petrosik.Enums.GeneralDirections.Down
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Down
+    path: ../Utility/Enums.cs
+    startLine: 26
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Down = 2
+    return:
+      type: Petrosik.Enums.GeneralDirections
+- uid: Petrosik.Enums.GeneralDirections.Left
+  commentId: F:Petrosik.Enums.GeneralDirections.Left
+  id: Left
+  parent: Petrosik.Enums.GeneralDirections
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: GeneralDirections.Left
+  fullName: Petrosik.Enums.GeneralDirections.Left
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Left
+    path: ../Utility/Enums.cs
+    startLine: 27
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Left = 4
+    return:
+      type: Petrosik.Enums.GeneralDirections
+- uid: Petrosik.Enums.GeneralDirections.Right
+  commentId: F:Petrosik.Enums.GeneralDirections.Right
+  id: Right
+  parent: Petrosik.Enums.GeneralDirections
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: GeneralDirections.Right
+  fullName: Petrosik.Enums.GeneralDirections.Right
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Right
+    path: ../Utility/Enums.cs
+    startLine: 28
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Right = 8
+    return:
+      type: Petrosik.Enums.GeneralDirections
+- uid: Petrosik.Enums.GeneralDirections.Fowards
+  commentId: F:Petrosik.Enums.GeneralDirections.Fowards
+  id: Fowards
+  parent: Petrosik.Enums.GeneralDirections
+  langs:
+  - csharp
+  - vb
+  name: Fowards
+  nameWithType: GeneralDirections.Fowards
+  fullName: Petrosik.Enums.GeneralDirections.Fowards
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Fowards
+    path: ../Utility/Enums.cs
+    startLine: 29
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Fowards = 16
+    return:
+      type: Petrosik.Enums.GeneralDirections
+- uid: Petrosik.Enums.GeneralDirections.Backwards
+  commentId: F:Petrosik.Enums.GeneralDirections.Backwards
+  id: Backwards
+  parent: Petrosik.Enums.GeneralDirections
+  langs:
+  - csharp
+  - vb
+  name: Backwards
+  nameWithType: GeneralDirections.Backwards
+  fullName: Petrosik.Enums.GeneralDirections.Backwards
+  type: Field
+  source:
+    remote:
+      path: Utility/Enums.cs
+      branch: master
+      repo: https://github.com/petrosik/Utility-Stuff
+    id: Backwards
+    path: ../Utility/Enums.cs
+    startLine: 30
+  assemblies:
+  - PetrosikUtility
+  namespace: Petrosik.Enums
+  syntax:
+    content: Backwards = 32
+    return:
+      type: Petrosik.Enums.GeneralDirections
+references:
+- uid: Petrosik.Enums
+  commentId: N:Petrosik.Enums
+  href: Petrosik.html
+  name: Petrosik.Enums
+  nameWithType: Petrosik.Enums
+  fullName: Petrosik.Enums
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.Enums
+    name: Enums
+    href: Petrosik.Enums.html
+- uid: System.Object.Petrosik.UnityUtility.Extensions.IsUnityNull
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  parent: Petrosik.UnityUtility.Extensions
+  definition: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  commentId: M:Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+  isExternal: true
+  href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  name: IsUnityNull(object)
+  nameWithType: Extensions.IsUnityNull(object)
+  fullName: Petrosik.UnityUtility.Extensions.IsUnityNull(object)
+  nameWithType.vb: Extensions.IsUnityNull(Object)
+  fullName.vb: Petrosik.UnityUtility.Extensions.IsUnityNull(Object)
+  name.vb: IsUnityNull(Object)
+  spec.csharp:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: Petrosik.UnityUtility.Extensions.IsUnityNull(System.Object)
+    name: IsUnityNull
+    href: Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Petrosik.UnityUtility.Extensions
+  commentId: T:Petrosik.UnityUtility.Extensions
+  parent: Petrosik.UnityUtility
+  href: Petrosik.UnityUtility.Extensions.html
+  name: Extensions
+  nameWithType: Extensions
+  fullName: Petrosik.UnityUtility.Extensions
+- uid: Petrosik.UnityUtility
+  commentId: N:Petrosik.UnityUtility
+  href: Petrosik.html
+  name: Petrosik.UnityUtility
+  nameWithType: Petrosik.UnityUtility
+  fullName: Petrosik.UnityUtility
+  spec.csharp:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+  spec.vb:
+  - uid: Petrosik
+    name: Petrosik
+    href: Petrosik.html
+  - name: .
+  - uid: Petrosik.UnityUtility
+    name: UnityUtility
+    href: Petrosik.UnityUtility.html
+- uid: Petrosik.Enums.GeneralDirections
+  commentId: T:Petrosik.Enums.GeneralDirections
+  parent: Petrosik.Enums
+  href: Petrosik.Enums.GeneralDirections.html
+  name: GeneralDirections
+  nameWithType: GeneralDirections
+  fullName: Petrosik.Enums.GeneralDirections
