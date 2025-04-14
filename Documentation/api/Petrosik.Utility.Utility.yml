@@ -43,7 +43,7 @@ items:
   summary: >-
     Main Utility Class
 
-    <p>Recommended: using Utility = Petrosik.Utility.Utility;</p>
+    <p>Recommended when using: using Utility = Petrosik.Utility.Utility;</p>
   example: []
   syntax:
     content: public static class Utility

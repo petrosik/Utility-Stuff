@@ -379,11 +379,24 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: AutoGenerateVersions
     path: ../Utility/VersioningTool.cs
-    startLine: 411
+    startLine: 417
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
-  summary: Tries to generate actions that will change the current object into the target. Additionally you can specify what version they will start and tries to fit into the <code class="paramref">maxv</code> version
+  summary: >-
+    Tries to generate actions that will change the current object into the target. Additionally you can specify what version they will start and tries to fit into the <code class="paramref">maxv</code> version
+
+    <p>
+
+    Deletes all current actions!
+
+    </p>
+
+    <p>
+
+    I give up on trying to also get difference between values. mby in the future(prob not)
+
+    </p>
   example: []
   syntax:
     content: public void AutoGenerateVersions(object current, object target, Version? currentv = null, Version? maxv = null)
@@ -423,7 +436,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: GetEnumerator
     path: ../Utility/VersioningTool.cs
-    startLine: 543
+    startLine: 549
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -458,7 +471,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: this[]
     path: ../Utility/VersioningTool.cs
-    startLine: 551
+    startLine: 557
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -492,7 +505,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: this[]
     path: ../Utility/VersioningTool.cs
-    startLine: 565
+    startLine: 571
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -526,7 +539,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: ToString
     path: ../Utility/VersioningTool.cs
-    startLine: 579
+    startLine: 585
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -560,7 +573,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: GetHashCode
     path: ../Utility/VersioningTool.cs
-    startLine: 583
+    startLine: 589
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool

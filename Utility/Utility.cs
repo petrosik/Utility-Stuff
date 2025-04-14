@@ -14,7 +14,7 @@
 
         /// <summary>
         /// Main Utility Class
-        /// <para>Recommended: using Utility = Petrosik.Utility.Utility;</para>
+        /// <para>Recommended when using: using Utility = Petrosik.Utility.Utility;</para>
         /// </summary>
         /// <tip>
         /// Recommended when using:  

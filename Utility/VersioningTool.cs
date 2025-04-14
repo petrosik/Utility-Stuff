@@ -402,6 +402,12 @@
             }
             /// <summary>
             /// Tries to generate actions that will change the current object into the target. Additionally you can specify what version they will start and tries to fit into the <paramref name="maxv"></paramref> version
+            /// <para>
+            /// Deletes all current actions!
+            /// </para>
+            /// <para>
+            /// I give up on trying to also get difference between values. mby in the future(prob not)
+            /// </para>
             /// </summary>
             /// <warning>Deletes all current actions!</warning>
             /// <note>I give up on trying to also get difference between values. mby in the future(prob not)</note>

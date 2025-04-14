@@ -424,7 +424,7 @@ items:
     content: public string Export()
     return:
       type: System.String
-      description: "string formated: '$\"{Seed},{Pulls}\"'"
+      description: 'string formated: ```$"{Seed},{Pulls}"```'
     content.vb: Public Function Export() As String
   overload: Petrosik.Utility.DetRandom.Export*
 - uid: Petrosik.Utility.DetRandom.ToString

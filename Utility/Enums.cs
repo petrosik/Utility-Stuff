@@ -49,6 +49,9 @@
             Error,
             Important,
         }
+        /// <summary>
+        /// AddMethod, RemoveMethod, ModifyMethod are not implemented!
+        /// </summary>
         /// <warning>AddMethod, RemoveMethod, ModifyMethod are not implemented!</warning>
         public enum VersioningActionType
         {

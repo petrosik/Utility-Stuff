@@ -27,10 +27,11 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: VersioningActionType
     path: ../Utility/Enums.cs
-    startLine: 52
+    startLine: 55
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums
+  summary: AddMethod, RemoveMethod, ModifyMethod are not implemented!
   example: []
   syntax:
     content: public enum VersioningActionType
@@ -55,7 +56,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: None
     path: ../Utility/Enums.cs
-    startLine: 54
+    startLine: 57
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums
@@ -81,7 +82,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: ModifyValue
     path: ../Utility/Enums.cs
-    startLine: 55
+    startLine: 58
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums
@@ -107,7 +108,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: AddProperty
     path: ../Utility/Enums.cs
-    startLine: 56
+    startLine: 59
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums
@@ -133,7 +134,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: RemoveProperty
     path: ../Utility/Enums.cs
-    startLine: 57
+    startLine: 60
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums
@@ -159,7 +160,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: ModifyProperty
     path: ../Utility/Enums.cs
-    startLine: 58
+    startLine: 61
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums
@@ -185,7 +186,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: AddMethod
     path: ../Utility/Enums.cs
-    startLine: 60
+    startLine: 63
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums
@@ -211,7 +212,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: RemoveMethod
     path: ../Utility/Enums.cs
-    startLine: 61
+    startLine: 64
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums
@@ -237,7 +238,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: ModifyMethod
     path: ../Utility/Enums.cs
-    startLine: 62
+    startLine: 65
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.Enums

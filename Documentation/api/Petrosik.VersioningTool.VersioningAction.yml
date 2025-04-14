@@ -31,7 +31,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: VersioningAction
     path: ../Utility/VersioningTool.cs
-    startLine: 601
+    startLine: 607
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -67,7 +67,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: Type
     path: ../Utility/VersioningTool.cs
-    startLine: 603
+    startLine: 609
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -96,7 +96,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: OriginName
     path: ../Utility/VersioningTool.cs
-    startLine: 604
+    startLine: 610
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -125,7 +125,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: OriginType
     path: ../Utility/VersioningTool.cs
-    startLine: 605
+    startLine: 611
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -154,7 +154,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: TargetName
     path: ../Utility/VersioningTool.cs
-    startLine: 606
+    startLine: 612
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -183,7 +183,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: TargetType
     path: ../Utility/VersioningTool.cs
-    startLine: 607
+    startLine: 613
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -212,7 +212,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: Value
     path: ../Utility/VersioningTool.cs
-    startLine: 608
+    startLine: 614
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -241,7 +241,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: ValueConverter
     path: ../Utility/VersioningTool.cs
-    startLine: 612
+    startLine: 618
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -272,7 +272,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: IsField
     path: ../Utility/VersioningTool.cs
-    startLine: 617
+    startLine: 623
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -306,7 +306,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: FAttributes
     path: ../Utility/VersioningTool.cs
-    startLine: 618
+    startLine: 624
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -335,7 +335,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: PAttributes
     path: ../Utility/VersioningTool.cs
-    startLine: 619
+    startLine: 625
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -364,7 +364,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: ToString
     path: ../Utility/VersioningTool.cs
-    startLine: 686
+    startLine: 692
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool
@@ -396,7 +396,7 @@ items:
       repo: https://github.com/petrosik/Utility-Stuff
     id: GetHashCode
     path: ../Utility/VersioningTool.cs
-    startLine: 697
+    startLine: 703
   assemblies:
   - PetrosikUtility
   namespace: Petrosik.VersioningTool

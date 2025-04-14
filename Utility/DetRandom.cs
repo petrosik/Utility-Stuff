@@ -121,7 +121,7 @@
             /// <summary>
             /// Exports string that can be inported
             /// </summary>
-            /// <returns>string formated: '$"{Seed},{Pulls}"'</returns>
+            /// <returns>string formated: ```$"{Seed},{Pulls}"```</returns>
             public string Export()
             {
                 return $"{Seed},{Pulls}";
