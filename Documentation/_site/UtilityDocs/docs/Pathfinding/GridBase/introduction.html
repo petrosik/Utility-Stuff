@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Grid Base | Petrosik.Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Grid Base | Petrosik.Utility ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/petrosik/Utility-Stuff/blob/master/Documentation/UtilityDocs/docs/Pathfinding/GridBase/introduction.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Petrosik.Utility">
+            Petrosik.Utility
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="grid-base">Grid Base</h1>
+
+<p>Base for pathfinding classes contains grid map thats generated from paths thats also stored with it, and other default settings.</p>
+<h2 id="fields">Fields</h2>
+<ul>
+<li><strong>readonly PointF Up</strong><br>
+Default: <code>new(0f, 1f)</code></li>
+<li><strong>readonly PointF Down</strong><br>
+Default: <code>new(0f, -1f)</code></li>
+<li><strong>readonly PointF Left</strong><br>
+Default: <code>new(-1f, 0f)</code></li>
+<li><strong>readonly PointF Right</strong><br>
+Default: <code>new(1f, 0f)</code></li>
+<li><strong>int GridScale</strong><br>
+How many path units are in 1 world unit<br>
+Default: <code>20</code></li>
+<li><strong>float SearchRange</strong><br>
+How far should pathfinding search by default(world units)<br>
+Default: <code>20</code></li>
+<li><strong>int MaxSegmentCount</strong><br>
+After how many path units should the path make new &quot;node&quot; in the output. (0 for no limit)
+Default: <code>40</code></li>
+<li><strong>Size GridSize</strong><br>
+Size of the current grid</li>
+<li><strong><a href="../../enums.html#pathoccupancy">PathOccupancy</a>[,] Grid</strong></li>
+<li><strong>ImmutableList&lt;<a href="obstacleobject.html">ObstacleObject</a>&gt; LoadedObstacles</strong><br>
+Allows only <code>get</code> and returns internal list with all obstacles that contribute to generation of Grid</li>
+</ul>
+<h2 id="methods-overview">Methods overview</h2>
+<ul>
+<li><strong><a href="methods.html#addobstacle">AddObstacle</a>(<a href="obstacleobject.html">ObstacleObject</a> Obstacle)</strong><br>
+Adds obstacle object to the list that creates the grid</li>
+<li><strong><a href="methods.html#removeobstacle">RemoveObstacle</a>(<a href="obstacleobject.html">ObstacleObject</a> Obstacle)</strong><br>
+Removes obstacle object from the list that creates the grid</li>
+<li><strong><a href="methods.html#removeobstacleat">RemoveObstacleAt</a>(int Index)</strong><br>
+Removes obstacle object at position on the list that creates the grid</li>
+<li><strong><a href="methods.html#clearobstalces">ClearObstalces</a>()</strong><br>
+Clears all obstacles</li>
+<li><strong><a href="methods.html#moveobstalce">MoveObstalce</a>(int Index, int Offset = 1)</strong><br>
+Moves obstacle on Index Up or Down in the list based on Offset</li>
+<li><strong><a href="methods.html#addsingle">AddSingle</a>(int X, int Y, <a href="../../enums.html#pathoccupancy">PathOccupancy</a> Type)</strong><br>
+Adds single pixel worth obstacle</li>
+<li><strong><a href="methods.html#getpathcolor">GetPathColor</a>(<a href="../../enums.html#pathoccupancy">PathOccupancy</a> Tile)</strong><br>
+Returns color interpretation of the tile</li>
+<li><strong><a href="methods.html#getgridposition">GetGridPosition</a>(PointF Pos)</strong><br>
+Returns position on the grid from world position</li>
+<li><strong><a href="methods.html#getworldposition">GetWorldPosition</a>(PointF Pos)</strong><br>
+Returns position in world from grid position</li>
+<li><strong><a href="methods.html#exportpaths">ExportPaths</a>()</strong><br>
+Exports Obstacles into Json format</li>
+<li><strong><a href="methods.html#inportpaths">InportPaths</a>(string text)</strong><br>
+Inports Obstacles from Json text</li>
+<li><strong><a href="methods.html#getpath">GetPath</a>(PointF From, PointF To, float SearchRange = 0)</strong><br>
+Returns List of coordinates for path to target, searchrange is</li>
+<li><strong><a href="methods.html#getrawpath">GetRawPath</a>(PointF From, PointF To, float SearchRange = 0, bool WorldSpace = true)</strong><br>
+Simple Raw Pathing method</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/petrosik/Utility-Stuff/blob/master/Documentation/UtilityDocs/docs/Pathfinding/GridBase/introduction.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

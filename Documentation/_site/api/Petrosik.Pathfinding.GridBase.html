@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GridBase | Petrosik.Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GridBase | Petrosik.Utility ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/petrosik/Utility-Stuff/new/master/apiSpec/new?filename=Petrosik_Pathfinding_GridBase.md&amp;value=---%0Auid%3A%20Petrosik.Pathfinding.GridBase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Petrosik.Utility">
+            Petrosik.Utility
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Petrosik.Pathfinding.GridBase">
+
+
+
+  <h1 id="Petrosik_Pathfinding_GridBase" data-uid="Petrosik.Pathfinding.GridBase" class="text-break">
+Class GridBase  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Petrosik.html">Petrosik</a>.<a class="xref" href="Petrosik.Pathfinding.html">Pathfinding</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PetrosikUtility.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GridBase</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GridBase</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="Petrosik.Pathfinding.AStar.html">AStar</a></div>
+      <div><a class="xref" href="Petrosik.Pathfinding.PseudoAStar.html">PseudoAStar</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_">Extensions.IsUnityNull(object)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Petrosik_Pathfinding_GridBase_Grid" data-uid="Petrosik.Pathfinding.GridBase.Grid">
+  Grid
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PathOccupancy[,] Grid</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Petrosik.Enums.PathOccupancy.html">PathOccupancy</a>[,]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Petrosik_Pathfinding_GridBase_GridScale" data-uid="Petrosik.Pathfinding.GridBase.GridScale">
+  GridScale
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>How many path units are in 1 world unit</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GridScale</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Petrosik_Pathfinding_GridBase_MaxSegmentCount" data-uid="Petrosik.Pathfinding.GridBase.MaxSegmentCount">
+  MaxSegmentCount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>After how many path units should the path make new &quot;node&quot; in the output. (0 for no limit)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxSegmentCount</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Petrosik_Pathfinding_GridBase_SearchRange" data-uid="Petrosik.Pathfinding.GridBase.SearchRange">
+  SearchRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>How far should pathfinding search by default(world units)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SearchRange</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Petrosik_Pathfinding_GridBase_GridSize_" data-uid="Petrosik.Pathfinding.GridBase.GridSize*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_GridSize" data-uid="Petrosik.Pathfinding.GridBase.GridSize">
+  GridSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Size of the current grid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Size GridSize { get; protected set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.size">Size</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_LoadedObstacles_" data-uid="Petrosik.Pathfinding.GridBase.LoadedObstacles*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_LoadedObstacles" data-uid="Petrosik.Pathfinding.GridBase.LoadedObstacles">
+  LoadedObstacles
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImmutableList&lt;ObstacleObject&gt; LoadedObstacles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.immutable.immutablelist-1">ImmutableList</a>&lt;<a class="xref" href="Petrosik.Pathfinding.ObstacleObject.html">ObstacleObject</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Petrosik_Pathfinding_GridBase_AddObstacle_" data-uid="Petrosik.Pathfinding.GridBase.AddObstacle*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_AddObstacle_Petrosik_Pathfinding_ObstacleObject_" data-uid="Petrosik.Pathfinding.GridBase.AddObstacle(Petrosik.Pathfinding.ObstacleObject)">
+  AddObstacle(ObstacleObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds obstacle object to the list that creates the grid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddObstacle(ObstacleObject Obstacle)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Obstacle</code> <a class="xref" href="Petrosik.Pathfinding.ObstacleObject.html">ObstacleObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_AddSingle_" data-uid="Petrosik.Pathfinding.GridBase.AddSingle*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_AddSingle_System_Int32_System_Int32_Petrosik_Enums_PathOccupancy_" data-uid="Petrosik.Pathfinding.GridBase.AddSingle(System.Int32,System.Int32,Petrosik.Enums.PathOccupancy)">
+  AddSingle(int, int, PathOccupancy)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds single pixel worth obstacle</p>
+<p></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSingle(int X, int Y, PathOccupancy Type)</code></pre>
+  </div>
+<div class="WARNING alert alert-info">
+<h5>Warning</h5>
+<p><p>Use Sparingly, will slow down grid building</p>
+</p>
+</div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>X</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>Y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>Type</code> <a class="xref" href="Petrosik.Enums.PathOccupancy.html">PathOccupancy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_ClearObstalces_" data-uid="Petrosik.Pathfinding.GridBase.ClearObstalces*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_ClearObstalces" data-uid="Petrosik.Pathfinding.GridBase.ClearObstalces">
+  ClearObstalces()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clears all obstacles</p>
+<p>Also removes what you set as BaseClearArea when creating this GridBase</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearObstalces()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_ExportPaths_" data-uid="Petrosik.Pathfinding.GridBase.ExportPaths*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_ExportPaths" data-uid="Petrosik.Pathfinding.GridBase.ExportPaths">
+  ExportPaths()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L210"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exports Obstacles into Json format</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ExportPaths()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_GetGridPosition_" data-uid="Petrosik.Pathfinding.GridBase.GetGridPosition*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_GetGridPosition_System_Drawing_PointF_" data-uid="Petrosik.Pathfinding.GridBase.GetGridPosition(System.Drawing.PointF)">
+  GetGridPosition(PointF)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns position on the grid from world position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PointF GetGridPosition(PointF Pos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Pos</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_GetPath_" data-uid="Petrosik.Pathfinding.GridBase.GetPath*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_GetPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_" data-uid="Petrosik.Pathfinding.GridBase.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)">
+  GetPath(PointF, PointF, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L245"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns List of coordinates for path to target, searchrange is</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual List&lt;PointF&gt;? GetPath(PointF From, PointF To, float SearchRange = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>From</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd><p>World's Units</p>
+</dd>
+    <dt><code>To</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd><p>World's Units</p>
+</dd>
+    <dt><code>SearchRange</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>How far to search in world's units (0 for default limit)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_GetPathColor_" data-uid="Petrosik.Pathfinding.GridBase.GetPathColor*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_GetPathColor_Petrosik_Enums_PathOccupancy_" data-uid="Petrosik.Pathfinding.GridBase.GetPathColor(Petrosik.Enums.PathOccupancy)">
+  GetPathColor(PathOccupancy)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns color interpretation of the tile</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color GetPathColor(PathOccupancy Tile)</code></pre>
+  </div>
+<div class="TIP alert alert-info">
+<h5>Tip</h5>
+<p><p>PathOccupancy.Blocked =&gt; Color.Red <span style="background-color:#FF0000; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;"></span><br/>
+PathOccupancy.Clear =&gt; Color.DarkGreen <span style="background-color:#006400; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;"></span><br/>
+PathOccupancy.LowP =&gt; Color.Green <span style="background-color:#006400; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;"></span><br/>
+PathOccupancy.MediumP =&gt; Color.Yellow <span style="background-color:#FFFF00; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;"></span><br/>
+PathOccupancy.HighP =&gt; Color.Magenta <span style="background-color:#FF00FF; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;"></span><br/>
+PathOccupancy.Path =&gt; Color.White <span style="background-color:#FFFFFF; display: inline-block; vertical-align: middle; width: 20px; height: 20px; border: 2px solid #000;"></span></p>
+</p>
+</div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Tile</code> <a class="xref" href="Petrosik.Enums.PathOccupancy.html">PathOccupancy</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_GetRawPath_" data-uid="Petrosik.Pathfinding.GridBase.GetRawPath*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_GetRawPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_System_Boolean_" data-uid="Petrosik.Pathfinding.GridBase.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)">
+  GetRawPath(PointF, PointF, float, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Simple Raw Pathing method</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual LinkedList&lt;PointF&gt;? GetRawPath(PointF From, PointF To, float SearchRange = 0, bool WorldSpace = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>From</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd><p>World's Units</p>
+</dd>
+    <dt><code>To</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd><p>World's Units</p>
+</dd>
+    <dt><code>SearchRange</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>How far to search in world's units (0 for default limit)</p>
+</dd>
+    <dt><code>WorldSpace</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the positions be converted to world positions</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.linkedlist-1">LinkedList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_GetWorldPosition_" data-uid="Petrosik.Pathfinding.GridBase.GetWorldPosition*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_GetWorldPosition_System_Drawing_PointF_" data-uid="Petrosik.Pathfinding.GridBase.GetWorldPosition(System.Drawing.PointF)">
+  GetWorldPosition(PointF)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L202"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns position in world from grid position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PointF GetWorldPosition(PointF Pos)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Pos</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_InportPaths_" data-uid="Petrosik.Pathfinding.GridBase.InportPaths*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_InportPaths_System_String_" data-uid="Petrosik.Pathfinding.GridBase.InportPaths(System.String)">
+  InportPaths(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inports Obstacles from Json text</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InportPaths(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Happens when text is not Json format</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_MoveObstalce_" data-uid="Petrosik.Pathfinding.GridBase.MoveObstalce*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_MoveObstalce_System_Int32_System_Int32_" data-uid="Petrosik.Pathfinding.GridBase.MoveObstalce(System.Int32,System.Int32)">
+  MoveObstalce(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Moves obstacle on <code class="paramref">Index</code> Up or Down in the list based on <code class="paramref">Offset</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveObstalce(int Index, int Offset = 1)</code></pre>
+  </div>
+<div class="TIP alert alert-info">
+<h5>Tip</h5>
+<p><ul>
+<li>Moves Down, - Moves Up</li>
+</ul>
+</p>
+</div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>Offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><ul>
+<li>Moves Down, - Moves Up</li>
+</ul>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.indexoutofrangeexception">IndexOutOfRangeException</a></dt>
+    <dd><p>Occurs when Index + Offset is outside of range of the obstacle list</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_RemoveObstacle_" data-uid="Petrosik.Pathfinding.GridBase.RemoveObstacle*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_RemoveObstacle_Petrosik_Pathfinding_ObstacleObject_" data-uid="Petrosik.Pathfinding.GridBase.RemoveObstacle(Petrosik.Pathfinding.ObstacleObject)">
+  RemoveObstacle(ObstacleObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes obstacle object from the list that creates the grid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveObstacle(ObstacleObject Obstacle)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Obstacle</code> <a class="xref" href="Petrosik.Pathfinding.ObstacleObject.html">ObstacleObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_GridBase_RemoveObstacleAt_" data-uid="Petrosik.Pathfinding.GridBase.RemoveObstacleAt*"></a>
+
+  <h3 id="Petrosik_Pathfinding_GridBase_RemoveObstacleAt_System_Int32_" data-uid="Petrosik.Pathfinding.GridBase.RemoveObstacleAt(System.Int32)">
+  RemoveObstacleAt(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes obstacle object at position on the list that creates the grid</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveObstacleAt(int Index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/GridBase.cs/#L14" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

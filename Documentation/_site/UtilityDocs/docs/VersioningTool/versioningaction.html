@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Versioning Action | Petrosik.Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Versioning Action | Petrosik.Utility ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/petrosik/Utility-Stuff/blob/master/Documentation/UtilityDocs/docs/VersioningTool/versioningaction.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="Petrosik.Utility">
+            Petrosik.Utility
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="versioning-action">Versioning Action</h1>
+
+<p>Class that contains actions that specify what needs to be done.</p>
+<h2 id="fields">Fields</h2>
+<ul>
+<li><strong><a href="../enums.html#versioningactiontype">VersioningActionType</a> Type { get; set; }</strong><br>
+Action type</li>
+<li><strong>string? OriginName { get; set; }</strong><br>
+Name of the field that you want to modify</li>
+<li><strong>Type? OriginType { get; set; }</strong><br>
+Type of the field that you are modifying</li>
+<li><strong>string? TargetName { get; set; }</strong><br>
+If you are changing or creating field this will be the final name</li>
+<li><strong>Type? TargetType { get; set; }</strong><br>
+If you are chanfing or creating field this will be the final type</li>
+<li><strong>object? Value { get; set; }</strong><br>
+Value that will be set in selected field</li>
+<li><strong>Func&lt;object, object&gt;? ValueConverter { get; set; }</strong><br>
+This can be value converter or value modifer</li>
+<li><strong>public bool IsField { get; set; }</strong><br>
+!!! note &quot;IsField&quot;
+Only applies for field/property changes<br>
+true = field, false = property</li>
+<li><strong>FieldAttributes FAttributes { get; set; }</strong><br>
+Additional atributes that you want to set or modify for field atribute</li>
+<li><strong>PropertyAttributes PAttributes { get; set; }</strong><br>
+Additional atributes that you want to set or modify for property atribute</li>
+</ul>
+<p>!!! note<br>
+OriginName and OriginType are pairs you need to fill out both. Same with target.</p>
+<h2 id="methods">Methods</h2>
+<p>There are only constructors.<br>
+!!! tip
+Make sure to use correct constructor if you don't know what you are doing.<br>
+There are multiple preset constructors that you can use, and for the most part it's all you need.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/petrosik/Utility-Stuff/blob/master/Documentation/UtilityDocs/docs/VersioningTool/versioningaction.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

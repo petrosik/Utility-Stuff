@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Methods | Petrosik.Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Methods | Petrosik.Utility ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/petrosik/Utility-Stuff/blob/master/Documentation/UtilityDocs/docs/Pathfinding/GridBase/methods.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Petrosik.Utility">
+            Petrosik.Utility
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="methods">Methods</h1>
+
+<h3 id="addobstacle">AddObstacle</h3>
+<p>Adds obstacle object to the list that creates the grid<br>
+<strong>The Method:</strong></p>
+<pre><code>void AddObstacle(ObstacleObject Obstacle)
+</code></pre>
+<p><code>Obstacle</code> - Obstacle that should be added</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+var scalematrix = new Matrix();
+scalematrix.Scale(GridScale, GridScale);
+Obstacle.Shape.Transform(scalematrix);
+loadedObstacles.Add(Obstacle);
+BuildGrid();
+``` 
+</details>
+<hr>
+<h3 id="removeobstacle">RemoveObstacle</h3>
+<p>Removes obstacle object from the list that creates the grid<br>
+<strong>The Method:</strong></p>
+<pre><code>void RemoveObstacle(ObstacleObject Obstacle)
+</code></pre>
+<p><code>Obstacle</code> - Obstacle that should be removed from the list</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+loadedObstacles.Remove(Obstacle);
+BuildGrid();
+``` 
+</details>
+<hr>
+<h3 id="removeobstacleat">RemoveObstacleAt</h3>
+<p>Removes obstacle object at position on the list that creates the grid<br>
+<strong>The Method:</strong></p>
+<pre><code>void RemoveObstacleAt(int Index)
+</code></pre>
+<p><code>Index</code> - At what position should be removed</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+loadedObstacles.RemoveAt(Index);
+BuildGrid();
+``` 
+</details>
+<hr>
+<h3 id="clearobstalces">ClearObstalces</h3>
+<p>Clears all obstacles<br>
+!!! warning
+Also removes what you set as BaseClearArea when creating this GridBase</p>
+<p><strong>The Method:</strong></p>
+<pre><code>void ClearObstalces()  
+</code></pre>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+loadedObstacles.Clear();
+BuildGrid();
+``` 
+</details>
+<hr>
+<h3 id="moveobstalce">MoveObstalce</h3>
+<p>Moves obstacle on Index Up or Down in the list based on Offset
+!!! tip
++ Moves Down, - Moves Up<br>
+<strong>The Method:</strong></p>
+<pre><code>void MoveObstalce(int Index, int Offset = 1)
+</code></pre>
+<p><code>Index</code> - Index what positon should be moved<br>
+<code>Offset</code> (Default: 1) - How much should it be moved</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+if (Index + Offset < 0 || Index + Offset > loadedObstacles.Count - 1)
+{
+    throw new IndexOutOfRangeException("Index + Offset is outside of range of the obstacle list");
+}
+(loadedObstacles[Index + Offset], loadedObstacles[Index]) = (loadedObstacles[Index], loadedObstacles[Index + Offset]);
+BuildGrid();
+``` 
+</details>
+<hr>
+<h3 id="addsingle">AddSingle</h3>
+<p>Adds single pixel worth obstacle
+!!! warning
+Use Sparingly, will slow down grid building<br>
+<strong>The Method:</strong></p>
+<pre><code>void AddSingle(int X, int Y, PathOccupancy Type)
+</code></pre>
+<p><code>X</code> - x Grid position<br>
+<code>Y</code> - y Grid position
+<code>Type</code> - What type the object should be</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+GraphicsPath path = new GraphicsPath();
+path.AddRectangle(new RectangleF(X, Y, 1f / GridScale, 1f / GridScale));
+AddObstacle(new(Type, path));
+``` 
+</details>
+<hr>
+<h3 id="getpathcolor">GetPathColor</h3>
+<p>Returns color interpretation of the tile<br>
+<strong>The Method:</strong></p>
+<pre><code>Color GetPathColor(PathOccupancy Tile)
+</code></pre>
+<p><code>Tile</code> - Tile to get the color for
+!!! tip
+PathOccupancy.Blocked =&gt; Color.Red <span class="color-box" style="background-color:#FF0000;"></span><br>
+PathOccupancy.Clear =&gt; Color.DarkGreen <span class="color-box" style="background-color:#006400;"></span><br>
+PathOccupancy.LowP =&gt; Color.Green <span class="color-box" style="background-color:#008000;"></span><br>
+PathOccupancy.MediumP =&gt; Color.Yellow <span class="color-box" style="background-color:#FFFF00;"></span><br>
+PathOccupancy.HighP =&gt; Color.Magenta <span class="color-box" style="background-color:#FF00FF;"></span><br>
+PathOccupancy.Path =&gt; Color.White <span class="color-box" style="background-color:#FFFFFF;"></span></p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+switch (Tile)
+{
+    case PathOccupancy.Blocked:
+        return Color.Red;
+    case PathOccupancy.Clear:
+        return Color.DarkGreen;
+    case PathOccupancy.LowP:
+        return Color.Green;
+    case PathOccupancy.MediumP:
+        return Color.Yellow;
+    case PathOccupancy.HighP:
+        return Color.Magenta;
+    default:
+        return Color.White;
+}
+``` 
+</details>
+<hr>
+<h3 id="getgridposition">GetGridPosition</h3>
+<p>Returns position on the grid from world position<br>
+<strong>The Method:</strong></p>
+<pre><code>PointF GetGridPosition(PointF Pos)
+</code></pre>
+<p><code>Pos</code> - World position</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+return new PointF((float)Math.Floor(Pos.X / (1f / GridScale)), (float)Math.Floor(Pos.Y / (1f / GridScale)));
+``` 
+</details>
+<hr>
+<h3 id="getworldposition">GetWorldPosition</h3>
+<p>Returns position in world from grid position<br>
+<strong>The Method:</strong></p>
+<pre><code>PointF GetWorldPosition(PointF Pos)
+</code></pre>
+<p><code>Pos</code> - Grid position</p>
+<details> <summary><b>Raw Code:</b></summary>
+```  
+return new PointF(Pos.X * (1f / GridScale) + (1f / GridScale / 2), Pos.Y * (1f / GridScale) + (1f / GridScale / 2));
+``` 
+</details>
+<hr>
+<h3 id="exportpaths">ExportPaths</h3>
+<p>Exports Obstacles into Json format<br>
+<strong>The Method:</strong></p>
+<pre><code>string ExportPaths()
+</code></pre>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+List<obstacleobjectexport> l = new();
+foreach (var obstacle in loadedObstacles)
+{
+    l.Add(new(obstacle.Type, obstacle.Shape.PathPoints.Select(x => new float[] { x.X, x.Y }).ToArray(), obstacle.Shape.PathTypes));
+}
+return JsonSerializer.Serialize(l);
+``` 
+</obstacleobjectexport></details>
+<hr>
+<h3 id="inportpaths">InportPaths</h3>
+<p>Inports Obstacles from Json text<br>
+<strong>The Method:</strong></p>
+<pre><code>void InportPaths(string text)
+</code></pre>
+<p><code>text</code> - Text that gets inported</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+ var l = JsonSerializer.Deserialize<><obstacleobjectexport>>(text);
+ if (l == null)
+ {
+     throw new ArgumentException($"Inported text is not readable Json format. '{text}'");
+ }
+ loadedObstacles = new();
+ foreach (var obstacle in l)
+ {
+     loadedObstacles.Add(new(obstacle.Type, new(obstacle.Points.Select(x => new PointF(x[0], x[1])).ToArray(), obstacle.PointTypes)));
+ }
+ BuildGrid();
+``` 
+</obstacleobjectexport></details>
+<hr>
+<h3 id="getpath">GetPath</h3>
+<p>Returns List of coordinates for path to target, searchrange is<br>
+<strong>The Method:</strong></p>
+<pre><code>virtual List&lt;PointF&gt;? GetPath(PointF From, PointF To, float SearchRange = 0)
+</code></pre>
+<p><code>From</code> - World's Units<br>
+<code>To</code> - World's Units<br>
+<code>SearchRange</code> (default: 0) - How far to search in world's units (0 for default limit)</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+throw new NotImplementedException("Someone didn't implemented this");
+``` 
+</details>
+<hr>
+<h3 id="getrawpath">GetRawPath</h3>
+<p>Simple Raw Pathing method</p>
+<p><strong>The Method:</strong></p>
+<pre><code>virtual LinkedList&lt;PointF&gt;? GetRawPath(PointF From, PointF To, float SearchRange = 0, bool WorldSpace = true)  
+</code></pre>
+<p><code>From</code> - World's Units<br>
+<code>To</code> - World's Units<br>
+<code>SearchRange</code> (default: 0) - How far to search in world's units (0 for default limit)<br>
+<code>WorldSpace</code> (default: true) - Should the positions be converted to world positions</p>
+<details> <summary><b>Raw Code:</b></summary>
+``` 
+throw new NotImplementedException("Someone didn't implemented this");
+``` 
+</details>
+---
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/petrosik/Utility-Stuff/blob/master/Documentation/UtilityDocs/docs/Pathfinding/GridBase/methods.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

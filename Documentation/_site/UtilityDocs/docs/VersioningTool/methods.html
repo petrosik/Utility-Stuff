@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Methods | Petrosik.Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Methods | Petrosik.Utility ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/petrosik/Utility-Stuff/blob/master/Documentation/UtilityDocs/docs/VersioningTool/methods.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="Petrosik.Utility">
+            Petrosik.Utility
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="methods">Methods</h1>
+
+<h3 id="add">Add</h3>
+<p>Adds Action</p>
+<pre><code class="lang-csharp">void Add(Version version, VersioningAction action)
+</code></pre>
+<hr>
+<h3 id="remove">Remove</h3>
+<p>Removes Action</p>
+<pre><code class="lang-csharp">void Remove(Version version)
+</code></pre>
+<hr>
+<h3 id="modify">Modify</h3>
+<p>Modifies Action specified by version</p>
+<pre><code class="lang-csharp">void Modify(Version version, VersioningAction action)
+</code></pre>
+<hr>
+<h3 id="insert">Insert</h3>
+<p>Insesrts action into the list. If the version is already inside it shifts it and all after that conflicts</p>
+<pre><code class="lang-csharp">void Insert(Version version, VersioningAction action)
+</code></pre>
+<hr>
+<h3 id="shift">Shift</h3>
+<p>Moves the action on oldVersion to the newVersion</p>
+<pre><code class="lang-csharp">void Shift(Version oldVersion, Version newVersion)
+</code></pre>
+<hr>
+<h3 id="clear">Clear</h3>
+<p>Removes all Actions</p>
+<pre><code class="lang-csharp">void Clear()
+</code></pre>
+<hr>
+<h3 id="completeupdate">CompleteUpdate</h3>
+<p>Applies the updates to the obj that are &gt; than current and &lt;= than target version and tries to convert it to the output type</p>
+<pre><code class="lang-csharp">Tout CompleteUpdate(TIn obj, Version current, Version target)
+</code></pre>
+<hr>
+<h3 id="simpleupdate">SimpleUpdate</h3>
+<p>Applies the updates to the obj that are &gt; than current and &lt;= than target</p>
+<pre><code class="lang-csharp">object SimpleUpdate(object obj, Version current, Version target)
+</code></pre>
+<hr>
+<h3 id="autogenerateversions">AutoGenerateVersions</h3>
+<p>Tries to generate actions that will change the current object into the target. Additionally you can specify what version they will start and tries to fit into the maxv version</p>
+<pre><code class="lang-csharp">void AutoGenerateVersions(object current, object target, Version? currentv = null, Version? maxv = null)
+</code></pre>
+<h2 id="-warningdeletes-all-current-actions-notei-give-up-on-trying-to-also-get-difference-between-values-mby-in-the-futureprob-not">!!! warning
+Deletes all current actions!
+!!! note
+I give up on trying to also get difference between values. mby in the future(prob not)</h2>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/petrosik/Utility-Stuff/blob/master/Documentation/UtilityDocs/docs/VersioningTool/methods.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

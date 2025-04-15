@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PseudoAStar | Petrosik.Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PseudoAStar | Petrosik.Utility ">
+      
+      <meta name="description" content="Modified A* algorithm, faster in some cases but unstable and sometimes doesn&#39;t return any path. Good for open space not mazes Cardinal directions only, no diagonals Desn&#39;t support pathfinding for tile traversability">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/petrosik/Utility-Stuff/new/master/apiSpec/new?filename=Petrosik_Pathfinding_PseudoAStar.md&amp;value=---%0Auid%3A%20Petrosik.Pathfinding.PseudoAStar%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Petrosik.Utility">
+            Petrosik.Utility
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Petrosik.Pathfinding.PseudoAStar">
+
+
+
+  <h1 id="Petrosik_Pathfinding_PseudoAStar" data-uid="Petrosik.Pathfinding.PseudoAStar" class="text-break">
+Class PseudoAStar  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/PseudoAStar.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Petrosik.html">Petrosik</a>.<a class="xref" href="Petrosik.Pathfinding.html">Pathfinding</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PetrosikUtility.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Modified A* algorithm, faster in some cases but unstable and sometimes doesn't return any path. Good for open space not mazes</p>
+<p>Cardinal directions only, no diagonals</p>
+<p>Desn't support pathfinding for tile traversability</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PseudoAStar : GridBase</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Petrosik.Pathfinding.GridBase.html">GridBase</a></div>
+      <div><span class="xref">PseudoAStar</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GridScale">GridBase.GridScale</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_SearchRange">GridBase.SearchRange</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_MaxSegmentCount">GridBase.MaxSegmentCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GridSize">GridBase.GridSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_Grid">GridBase.Grid</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_LoadedObstacles">GridBase.LoadedObstacles</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_AddObstacle_Petrosik_Pathfinding_ObstacleObject_">GridBase.AddObstacle(ObstacleObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_RemoveObstacle_Petrosik_Pathfinding_ObstacleObject_">GridBase.RemoveObstacle(ObstacleObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_RemoveObstacleAt_System_Int32_">GridBase.RemoveObstacleAt(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_ClearObstalces">GridBase.ClearObstalces()</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_MoveObstalce_System_Int32_System_Int32_">GridBase.MoveObstalce(int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_AddSingle_System_Int32_System_Int32_Petrosik_Enums_PathOccupancy_">GridBase.AddSingle(int, int, PathOccupancy)</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetPathColor_Petrosik_Enums_PathOccupancy_">GridBase.GetPathColor(PathOccupancy)</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetGridPosition_System_Drawing_PointF_">GridBase.GetGridPosition(PointF)</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_GetWorldPosition_System_Drawing_PointF_">GridBase.GetWorldPosition(PointF)</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_ExportPaths">GridBase.ExportPaths()</a>
+    </div>
+    <div>
+      <a class="xref" href="Petrosik.Pathfinding.GridBase.html#Petrosik_Pathfinding_GridBase_InportPaths_System_String_">GridBase.InportPaths(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_">Extensions.IsUnityNull(object)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Petrosik_Pathfinding_PseudoAStar_CheckDirectPath_" data-uid="Petrosik.Pathfinding.PseudoAStar.CheckDirectPath*"></a>
+
+  <h3 id="Petrosik_Pathfinding_PseudoAStar_CheckDirectPath_System_Drawing_PointF_System_Drawing_PointF_" data-uid="Petrosik.Pathfinding.PseudoAStar.CheckDirectPath(System.Drawing.PointF,System.Drawing.PointF)">
+  CheckDirectPath(PointF, PointF)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/PseudoAStar.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks path in direct line if it's acessible</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckDirectPath(PointF from, PointF to)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_PseudoAStar_GetPath_" data-uid="Petrosik.Pathfinding.PseudoAStar.GetPath*"></a>
+
+  <h3 id="Petrosik_Pathfinding_PseudoAStar_GetPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_" data-uid="Petrosik.Pathfinding.PseudoAStar.GetPath(System.Drawing.PointF,System.Drawing.PointF,System.Single)">
+  GetPath(PointF, PointF, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/PseudoAStar.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns List of coordinates for path to target, searchrange is</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override List&lt;PointF&gt;? GetPath(PointF from, PointF to, float searchrange = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+    <dt><code>searchrange</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_PseudoAStar_GetRawPath_" data-uid="Petrosik.Pathfinding.PseudoAStar.GetRawPath*"></a>
+
+  <h3 id="Petrosik_Pathfinding_PseudoAStar_GetRawPath_System_Drawing_PointF_System_Drawing_PointF_System_Single_System_Boolean_" data-uid="Petrosik.Pathfinding.PseudoAStar.GetRawPath(System.Drawing.PointF,System.Drawing.PointF,System.Single,System.Boolean)">
+  GetRawPath(PointF, PointF, float, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/PseudoAStar.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Simple Raw Pathing method</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override LinkedList&lt;PointF&gt;? GetRawPath(PointF from, PointF to, float searchrange, bool WorldSpace = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+    <dt><code>searchrange</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>WorldSpace</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the positions be converted to world positions</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.linkedlist-1">LinkedList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Pathfinding_PseudoAStar_PrefDirCheck_" data-uid="Petrosik.Pathfinding.PseudoAStar.PrefDirCheck*"></a>
+
+  <h3 id="Petrosik_Pathfinding_PseudoAStar_PrefDirCheck_System_Drawing_PointF_System_Drawing_PointF_System_Int32_0__0___System_Drawing_PointF__" data-uid="Petrosik.Pathfinding.PseudoAStar.PrefDirCheck(System.Drawing.PointF,System.Drawing.PointF,System.Int32[0:,0:],System.Drawing.PointF@)">
+  PrefDirCheck(PointF, PointF, int[,], out PointF)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/PseudoAStar.cs/#L376"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PrefDirCheck(PointF currentpos, PointF to, int[,] numberpath, out PointF prefdir)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>currentpos</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+    <dt><code>numberpath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[,]</dt>
+    <dd></dd>
+    <dt><code>prefdir</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.pointf">PointF</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/Pathfinding/PseudoAStar.cs/#L17" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

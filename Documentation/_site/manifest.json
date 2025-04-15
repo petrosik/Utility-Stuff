@@ -1,0 +1,578 @@
+{
+  "source_base_path": "C:/Users/petrosik/source/repos/petrosik/Utility-Stuff/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Enums.GeneralDirections.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Enums.GeneralDirections.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Enums.GeneralDirections",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Enums.InfoType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Enums.InfoType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Enums.InfoType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Enums.PathOccupancy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Enums.PathOccupancy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Enums.PathOccupancy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Enums.Rarity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Enums.Rarity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Enums.Rarity",
+      "Summary": "<p sourcefile=\"api/Petrosik.Enums.Rarity.yml\" sourcestartlinenumber=\"1\">More common = bigger number</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Enums.SQLOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Enums.SQLOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Enums.SQLOptions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Enums.VersioningActionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Enums.VersioningActionType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Enums.VersioningActionType",
+      "Summary": "<p sourcefile=\"api/Petrosik.Enums.VersioningActionType.yml\" sourcestartlinenumber=\"1\">AddMethod, RemoveMethod, ModifyMethod are not implemented!</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Enums.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Enums",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.ImageSharpUtility.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.ImageSharpUtility.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.ImageSharpUtility.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.ImageSharpUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.ImageSharpUtility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.ImageSharpUtility",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Pathfinding.AStar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Pathfinding.AStar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Pathfinding.AStar",
+      "Summary": "<p sourcefile=\"api/Petrosik.Pathfinding.AStar.yml\" sourcestartlinenumber=\"1\">Slightly modifed A*</p>\n<p>Cardinal directions only, no diagonals</p>\n<p>Supports pathfinding for tile traversability</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Pathfinding.GridBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Pathfinding.GridBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Pathfinding.GridBase",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Pathfinding.ObstacleObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Pathfinding.ObstacleObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Pathfinding.ObstacleObject",
+      "Summary": "<p sourcefile=\"api/Petrosik.Pathfinding.ObstacleObject.yml\" sourcestartlinenumber=\"1\">Simple struct that exists only to hold info about PathOccupancy type and GraphicsPath shape. This gets later converted into the Grid in GridBase</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Pathfinding.PseudoAStar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Pathfinding.PseudoAStar.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Pathfinding.PseudoAStar",
+      "Summary": "<p sourcefile=\"api/Petrosik.Pathfinding.PseudoAStar.yml\" sourcestartlinenumber=\"1\">Modified A* algorithm, faster in some cases but unstable and sometimes doesn't return any path. Good for open space not mazes</p>\n<p>Cardinal directions only, no diagonals</p>\n<p>Desn't support pathfinding for tile traversability</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Pathfinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Pathfinding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Pathfinding",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Sql.SqlManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Sql.SqlManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Sql.SqlManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Sql.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Sql.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Sql",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.UnityUtility.ChancePart-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.UnityUtility.ChancePart-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.UnityUtility.ChancePart<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.UnityUtility.ChanceTable-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.UnityUtility.ChanceTable-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.UnityUtility.ChanceTable<T>",
+      "Summary": "<p sourcefile=\"api/Petrosik.UnityUtility.ChanceTable-1.yml\" sourcestartlinenumber=\"1\">Chance table or loot table allows to add and then pull items with rarities, the items are weighted and have calculated pull values based on the amount of items in the pool + it's rarity</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.UnityUtility.ColorConvert.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.UnityUtility.ColorConvert.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.UnityUtility.ColorConvert.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.UnityUtility.ColorConvert.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.UnityUtility.ColorConvert.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.UnityUtility.ColorConvert",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.UnityUtility.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.UnityUtility.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.UnityUtility.Extensions",
+      "Summary": "<p sourcefile=\"api/Petrosik.UnityUtility.Extensions.yml\" sourcestartlinenumber=\"1\">All basic Modifications/Extensions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.UnityUtility.Utility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.UnityUtility.Utility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.UnityUtility.Utility",
+      "Summary": "<p sourcefile=\"api/Petrosik.UnityUtility.Utility.yml\" sourcestartlinenumber=\"1\">Contains all unity specific utility stuff</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.UnityUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.UnityUtility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.UnityUtility",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.BiDictionary-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.BiDictionary-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility.BiDictionary<TKey, TValue>",
+      "Summary": "<p sourcefile=\"api/Petrosik.Utility.BiDictionary-2.yml\" sourcestartlinenumber=\"1\">Wrapper for dictionary making it able to list by either key or value in O(1) time, it's possible because it contains two dictionaries that stores both pair versions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.ChancePart-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.ChancePart-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility.ChancePart<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.ChanceTable-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.ChanceTable-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility.ChanceTable<T>",
+      "Summary": "<p sourcefile=\"api/Petrosik.Utility.ChanceTable-1.yml\" sourcestartlinenumber=\"1\">Chance table or loot table allows to add and then pull items with rarities, the items are weighted and have calculated pull values based on the amount of items in the pool + it's rarity</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.DetRandom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.DetRandom.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility.DetRandom",
+      "Summary": "<p sourcefile=\"api/Petrosik.Utility.DetRandom.yml\" sourcestartlinenumber=\"1\">(deterministic friendly) Random with exposed Seed and number of actions(Pulls) taken.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility.Extensions",
+      "Summary": "<p sourcefile=\"api/Petrosik.Utility.Extensions.yml\" sourcestartlinenumber=\"1\">All basic Modifications/Extensions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.Save-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.Save-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility.Save<T>",
+      "Summary": "<p sourcefile=\"api/Petrosik.Utility.Save-1.yml\" sourcestartlinenumber=\"1\">Wrapper for save data with additional information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.SaveManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.SaveManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility.SaveManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.Utility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.Utility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility.Utility",
+      "Summary": "<p sourcefile=\"api/Petrosik.Utility.Utility.yml\" sourcestartlinenumber=\"1\">Main Utility Class</p>\n<p>Recommended when using: using Utility = Petrosik.Utility.Utility;</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.Utility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.Utility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.Utility",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.VersioningTool.VersioningAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.VersioningTool.VersioningAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.VersioningTool.VersioningAction",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.VersioningTool.VersioningTool-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.VersioningTool.VersioningTool-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.VersioningTool.VersioningTool<TIn, TOut>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Petrosik.VersioningTool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Petrosik.VersioningTool.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Petrosik.VersioningTool",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

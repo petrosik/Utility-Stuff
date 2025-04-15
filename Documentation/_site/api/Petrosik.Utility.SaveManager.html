@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SaveManager | Petrosik.Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SaveManager | Petrosik.Utility ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/petrosik/Utility-Stuff/new/master/apiSpec/new?filename=Petrosik_Utility_SaveManager.md&amp;value=---%0Auid%3A%20Petrosik.Utility.SaveManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Petrosik.Utility">
+            Petrosik.Utility
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Petrosik.Utility.SaveManager">
+
+
+
+  <h1 id="Petrosik_Utility_SaveManager" data-uid="Petrosik.Utility.SaveManager" class="text-break">
+Class SaveManager  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Petrosik.html">Petrosik</a>.<a class="xref" href="Petrosik.Utility.html">Utility</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PetrosikUtility.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SaveManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">SaveManager</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_">Extensions.IsUnityNull(object)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Petrosik_Utility_SaveManager__ctor_" data-uid="Petrosik.Utility.SaveManager.#ctor*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager__ctor_System_String_" data-uid="Petrosik.Utility.SaveManager.#ctor(System.String)">
+  SaveManager(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SaveManager(string SavesFolderPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>SavesFolderPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Utility_SaveManager__ctor_" data-uid="Petrosik.Utility.SaveManager.#ctor*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager__ctor_System_String_System_Environment_SpecialFolder_" data-uid="Petrosik.Utility.SaveManager.#ctor(System.String,System.Environment.SpecialFolder)">
+  SaveManager(string, SpecialFolder)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SaveManager(string SavesFolderName, Environment.SpecialFolder SpecialFolder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>SavesFolderName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>SpecialFolder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.environment">Environment</a>.<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.environment.specialfolder">SpecialFolder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Petrosik_Utility_SaveManager_CurrentSaveVersion" data-uid="Petrosik.Utility.SaveManager.CurrentSaveVersion">
+  CurrentSaveVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Version CurrentSaveVersion</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.version">Version</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Petrosik_Utility_SaveManager_SavesPath" data-uid="Petrosik.Utility.SaveManager.SavesPath">
+  SavesPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SavesPath</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Petrosik_Utility_SaveManager_Delete_" data-uid="Petrosik.Utility.SaveManager.Delete*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager_Delete_System_String_" data-uid="Petrosik.Utility.SaveManager.Delete(System.String)">
+  Delete(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L196"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to deletes the save file in the save folder if it exists</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Delete(string Name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Utility_SaveManager_LoadInfo_" data-uid="Petrosik.Utility.SaveManager.LoadInfo*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager_LoadInfo__1_System_String_" data-uid="Petrosik.Utility.SaveManager.LoadInfo``1(System.String)">
+  LoadInfo&lt;T&gt;(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads only Additional Info, if the file exists</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Save&lt;T&gt;? LoadInfo&lt;T&gt;(string Name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Petrosik.Utility.Save-1.html">Save</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Utility_SaveManager_Load_" data-uid="Petrosik.Utility.SaveManager.Load*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager_Load__1_System_Boolean_" data-uid="Petrosik.Utility.SaveManager.Load``1(System.Boolean)">
+  Load&lt;T&gt;(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to load all saves in the saves folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Save&lt;T&gt;?&gt; Load&lt;T&gt;(bool InfoOnly) where T : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>InfoOnly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Specifies if to load only the Save&lt;<code class="typeparamref">T</code>&gt; wrapper information</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Petrosik.Utility.Save-1.html">Save</a>&lt;T&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Utility_SaveManager_Load_" data-uid="Petrosik.Utility.SaveManager.Load*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager_Load__1_System_String_System_Boolean_" data-uid="Petrosik.Utility.SaveManager.Load``1(System.String,System.Boolean)">
+  Load&lt;T&gt;(string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to load the save by the <code class="paramref">Name</code> if it exists</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Save&lt;T&gt;? Load&lt;T&gt;(string Name, bool InfoOnly) where T : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>InfoOnly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Specifies if to load only the Save&lt;<code class="typeparamref">T</code>&gt; wrapper information</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Petrosik.Utility.Save-1.html">Save</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Utility_SaveManager_Save_" data-uid="Petrosik.Utility.SaveManager.Save*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager_Save__1_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String___0___" data-uid="Petrosik.Utility.SaveManager.Save``1(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,``0}})">
+  Save&lt;T&gt;(IEnumerable&lt;KeyValuePair&lt;string, T&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Works same as it's single counter part</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save&lt;T&gt;(IEnumerable&lt;KeyValuePair&lt;string, T&gt;&gt; Saves) where T : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Saves</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, T&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Utility_SaveManager_Save_" data-uid="Petrosik.Utility.SaveManager.Save*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager_Save__1_System_Collections_Generic_IEnumerable_System_ValueTuple_System_String_Petrosik_Utility_Save___0__System_Boolean___" data-uid="Petrosik.Utility.SaveManager.Save``1(System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,Petrosik.Utility.Save{``0},System.Boolean}})">
+  Save&lt;T&gt;(IEnumerable&lt;(string Name, Save&lt;T&gt; Save, bool UpdateWrapper)&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Works same as it's single counter part</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save&lt;T&gt;(IEnumerable&lt;(string Name, Save&lt;T&gt; Save, bool UpdateWrapper)&gt; Saves) where T : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Saves</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,petrosik.utility.save---0-,system.boolean-.name">Name</a>, <a class="xref" href="Petrosik.Utility.Save-1.html">Save</a>&lt;T&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,petrosik.utility.save---0-,system.boolean-.save">Save</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,petrosik.utility.save---0-,system.boolean-.updatewrapper">UpdateWrapper</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Utility_SaveManager_Save_" data-uid="Petrosik.Utility.SaveManager.Save*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager_Save__1_System_String_Petrosik_Utility_Save___0__System_Boolean_" data-uid="Petrosik.Utility.SaveManager.Save``1(System.String,Petrosik.Utility.Save{``0},System.Boolean)">
+  Save&lt;T&gt;(string, Save&lt;T&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If <code class="paramref">UpdateWrapper</code> is false it save the <code class="paramref">Save</code> as is, otherwise it tries to updates wrapper values (LastUpdated, Version, etc.) if the file already exists</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save&lt;T&gt;(string Name, Save&lt;T&gt; Save, bool UpdateWrapper = false) where T : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>Save</code> <a class="xref" href="Petrosik.Utility.Save-1.html">Save</a>&lt;T&gt;</dt>
+    <dd></dd>
+    <dt><code>UpdateWrapper</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Utility_SaveManager_Save_" data-uid="Petrosik.Utility.SaveManager.Save*"></a>
+
+  <h3 id="Petrosik_Utility_SaveManager_Save__1_System_String___0_" data-uid="Petrosik.Utility.SaveManager.Save``1(System.String,``0)">
+  Save&lt;T&gt;(string, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Saves the <code class="paramref">Save</code> by the <code class="paramref">Name</code> in the save folder</p>
+<p>In case it get passed the wrapper Save&lt;T&gt; class as the <code class="paramref">Save</code> it strips it and saves only the SaveData</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save&lt;T&gt;(string Name, T Save) where T : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>Save</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SaveManager.cs/#L11" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

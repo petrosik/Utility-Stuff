@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SqlManager | Petrosik.Utility </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SqlManager | Petrosik.Utility ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/petrosik/Utility-Stuff/new/master/apiSpec/new?filename=Petrosik_Sql_SqlManager.md&amp;value=---%0Auid%3A%20Petrosik.Sql.SqlManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Petrosik.Utility">
+            Petrosik.Utility
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Petrosik.Sql.SqlManager">
+
+
+
+  <h1 id="Petrosik_Sql_SqlManager" data-uid="Petrosik.Sql.SqlManager" class="text-break">
+Class SqlManager  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Petrosik.html">Petrosik</a>.<a class="xref" href="Petrosik.Sql.html">Sql</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>PetrosikUtility.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SqlManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">SqlManager</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Petrosik.UnityUtility.Extensions.html#Petrosik_UnityUtility_Extensions_IsUnityNull_System_Object_">Extensions.IsUnityNull(object)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Petrosik_Sql_SqlManager_ExecuteCommand_" data-uid="Petrosik.Sql.SqlManager.ExecuteCommand*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_ExecuteCommand_System_String_System_Object_" data-uid="Petrosik.Sql.SqlManager.ExecuteCommand(System.String,System.Object)">
+  ExecuteCommand(string, object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to execute the Command with the params</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? ExecuteCommand(string Command, object? param)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Command</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>param</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_ExecuteQuarry_" data-uid="Petrosik.Sql.SqlManager.ExecuteQuarry*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_ExecuteQuarry__2_System_String_System_Object_" data-uid="Petrosik.Sql.SqlManager.ExecuteQuarry``2(System.String,System.Object)">
+  ExecuteQuarry&lt;TKey, TValue&gt;(string, object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to execute the QuarryCommand with the params</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;object&gt; ExecuteQuarry&lt;TKey, TValue&gt;(string Command, object? param)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Command</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>param</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TKey</code></dt>
+    <dd></dd>
+    <dt><code>TValue</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_LoadAll_" data-uid="Petrosik.Sql.SqlManager.LoadAll*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_LoadAll__2_System_String_System_Func_System_Object___1__" data-uid="Petrosik.Sql.SqlManager.LoadAll``2(System.String,System.Func{System.Object,``1})">
+  LoadAll&lt;TKey, TValue&gt;(string, Func&lt;object, TValue&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads entire table</p>
+<p>Needs the table and the output type to have Id property!!!!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;TKey, TValue&gt;? LoadAll&lt;TKey, TValue&gt;(string tableName, Func&lt;object, TValue&gt; dataConverter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>dataConverter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, TValue&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;TKey, TValue&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TKey</code></dt>
+    <dd></dd>
+    <dt><code>TValue</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_Load_" data-uid="Petrosik.Sql.SqlManager.Load*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_Load__2___0_System_String_System_Func_System_Object___1__" data-uid="Petrosik.Sql.SqlManager.Load``2(``0,System.String,System.Func{System.Object,``1})">
+  Load&lt;TId, TData&gt;(TId, string, Func&lt;object, TData&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads single entry from table</p>
+<p>Needs the table and the output type to have Id property!!!!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TData Load&lt;TId, TData&gt;(TId id, string tableName, Func&lt;object, TData&gt; entityConverter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TId</span></dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>entityConverter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, TData&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TData</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TId</code></dt>
+    <dd></dd>
+    <dt><code>TData</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_Remove_" data-uid="Petrosik.Sql.SqlManager.Remove*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_Remove__1___0_System_String_" data-uid="Petrosik.Sql.SqlManager.Remove``1(``0,System.String)">
+  Remove&lt;Tkey&gt;(Tkey, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L300"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes entry from database</p>
+<p>Uses delete as the db command</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove&lt;Tkey&gt;(Tkey Id, string tableName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Id</code> <span class="xref">Tkey</span></dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Tkey</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_SaveAll_" data-uid="Petrosik.Sql.SqlManager.SaveAll*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_SaveAll__1_System_Collections_Generic_IEnumerable___0__System_String_" data-uid="Petrosik.Sql.SqlManager.SaveAll``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+  SaveAll&lt;TData&gt;(IEnumerable&lt;TData&gt;, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L196"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Saves list of entries to database</p>
+<p>Uses insert as the db command</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SaveAll&lt;TData&gt;(IEnumerable&lt;TData&gt; data, string tableName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TData&gt;</dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TData</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_Save_" data-uid="Petrosik.Sql.SqlManager.Save*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_Save__1___0_System_String_" data-uid="Petrosik.Sql.SqlManager.Save``1(``0,System.String)">
+  Save&lt;TData&gt;(TData, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Saves single entry to the database</p>
+<p>Uses insert as the db command</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save&lt;TData&gt;(TData data, string tableName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <span class="xref">TData</span></dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TData</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_SetPath_" data-uid="Petrosik.Sql.SqlManager.SetPath*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_SetPath_System_String_System_Boolean_" data-uid="Petrosik.Sql.SqlManager.SetPath(System.String,System.Boolean)">
+  SetPath(string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets path to the .db file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPath(string path, bool ignoreCheck = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>ignoreCheck</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Ignore if the .db file doesn't exist</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_SqlMainManager_" data-uid="Petrosik.Sql.SqlManager.SqlMainManager*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_SqlMainManager__3_Petrosik_Enums_SQLOptions_System_String___0___1_System_Collections_Generic_IEnumerable___1__System_Func_System_Object___1__System_Func___1___2__" data-uid="Petrosik.Sql.SqlManager.SqlMainManager``3(Petrosik.Enums.SQLOptions,System.String,``0,``1,System.Collections.Generic.IEnumerable{``1},System.Func{System.Object,``1},System.Func{``1,``2})">
+  SqlMainManager&lt;Tkey, TValue, TDBValue&gt;(SQLOptions, string, Tkey?, TValue?, IEnumerable&lt;TValue&gt;, Func&lt;object, TValue&gt;?, Func&lt;TValue, TDBValue&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Basic SqlManager,while it should be functional, it is mainly an EXAMPLE and it probably shoulnd NOT be used!!!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;TValue&gt;? SqlMainManager&lt;Tkey, TValue, TDBValue&gt;(SQLOptions opt, string tableName, Tkey? Id = default, TValue? data = default, IEnumerable&lt;TValue&gt; datalist = null, Func&lt;object, TValue&gt;? converter = null, Func&lt;TValue, TDBValue&gt;? converterToDB = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>opt</code> <a class="xref" href="Petrosik.Enums.SQLOptions.html">SQLOptions</a></dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>Id</code> <span class="xref">Tkey</span></dt>
+    <dd></dd>
+    <dt><code>data</code> <span class="xref">TValue</span></dt>
+    <dd></dd>
+    <dt><code>datalist</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TValue&gt;</dt>
+    <dd></dd>
+    <dt><code>converter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, TValue&gt;</dt>
+    <dd><p>converts from db object to <code class="typeparamref">TValue</code></p>
+</dd>
+    <dt><code>converterToDB</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TValue, TDBValue&gt;</dt>
+    <dd><p>converts from <code class="typeparamref">TValue</code> to db object</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TValue&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>Tkey</code></dt>
+    <dd><p>Key in the db</p>
+</dd>
+    <dt><code>TValue</code></dt>
+    <dd><p>Data</p>
+</dd>
+    <dt><code>TDBValue</code></dt>
+    <dd><p>DB friendly data</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_UpdateOrUpsertList_" data-uid="Petrosik.Sql.SqlManager.UpdateOrUpsertList*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_UpdateOrUpsertList__1_System_Collections_Generic_IEnumerable___0__System_String_" data-uid="Petrosik.Sql.SqlManager.UpdateOrUpsertList``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+  UpdateOrUpsertList&lt;TData&gt;(IEnumerable&lt;TData&gt;, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates multiple entries in database</p>
+<p>Uses insert or replace as the db command</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateOrUpsertList&lt;TData&gt;(IEnumerable&lt;TData&gt; data, string tableName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TData&gt;</dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TData</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_UpdateOrUpsert_" data-uid="Petrosik.Sql.SqlManager.UpdateOrUpsert*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_UpdateOrUpsert__1___0_System_String_" data-uid="Petrosik.Sql.SqlManager.UpdateOrUpsert``1(``0,System.String)">
+  UpdateOrUpsert&lt;TData&gt;(TData, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates entry in database</p>
+<p>Uses insert or replace as the db command</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateOrUpsert&lt;TData&gt;(TData data, string tableName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <span class="xref">TData</span></dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TData</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Petrosik_Sql_SqlManager_Update_" data-uid="Petrosik.Sql.SqlManager.Update*"></a>
+
+  <h3 id="Petrosik_Sql_SqlManager_Update__1___0_System_String_" data-uid="Petrosik.Sql.SqlManager.Update``1(``0,System.String)">
+  Update&lt;TData&gt;(TData, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates entry in database</p>
+<p>Uses update as the db command</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update&lt;TData&gt;(TData user, string tableName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>user</code> <span class="xref">TData</span></dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TData</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/petrosik/Utility-Stuff/blob/master/Utility/SqlManager.cs/#L14" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
