@@ -1,5 +1,6 @@
 # **About**
-Just a collection of code that i use in most of my projects.
+Just a collection of code that i use in most of my projects.   
+[Documentation](https://petrosik.github.io/Utility-Stuff/)
 # **Usage**
 If you want to use it, either:
 - ### Build on your own
