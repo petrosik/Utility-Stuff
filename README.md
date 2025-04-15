@@ -8,7 +8,7 @@ Just a collection of code that i use in most of my projects.
 - Collection of utility methods for ImageSharp
 - Sqlite Helper
 - Chance Table
-- Determistic Random
+- Deterministic Random
 - Versioning Tool
 - Pathfinding
 - Save Manager
