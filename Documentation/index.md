@@ -2,7 +2,7 @@
 _layout: landing
 ---
 
-[![Github](https://github.com/petrosik/Utility-Stuff)] 
+[Github](https://github.com/petrosik/Utility-Stuff)
 # Introduction
 
 Collection of usefull code and code that i use in most of my projects.
@@ -17,6 +17,8 @@ Collection of usefull code and code that i use in most of my projects.
 - Determistic Random
 - Versioning Tool
 - Pathfinding
+- Save Manager
+- Bidirectional Dictionary
 
 ## Support
 
