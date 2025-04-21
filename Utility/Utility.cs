@@ -399,7 +399,7 @@
             /// <returns></returns>
             public static PointF Direction(this PointF v1, PointF v2)
             {
-                return new PointF(Math.Abs(v1.X) - Math.Abs(v2.X), Math.Abs(v1.Y) - Math.Abs(v2.Y)).Normalize();
+                return new PointF(v1.X - v2.X,v1.Y - v2.Y).Normalize();
             }
             /// <summary>
             /// Merges Arrays into one
@@ -651,7 +651,7 @@
             /// <returns></returns>
             public static Vector2 Direction(this Vector2 v1, Vector2 v2)
             {
-                return (v1.Abs() - v2.Abs()).normalized;
+                return (v1 - v2).normalized;
             }
             /// <summary>
             /// Returns direction from v1 to v2 normalized 
@@ -661,7 +661,7 @@
             /// <returns></returns>
             public static Vector3 Direction(this Vector3 v1, Vector3 v2)
             {
-                return (v1.Abs() - v2.Abs()).normalized;
+                return (v1 - v2).normalized;
             }
             public static void DestroyChildren(this GameObject obj, List<string>? namelist = null, bool whitelist = false)
             {
