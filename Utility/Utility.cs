@@ -374,6 +374,86 @@
                 var c = Color.FromArgb(basec.A + additivec.A, (basec.R + additivec.R) / 2, (basec.G + additivec.G) / 2, (basec.B + additivec.B) / 2);
                 return c;
             }
+            /// <summary>
+            /// Sets the <paramref name="bitPosition"/> to <paramref name="bitValue"/> in the <paramref name="value"/>
+            /// </summary>
+            /// <param name="value"></param>
+            /// <param name="bitPosition"></param>
+            /// <param name="bitValue"></param>
+            /// <returns></returns>
+            public static uint SetBit(uint value, int bitPosition, bool bitValue)
+            {
+                if (bitValue)
+                {
+                    // Set the bit at bitPosition to 1
+                    return value | (1u << bitPosition);
+                }
+                else
+                {
+                    // Clear the bit at bitPosition (set it to 0)
+                    return value & ~(1u << bitPosition);
+                }
+            }
+            /// <summary>
+            /// Sets the <paramref name="bitPosition"/> to <paramref name="bitValue"/> in the <paramref name="value"/>
+            /// </summary>
+            /// <param name="value"></param>
+            /// <param name="bitPosition"></param>
+            /// <param name="bitValue"></param>
+            /// <returns></returns>
+            public static int SetBit(int value, int bitPosition, bool bitValue)
+            {
+                if (bitValue)
+                {
+                    // Set the bit at bitPosition to 1
+                    return value | (1 << bitPosition);
+                }
+                else
+                {
+                    // Clear the bit at bitPosition (set it to 0)
+                    return value & ~(1 << bitPosition);
+                }
+            }
+            /// <summary>
+            /// Sets the <paramref name="bitPosition"/> to <paramref name="bitValue"/> in the <paramref name="value"/>
+            /// </summary>
+            /// <param name="value"></param>
+            /// <param name="bitPosition"></param>
+            /// <param name="bitValue"></param>
+            /// <returns></returns>
+            public static long SetBit(long value, int bitPosition, bool bitValue)
+            {
+                if (bitValue)
+                {
+                    // Set the bit at bitPosition to 1
+                    return value | (1L << bitPosition);
+                }
+                else
+                {
+                    // Clear the bit at bitPosition (set it to 0)
+                    return value & ~(1L << bitPosition);
+                }
+            }
+            /// <summary>
+            /// Sets the <paramref name="bitPosition"/> to <paramref name="bitValue"/> in the <paramref name="value"/>
+            /// </summary>
+            /// <param name="value"></param>
+            /// <param name="bitPosition"></param>
+            /// <param name="bitValue"></param>
+            /// <returns></returns>
+            public static byte SetBit(byte value, int bitPosition, bool bitValue)
+            {
+                if (bitValue)
+                {
+                    // Set the bit at bitPosition to 1
+                    return (byte)(value | (1 << bitPosition));
+                }
+                else
+                {
+                    // Clear the bit at bitPosition (set it to 0)
+                    return (byte)(value & ~(1 << bitPosition));
+                }
+            }
         }
         /// <summary>
         /// All basic Modifications/Extensions
@@ -547,6 +627,86 @@
                 float num = v1.X - v2.X;
                 float num2 = v1.Y - v2.Y;
                 return (float)Math.Sqrt(num * num + num2 * num2);
+            }
+            /// <summary>
+            /// Sets the <paramref name="bitPosition"/> to <paramref name="bitValue"/> in the <paramref name="value"/>
+            /// </summary>
+            /// <param name="value"></param>
+            /// <param name="bitPosition"></param>
+            /// <param name="bitValue"></param>
+            /// <returns></returns>
+            public static uint SetBit(this uint value, int bitPosition, bool bitValue)
+            {
+                if (bitValue)
+                {
+                    // Set the bit at bitPosition to 1
+                    return value | (1u << bitPosition);
+                }
+                else
+                {
+                    // Clear the bit at bitPosition (set it to 0)
+                    return value & ~(1u << bitPosition);
+                }
+            }
+            /// <summary>
+            /// Sets the <paramref name="bitPosition"/> to <paramref name="bitValue"/> in the <paramref name="value"/>
+            /// </summary>
+            /// <param name="value"></param>
+            /// <param name="bitPosition"></param>
+            /// <param name="bitValue"></param>
+            /// <returns></returns>
+            public static int SetBit(this int value, int bitPosition, bool bitValue)
+            {
+                if (bitValue)
+                {
+                    // Set the bit at bitPosition to 1
+                    return value | (1 << bitPosition);
+                }
+                else
+                {
+                    // Clear the bit at bitPosition (set it to 0)
+                    return value & ~(1 << bitPosition);
+                }
+            }
+            /// <summary>
+            /// Sets the <paramref name="bitPosition"/> to <paramref name="bitValue"/> in the <paramref name="value"/>
+            /// </summary>
+            /// <param name="value"></param>
+            /// <param name="bitPosition"></param>
+            /// <param name="bitValue"></param>
+            /// <returns></returns>
+            public static long SetBit(this long value, int bitPosition, bool bitValue)
+            {
+                if (bitValue)
+                {
+                    // Set the bit at bitPosition to 1
+                    return value | (1L << bitPosition);
+                }
+                else
+                {
+                    // Clear the bit at bitPosition (set it to 0)
+                    return value & ~(1L << bitPosition);
+                }
+            }
+            /// <summary>
+            /// Sets the <paramref name="bitPosition"/> to <paramref name="bitValue"/> in the <paramref name="value"/>
+            /// </summary>
+            /// <param name="value"></param>
+            /// <param name="bitPosition"></param>
+            /// <param name="bitValue"></param>
+            /// <returns></returns>
+            public static byte SetBit(this byte value, int bitPosition, bool bitValue)
+            {
+                if (bitValue)
+                {
+                    // Set the bit at bitPosition to 1
+                    return (byte)(value | (1 << bitPosition));
+                }
+                else
+                {
+                    // Clear the bit at bitPosition (set it to 0)
+                    return (byte)(value & ~(1 << bitPosition));
+                }
             }
         }
     }
