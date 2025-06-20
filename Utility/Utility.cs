@@ -11,6 +11,7 @@
         using System.Numerics;
         using System.Text;
         using System.Text.Json;
+        using System.Text.RegularExpressions;
 
         /// <summary>
         /// Main Utility Class
@@ -454,6 +455,18 @@
                     return (byte)(value & ~(1 << bitPosition));
                 }
             }
+            /// <summary>
+            /// Removes any characters that are invalid in file name with '_'
+            /// </summary>
+            /// <param name="str"></param>
+            /// <returns></returns>
+            public static string SanitizeFileName(string str)
+            {
+                string invalidChars = new string(Path.GetInvalidFileNameChars());
+                string invalidRegStr = string.Format("[{0}]", Regex.Escape(invalidChars));
+                string sanitized = Regex.Replace(str, invalidRegStr, "_");
+                return sanitized;
+            }
         }
         /// <summary>
         /// All basic Modifications/Extensions
@@ -707,6 +720,18 @@
                     // Clear the bit at bitPosition (set it to 0)
                     return (byte)(value & ~(1 << bitPosition));
                 }
+            }
+            /// <summary>
+            /// Removes any characters that are invalid in file name with '_'
+            /// </summary>
+            /// <param name="str"></param>
+            /// <returns></returns>
+            public static string SanitizeFileName(this string str)
+            {
+                string invalidChars = new string(Path.GetInvalidFileNameChars());
+                string invalidRegStr = string.Format("[{0}]", Regex.Escape(invalidChars));
+                string sanitized = Regex.Replace(str, invalidRegStr, "_");
+                return sanitized;
             }
         }
     }

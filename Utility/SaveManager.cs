@@ -187,7 +187,8 @@
             }
             private void SaveGeneral(string Name, object SaveData, object CustomPreview, bool Strip, bool update = true)
             {
-                if (Name == null || Name == "" || SaveData == null) return;
+                Name = Name.SanitizeFileName();
+                if (string.IsNullOrEmpty(Name) || SaveData == null) return;
                 if (Strip && SaveData.GetType().IsGenericType && SaveData.GetType().GetGenericTypeDefinition() == typeof(Save<,>))
                 {
                     var saveDataProperty = SaveData.GetType().GetField("SaveData");
@@ -245,7 +246,8 @@
             }
             private void SaveGeneral(string Name, object SaveData, bool Strip, bool update = true)
             {
-                if (Name == null || Name == "" || SaveData == null) return;
+                Name = Name.SanitizeFileName();
+                if (string.IsNullOrEmpty(Name) || SaveData == null) return;
                 if (Strip && SaveData.GetType().IsGenericType && SaveData.GetType().GetGenericTypeDefinition() == typeof(Save<>))
                 {
                     var saveDataProperty = SaveData.GetType().GetField("SaveData");
@@ -293,8 +295,8 @@
             }
             private Save<T, TPreview>? LoadGeneral<T, TPreview>(string Name, bool InfoOnly)
             {
-                var path = Path.Combine(SavesPath, Name);
-                if (Name == null || Name == "" || !File.Exists(path)) return null;
+                var path = Path.Combine(SavesPath, Name.SanitizeFileName());
+                if (string.IsNullOrEmpty(Name) || !File.Exists(path)) return null;
                 if (InfoOnly)
                 {
                     return LoadInfo<T, TPreview>(Name);
@@ -306,8 +308,8 @@
             }
             private Save<T>? LoadGeneral<T>(string Name, bool InfoOnly)
             {
-                var path = Path.Combine(SavesPath, Name);
-                if (Name == null || Name == "" || !File.Exists(path)) return null;
+                var path = Path.Combine(SavesPath, Name.SanitizeFileName());
+                if (string.IsNullOrEmpty(Name) || !File.Exists(path)) return null;
                 if (InfoOnly)
                 {
                     return LoadInfo<T>(Name);
@@ -324,7 +326,7 @@
             /// <returns></returns>
             public Save<T, TPreview>? LoadInfo<T, TPreview>(string Name)
             {
-                var path = Path.Combine(SavesPath, Name);
+                var path = Path.Combine(SavesPath, Name.SanitizeFileName());
                 if (string.IsNullOrEmpty(Name) || !File.Exists(path)) return null;
                 int len = 0;
                 using (var s = new StreamReader(path))
@@ -370,7 +372,7 @@
             /// <returns></returns>
             public Save<T>? LoadInfo<T>(string Name)
             {
-                var path = Path.Combine(SavesPath, Name);
+                var path = Path.Combine(SavesPath, Name.SanitizeFileName());
                 if (string.IsNullOrEmpty(Name) || !File.Exists(path)) return null;
                 using (var s = new StreamReader(path))
                 {
@@ -396,7 +398,7 @@
             /// <param name="Name"></param>
             public async void Delete(string Name)
             {
-                var path = Path.Combine(SavesPath, Name);
+                var path = Path.Combine(SavesPath, Name.SanitizeFileName());
                 if (File.Exists(path))
                 {
                     File.Delete(path);
@@ -419,22 +421,20 @@
                 get => _Name;
                 set
                 {
-                    if (value != null)
+                    if (string.IsNullOrEmpty(value))
                     {
-                        var invalid = Path.GetInvalidFileNameChars();
-                        // Remove invalid filename characters
-                        string sanitizedValue = string.Concat(value.Where(c => !invalid.Contains(c)));
+                        string sanitizedValue = value.SanitizeFileName();
 
                         _Name = sanitizedValue.Length > 64 ? sanitizedValue.Substring(0, 64) : sanitizedValue;
                     }
                     else
                     {
-                        _Name = "";
+                        _Name = "save1";
                     }
                 }
             }
             [JsonProperty(Order = -10)]
-            private string _Name = "";
+            private string _Name = "save1";
 
             /// <summary>
             /// Limited to 1024 characters
@@ -486,22 +486,20 @@
                 get => _Name;
                 set
                 {
-                    if (value != null)
+                    if (string.IsNullOrEmpty(value))
                     {
-                        var invalid = Path.GetInvalidFileNameChars();
-                        // Remove invalid filename characters
-                        string sanitizedValue = string.Concat(value.Where(c => !invalid.Contains(c)));
+                        string sanitizedValue = value.SanitizeFileName();
 
                         _Name = sanitizedValue.Length > 64 ? sanitizedValue.Substring(0, 64) : sanitizedValue;
                     }
                     else
                     {
-                        _Name = "";
+                        _Name = "save1";
                     }
                 }
             }
             [JsonProperty(Order = -10)]
-            private string _Name = "";
+            private string _Name = "save1";
 
             /// <summary>
             /// Limited to 1024 characters
