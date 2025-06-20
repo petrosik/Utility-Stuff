@@ -160,7 +160,7 @@
             public IEnumerable<Save<T, TPreview>?> Load<T, TPreview>(bool InfoOnly) where T : notnull
             {
                 var saves = new List<Save<T, TPreview>?>();
-                var savefiles = Directory.GetFiles(SavesPath);
+                var savefiles = Directory.GetFiles(SavesPath).Select(Path.GetFileName);
                 foreach (var save in savefiles)
                 {
                     saves.Add(LoadGeneral<T, TPreview>(save, InfoOnly));
@@ -178,7 +178,7 @@
             public IEnumerable<Save<T>?> Load<T>(bool InfoOnly) where T : notnull
             {
                 var saves = new List<Save<T>?>();
-                var savefiles = Directory.GetFiles(SavesPath);
+                var savefiles = Directory.GetFiles(SavesPath).Select(Path.GetFileName);
                 foreach (var save in savefiles)
                 {
                     saves.Add(LoadGeneral<T>(save, InfoOnly));
@@ -421,7 +421,7 @@
                 get => _Name;
                 set
                 {
-                    if (string.IsNullOrEmpty(value))
+                    if (!string.IsNullOrEmpty(value))
                     {
                         string sanitizedValue = value.SanitizeFileName();
 
@@ -486,7 +486,7 @@
                 get => _Name;
                 set
                 {
-                    if (string.IsNullOrEmpty(value))
+                    if (!string.IsNullOrEmpty(value))
                     {
                         string sanitizedValue = value.SanitizeFileName();
 
