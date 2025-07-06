@@ -492,7 +492,7 @@
             /// <returns></returns>
             public static PointF Direction(this PointF v1, PointF v2)
             {
-                return new PointF(v1.X - v2.X,v1.Y - v2.Y).Normalize();
+                return new PointF(v2.X - v1.X,v2.Y - v1.Y).Normalize();
             }
             /// <summary>
             /// Merges Arrays into one
@@ -756,23 +756,14 @@
             public static float[,] Perlin2D(int xsize, int ysize, float scale = 6, bool convertToPercent = false)
             {
                 var noise = new float[xsize, ysize];
+                var cnv = convertToPercent ? 100 : 1;
                 for (float y = 0; y < ysize; y++)
                 {
                     for (float x = 0; x < xsize; x++)
                     {
                         float xCoord = x / xsize * scale;
                         float yCoord = y / ysize * scale;
-                        noise[(int)x, (int)y] = Mathf.PerlinNoise(xCoord, yCoord);
-                    }
-                }
-                if (convertToPercent)
-                {
-                    for (int y = 0; y < ysize; y++)
-                    {
-                        for (int x = 0; x < xsize; x++)
-                        {
-                            noise[x, y] *= 100;
-                        }
+                        noise[(int)x, (int)y] = Mathf.PerlinNoise(xCoord, yCoord)* cnv;
                     }
                 }
                 return noise;
@@ -836,7 +827,7 @@
             /// <returns></returns>
             public static Vector2 Direction(this Vector2 v1, Vector2 v2)
             {
-                return (v1 - v2).normalized;
+                return (v2 - v1).normalized;
             }
             /// <summary>
             /// Returns direction from v1 to v2 normalized 
@@ -846,7 +837,7 @@
             /// <returns></returns>
             public static Vector3 Direction(this Vector3 v1, Vector3 v2)
             {
-                return (v1 - v2).normalized;
+                return (v2 - v1).normalized;
             }
             public static void DestroyChildren(this GameObject obj, List<string>? namelist = null, bool whitelist = false)
             {
@@ -1061,7 +1052,7 @@
             }
             /// <summary>
             /// Aligns vector <paramref name="v"/> to be either 1,0,-1 on either axis if the axis is &gt;= 0.5f
-            /// <para>Multiple Axis can have values (ie [1,-1,0]) </para>
+            /// <para>Multiple Axis can have values (ie [1,-1]) </para>
             /// </summary>
             /// <param name="v"></param>
             /// <returns></returns>
@@ -1070,6 +1061,33 @@
                 return new Vector2(
                            Mathf.Abs(v.x) >= 0.5f ? Mathf.Sign(v.x) : 0f,
                            Mathf.Abs(v.y) >= 0.5f ? Mathf.Sign(v.y) : 0f);
+            }
+            /// <summary>
+            /// Aligns vector <paramref name="v"/> to be either 1,0,-1 on either axis if the axis is &gt;= 0.5f
+            /// <para>Only one Axis can have values (ie [1,0,0] but never [1,-1,0]) </para>
+            /// <para>Direction is preffered in order: x, y, z</para>
+            /// </summary>
+            /// <param name="v"></param>
+            /// <returns></returns>
+            public static Vector3 AlignToSingleAxis(this Vector3 v)
+            {
+                var x = Mathf.Abs(v.x) >= 0.5f ? Mathf.Sign(v.x) : 0f;
+                var y = x == 0 ? Mathf.Abs(v.y) >= 0.5f ? Mathf.Sign(v.y) : 0f : 0f;
+                var z = y == 0 && x == 0 ? Mathf.Abs(v.z) >= 0.5f ? Mathf.Sign(v.z) : 0f : 0f;
+                return new Vector3(x, y, z);
+            }
+            /// <summary>
+            /// Aligns vector <paramref name="v"/> to be either 1,0,-1 on either axis if the axis is &gt;= 0.5f
+            /// <para>Only one Axis can have values (ie [1,0] but never [1,-1]) </para>
+            /// <para>Direction is preffered in order: x, y</para>
+            /// </summary>
+            /// <param name="v"></param>
+            /// <returns></returns>
+            public static Vector2 AlignToSingleAxis(this Vector2 v)
+            {
+                var x = Mathf.Abs(v.x) >= 0.5f ? Mathf.Sign(v.x) : 0f;
+                var y = x == 0 ? Mathf.Abs(v.y) >= 0.5f ? Mathf.Sign(v.y) : 0f : 0f;
+                return new Vector2(x, y);
             }
         }
         namespace ColorConvert
