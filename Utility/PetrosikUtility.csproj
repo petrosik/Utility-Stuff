@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>petrosik</Authors>
-    <Version>1.0.2</Version> 
+    <Version>1.0.3</Version> 
     <Company>petrosik</Company>
     <PackageId>petrosik.Utility</PackageId>
     <Product>petrosik.Utility</Product>
@@ -47,7 +47,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="mkdir &quot;C:\LocalNugetPackages\petrosik\&quot;&#xD;&#xA;xcopy /Y /I &quot;$(ProjectDir)bin\Release\petrosik.Utility.$(Version).nupkg&quot; &quot;C:\LocalNugetPackages\petrosik\&quot;" />
+    <Exec Command="mkdir &quot;C:\LocalNugetPackages\petrosik\&quot;&#xD;&#xA;xcopy /Y /I &quot;$(ProjectDir)bin\Release\petrosik.Utility.$(Version).nupkg&quot; &quot;C:\LocalNugetPackages\petrosik\&quot;" Condition="Exists('$(ProjectDir)bin\Release\petrosik.Utility.$(Version).nupkg')" />
   </Target>
 
 </Project>
