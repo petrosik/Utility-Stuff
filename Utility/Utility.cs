@@ -34,6 +34,7 @@
             /// Input:  `Hi, world. "This is a example"`  
             /// Output: [`Hi,`,`world.`,`"This is a example"`]
             /// </returns>
+            [Obsolete("Use SmartSplit instead")]
             public static string?[] SplitText(string message, out string? tempparam, int paramlenght = 8, char prefix = '$')
             {
                 int[] lenght = new int[] { 0, 1 };
@@ -90,6 +91,61 @@
                     }
                 }
                 return param;
+            }
+            /// <summary>
+            /// Splits <paramref name="input"/> by the <paramref name="separator"/>
+            /// <para>Takes into account brackets ( (, {, [ ) and " and will not split text inside them</para>
+            /// </summary>
+            /// <param name="input"></param>
+            /// <param name="separator"></param>
+            /// <returns></returns>
+            public static List<string> SmartSplit(string input, char separator = ',')
+            {
+                var result = new List<string>();
+                var current = new StringBuilder();
+                int parens = 0, brackets = 0, braces = 0;
+                bool inQuotes = false;
+
+                for (int i = 0; i < input.Length; i++)
+                {
+                    char c = input[i];
+
+                    // Handle quote toggle (assuming only double quotes used)
+                    if (c == '"' && (i == 0 || input[i - 1] != '\\'))
+                    {
+                        inQuotes = !inQuotes;
+                    }
+
+                    if (!inQuotes)
+                    {
+                        switch (c)
+                        {
+                            case '(': parens++; break;
+                            case ')': parens--; break;
+                            case '[': brackets++; break;
+                            case ']': brackets--; break;
+                            case '{': braces++; break;
+                            case '}': braces--; break;
+                        }
+                    }
+
+                    if (c == separator && parens == 0 && brackets == 0 && braces == 0 && !inQuotes)
+                    {
+                        result.Add(current.ToString().Trim());
+                        current.Clear();
+                    }
+                    else
+                    {
+                        current.Append(c);
+                    }
+                }
+
+                if (current.Length > 0)
+                {
+                    result.Add(current.ToString().Trim());
+                }
+
+                return result;
             }
             /// <summary>
             /// Splits string into a list of strings by spaces untill it reached message limit, overridechunksize makes it ignore spaces
@@ -466,6 +522,35 @@
                 string invalidRegStr = string.Format("[{0}]", Regex.Escape(invalidChars));
                 string sanitized = Regex.Replace(str, invalidRegStr, "_");
                 return sanitized;
+            }
+
+            /// <summary>
+            /// Calculates the Levenshtein distance between two strings.
+            /// </summary>
+            /// <param name="a"></param>
+            /// <param name="b"></param>
+            /// <returns></returns>
+            public static int Levenshtein(string a, string b)
+            {
+                int n = a.Length;
+                int m = b.Length;
+                var d = new int[n + 1, m + 1];
+
+                for (int i = 0; i <= n; i++) d[i, 0] = i;
+                for (int j = 0; j <= m; j++) d[0, j] = j;
+
+                for (int i = 1; i <= n; i++)
+                {
+                    for (int j = 1; j <= m; j++)
+                    {
+                        int cost = a[i - 1] == b[j - 1] ? 0 : 1;
+                        d[i, j] = Math.Min(
+                            Math.Min(d[i - 1, j] + 1, d[i, j - 1] + 1),
+                            d[i - 1, j - 1] + cost
+                        );
+                    }
+                }
+                return d[n, m];
             }
         }
         /// <summary>

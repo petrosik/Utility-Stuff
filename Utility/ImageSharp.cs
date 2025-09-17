@@ -5,9 +5,11 @@
         using SixLabors.ImageSharp;
         using SixLabors.ImageSharp.Drawing;
         using SixLabors.ImageSharp.Drawing.Processing;
+        using SixLabors.ImageSharp.Formats;
         using SixLabors.ImageSharp.PixelFormats;
         using SixLabors.ImageSharp.Processing;
         using System;
+        using System.IO;
 
         internal class ImageSharp
         {
@@ -35,6 +37,29 @@
                 }
 
                 return filteredImage;
+            }
+            /// <summary>
+            /// Converts <paramref name="data"/> to Image of specified pixel format <typeparamref name="TPixel"/>
+            /// </summary>
+            /// <typeparam name="TPixel"></typeparam>
+            /// <param name="data"></param>
+            /// <returns></returns>
+            public static Image<TPixel> ByteArrayToImage<TPixel>(byte[] data) where TPixel : unmanaged, IPixel<TPixel>
+            {
+                using var ms = new MemoryStream(data);
+                return Image.Load<TPixel>(ms);
+            }
+            /// <summary>
+            /// Converts <paramref name="image"/> with the <paramref name="encoder"/> to byte array
+            /// </summary>
+            /// <param name="image"></param>
+            /// <param name="encoder"></param>
+            /// <returns></returns>
+            public static byte[] ImageToByteArray(Image image, IImageEncoder encoder)
+            {
+                using var ms = new MemoryStream();
+                image.Save(ms, encoder); //other encoders PngEncoder, JpegEncoder, BmpEncoder, etc
+                return ms.ToArray();
             }
         }
         public static class Extensions
@@ -152,6 +177,30 @@
                 // use any color (not Transparent), so the corners will be clipped
                 context = context.Fill(Color.Red, path);
                 return context;
+            }
+
+            /// <summary>
+            /// Converts <paramref name="data"/> to Image of specified pixel format <typeparamref name="TPixel"/>
+            /// </summary>
+            /// <typeparam name="TPixel"></typeparam>
+            /// <param name="data"></param>
+            /// <returns></returns>
+            public static Image<TPixel> ToImage<TPixel>(this byte[] data) where TPixel : unmanaged, IPixel<TPixel>
+            {
+                using var ms = new MemoryStream(data);
+                return Image.Load<TPixel>(ms);
+            }
+            /// <summary>
+            /// Converts <paramref name="image"/> with the <paramref name="encoder"/> to byte array
+            /// </summary>
+            /// <param name="image"></param>
+            /// <param name="encoder"></param>
+            /// <returns></returns>
+            public static byte[] ToByteArray(this Image image, IImageEncoder encoder)
+            {
+                using var ms = new MemoryStream();
+                image.Save(ms, encoder); //other encoders PngEncoder, JpegEncoder, BmpEncoder, etc
+                return ms.ToArray();
             }
         }
     }
