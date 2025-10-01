@@ -10,7 +10,8 @@
         using System.Data.SQLite;
         using System.IO;
         using System.Linq;
-        using Utility = Utility.Utility;
+        using System.Linq.Expressions;
+        using Utility;
         public class SqlManager
         {
             private string filePath = "";
@@ -371,6 +372,135 @@
                         break;
                 }
                 return null;
+            }
+        }
+
+        public static class Extensions
+        {
+            public static IQueryable<T> GetPageContentRaw<T, TKey>(this IQueryable<T> query, int skip, int take, Expression<Func<T, TKey>>? orderBy = null, bool Reverse = false) where T : class
+            {
+                if (skip < 0) throw new ArgumentOutOfRangeException(nameof(skip), "Skip must be non-negative.");
+                if (take <= 0) throw new ArgumentOutOfRangeException(nameof(take), "Take must be greater than zero.");
+
+                if (orderBy != null)
+                {
+                    if (Reverse)
+                    {
+                        return query.OrderByDescending(orderBy).Skip(skip).Take(take);
+                    }
+                    else
+                    {
+                        return query.OrderBy(orderBy).Skip(skip).Take(take);
+                    }
+                }
+
+                return query.Skip(skip).Take(take);
+            }
+            /// <summary>
+            /// Gets a 'page' of elements from the query
+            /// </summary>
+            /// <typeparam name="T"></typeparam>
+            /// <typeparam name="TKey"></typeparam>
+            /// <param name="query"></param>
+            /// <param name="page">Index of the page</param>
+            /// <param name="orderBy"></param>
+            /// <param name="Reverse">Reverses the querry</param>
+            /// <param name="pageSize">Size of the page</param>
+            /// <returns></returns>
+            public static IQueryable<T> GetPageContent<T, TKey>(this IQueryable<T> query, int page, Expression<Func<T, TKey>>? orderBy = null, bool Reverse = false, int? pageSize = null) where T : class
+            {
+                if (page < 0) page = 0;
+                if (pageSize == null || pageSize <= 0)
+                {
+                    pageSize = 100; 
+                }
+
+                int skip = page * (int)pageSize;
+                return query.GetPageContentRaw(skip, (int)pageSize, orderBy, Reverse);
+            }
+            public static IQueryable<T> GetPageContentRaw<T>(this IQueryable<T> query, int skip, int take) where T : class
+            {
+                if (skip < 0) throw new ArgumentOutOfRangeException(nameof(skip), "Skip must be non-negative.");
+                if (take <= 0) throw new ArgumentOutOfRangeException(nameof(take), "Take must be greater than zero.");
+
+                return query.Skip(skip).Take(take);
+            }
+            /// <summary>
+            /// Gets a 'page' of elements from the query without any ordering
+            /// </summary>
+            /// <typeparam name="T"></typeparam>
+            /// <typeparam name="TKey"></typeparam>
+            /// <param name="query"></param>
+            /// <param name="page">Index of the page</param>
+            /// <param name="orderBy"></param>
+            /// <param name="Reverse">Reverses the querry</param>
+            /// <param name="pageSize">Size of the page</param>
+            /// <returns></returns>
+            public static IQueryable<T> GetPageContent<T>(this IQueryable<T> query, int page, int? pageSize = null) where T : class
+            {
+                if (page < 0) page = 0;
+                if (pageSize == null || pageSize <= 0)
+                {
+                    pageSize = 100;
+                }
+
+                int skip = page * (int)pageSize;
+                return query.GetPageContentRaw(skip, (int)pageSize);
+            }
+
+            public static IQueryable<T> GetPageContentRaw<T, TKey>(this IQueryable<T> query, int skip, int take, List<(Expression<Func<T, TKey>> KeySelector, bool Descending)>? orderBys = null) where T : class
+            {
+                if (skip < 0) throw new ArgumentOutOfRangeException(nameof(skip), "Skip must be non-negative.");
+                if (take <= 0) throw new ArgumentOutOfRangeException(nameof(take), "Take must be greater than zero.");
+
+                if (orderBys != null && orderBys.Any())
+                {
+                    IOrderedQueryable<T> orderedQuery = null!;
+
+                    for (int i = 0; i < orderBys.Count; i++)
+                    {
+                        var (keySelector, descending) = orderBys[i];
+
+                        if (i == 0)
+                        {
+                            orderedQuery = descending
+                                ? query.OrderByDescending(keySelector)
+                                : query.OrderBy(keySelector);
+                        }
+                        else
+                        {
+                            orderedQuery = descending
+                                ? orderedQuery.ThenByDescending(keySelector)
+                                : orderedQuery.ThenBy(keySelector);
+                        }
+                    }
+
+                    return orderedQuery.Skip(skip).Take(take);
+                }
+
+                return query.Skip(skip).Take(take);
+            }
+            /// <summary>
+            /// Gets a 'page' of elements from the query with multiple selectors
+            /// </summary>
+            /// <typeparam name="T"></typeparam>
+            /// <typeparam name="TKey"></typeparam>
+            /// <param name="query"></param>
+            /// <param name="page">Index of the page</param>
+            /// <param name="orderBy"></param>
+            /// <param name="Reverse">Reverses the querry</param>
+            /// <param name="pageSize">Size of the page</param>
+            /// <returns></returns>
+            public static IQueryable<T> GetPageContent<T, TKey>(this IQueryable<T> query, int page, List<(Expression<Func<T, TKey>> KeySelector, bool Descending)>? orderBys = null, int? pageSize = null) where T : class
+            {
+                if (page < 0) page = 0;
+                if (pageSize == null || pageSize <= 0)
+                {
+                    pageSize = 100;
+                }
+
+                int skip = page * (int)pageSize;
+                return query.GetPageContentRaw(skip, (int)pageSize, orderBys);
             }
         }
     }

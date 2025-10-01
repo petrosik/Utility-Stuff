@@ -15,12 +15,7 @@
 
         /// <summary>
         /// Main Utility Class
-        /// <para>Recommended when using: using Utility = Petrosik.Utility.Utility;</para>
         /// </summary>
-        /// <tip>
-        /// Recommended when using:  
-        /// `using Utility = Petrosik.Utility.Utility;`
-        /// </tip>
         public static class Utility
         {
             /// <summary>
@@ -826,7 +821,7 @@
         using System.Collections.Generic;
         using UnityEngine;
         /// <summary>
-        /// Contains all unity specific utility stuff
+        /// Contains all Unity specific utility stuff
         /// </summary>
         public static class Utility
         {
