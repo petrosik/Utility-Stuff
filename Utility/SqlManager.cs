@@ -429,11 +429,8 @@
             /// Gets a 'page' of elements from the query without any ordering
             /// </summary>
             /// <typeparam name="T"></typeparam>
-            /// <typeparam name="TKey"></typeparam>
             /// <param name="query"></param>
             /// <param name="page">Index of the page</param>
-            /// <param name="orderBy"></param>
-            /// <param name="Reverse">Reverses the querry</param>
             /// <param name="pageSize">Size of the page</param>
             /// <returns></returns>
             public static IQueryable<T> GetPageContent<T>(this IQueryable<T> query, int page, int? pageSize = null) where T : class
@@ -487,8 +484,7 @@
             /// <typeparam name="TKey"></typeparam>
             /// <param name="query"></param>
             /// <param name="page">Index of the page</param>
-            /// <param name="orderBy"></param>
-            /// <param name="Reverse">Reverses the querry</param>
+            /// <param name="orderBys"></param>
             /// <param name="pageSize">Size of the page</param>
             /// <returns></returns>
             public static IQueryable<T> GetPageContent<T, TKey>(this IQueryable<T> query, int page, List<(Expression<Func<T, TKey>> KeySelector, bool Descending)>? orderBys = null, int? pageSize = null) where T : class

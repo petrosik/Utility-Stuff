@@ -160,7 +160,7 @@
             /// <param name="context"></param>
             /// <param name="paths"></param>
             /// <returns></returns>
-            public static IImageProcessingContext Select(this IImageProcessingContext context, IPath[] paths)
+            public static IImageProcessingContext SelectClip(this IImageProcessingContext context, IPath[] paths)
             {
                 context.SetGraphicsOptions(new GraphicsOptions()
                 {
