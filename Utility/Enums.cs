@@ -75,5 +75,13 @@
             HighP = 8,
             Path = 128,
         }
+        [Serializable]
+        public enum HttpMethodType
+        {
+            GET,
+            POST,
+            PUT,
+            DELETE,
+        }
     }
 }
