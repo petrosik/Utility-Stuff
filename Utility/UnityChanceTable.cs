@@ -3,6 +3,7 @@ namespace Petrosik
     namespace UnityUtility
     {
         using Petrosik.Enums;
+        using Petrosik.Utility;
         using System;
         using System.Collections;
         using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace Petrosik
             /// </summary>
             public Dictionary<Rarity, int> RaritysCount { get; private set; }
             private readonly System.Random r = new();
+            private DetRandom? dr = null;
             public ChancePart<T> Current => Table[CurrentIndex];
             private int CurrentIndex = -1;
             object IEnumerator.Current => Current;
@@ -34,6 +36,15 @@ namespace Petrosik
             internal ChanceTable()
             {
                 InitRarsCount();
+            }
+            /// <summary>
+            /// <para>Note: If not set, system random will be used</para>
+            /// </summary>
+            /// <param name="dr"></param>
+            internal ChanceTable(DetRandom dr)
+            {
+                InitRarsCount();
+                this.dr = dr;
             }
             internal ChanceTable(Rarity Rarity, T Item)
             {
@@ -67,6 +78,10 @@ namespace Petrosik
                 {
                     rnum = UnityEngine.Random.Range(1f, 100f);
                 }
+                else if (dr != null)
+                {
+                    rnum = (float)dr.Next(1, 100) + (float)dr.NextDouble();
+                }
                 else
                 {
                     rnum = (float)r.Next(1, 100) + (float)r.NextDouble();
@@ -79,6 +94,10 @@ namespace Petrosik
                     if (UseUnityRandom)
                     {
                         result = multiple.ElementAt(UnityEngine.Random.Range(0, multiple.Count())).Object;
+                    }
+                    else if (dr != null)
+                    {
+                        result = multiple.ElementAt(dr.Next(0, multiple.Count())).Object;
                     }
                     else
                     {
@@ -120,6 +139,10 @@ namespace Petrosik
                 {
                     rnum = UnityEngine.Random.Range(1f, 100f);
                 }
+                else if (dr != null)
+                {
+                    rnum = (float)dr.Next(1, 100) + (float)dr.NextDouble();
+                }
                 else
                 {
                     rnum = (float)r.Next(1, 100) + (float)r.NextDouble();
@@ -132,6 +155,10 @@ namespace Petrosik
                     if (UseUnityRandom)
                     {
                         result = multiple.ElementAt(UnityEngine.Random.Range(0, multiple.Count())).Object;
+                    }
+                    else if (dr != null)
+                    {
+                        result = multiple.ElementAt(dr.Next(0, multiple.Count())).Object;
                     }
                     else
                     {
@@ -146,6 +173,15 @@ namespace Petrosik
                 if (RemoveAfterPull)
                     Table.RemoveAt(Table.FindIndex(t => t.Object.Equals(result)));
                 return result;
+            }
+            /// <summary>
+            /// Sets DetRandom instance to be used for pulls
+            /// <para>Note: If not set, system random will be used</para>
+            /// </summary>
+            /// <param name="detRandom"></param>
+            public void SetDetRandom(DetRandom? detRandom)
+            {
+                dr = detRandom;
             }
             public bool Exists(T item)
             {
