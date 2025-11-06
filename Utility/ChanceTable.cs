@@ -22,9 +22,14 @@ namespace Petrosik
             /// </summary>
             public Rarity TableAvrgRarity { get; private set; } = Rarity.None;
             /// <summary>
+            /// The chance of each item inside the table
+            /// </summary>
+            public IReadOnlyDictionary<T, float> TableChaces => Table.GroupBy(x=>x.Object).ToDictionary(part => part.Key, part => part.Sum(x=>x.Chance));
+            /// <summary>
             /// Count of each rarity inside the table
             /// </summary>
-            public Dictionary<Rarity, int> RaritysCount { get; private set; }
+            public IReadOnlyDictionary<Rarity, int> RaritysCount => _raritysCount;
+            private Dictionary<Rarity, int> _raritysCount { get; set; }
             private readonly Random r = new();
 
             public ChancePart<T> Current => Table[CurrentIndex];
@@ -141,7 +146,7 @@ namespace Petrosik
                     Console.WriteLine($"Adding item ({item}) with rarity none, this item will never be pulled");
                 }
                 Table.Add(new ChancePart<T>(Rarity, item));
-                RaritysCount[Rarity]++;
+                _raritysCount[Rarity]++;
                 RecalcChancePerc();
             }
             /// <summary>
@@ -154,7 +159,7 @@ namespace Petrosik
                 if (Table.Exists(p => p.Equals(item)))
                 {
                     var it = Table.Find(p => p.Object.Equals(item));
-                    RaritysCount[it!.Rarity]--;
+                    _raritysCount[it!.Rarity]--;
                     Table.Remove(it);
                     RecalcChancePerc();
                     return true;
@@ -166,7 +171,7 @@ namespace Petrosik
             }
             public void RemoveAt(int i)
             {
-                RaritysCount[Table[i].Rarity]--;
+                _raritysCount[Table[i].Rarity]--;
                 Table.RemoveAt(i);
                 RecalcChancePerc();
             }
@@ -188,10 +193,10 @@ namespace Petrosik
             }
             private void InitRarsCount()
             {
-                RaritysCount = new();
+                _raritysCount = new();
                 foreach (var r in Petrosik.Utility.Utility.GetEnumTypes<Rarity>())
                 {
-                    RaritysCount.Add(r, 0);
+                    _raritysCount.Add(r, 0);
                 }
             }
 
