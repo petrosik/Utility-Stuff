@@ -65,9 +65,7 @@ namespace Petrosik
             /// <returns></returns>
             public T? GetItem(bool UseUnityRandom = false, bool RemoveAfterPull = false)
             {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-                T result = (T)(object)null;
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+                T result = default(T);
                 if (Count == 1)
                 {
                     return Table[0].Object;
@@ -126,9 +124,7 @@ namespace Petrosik
             /// <returns></returns>
             public T? GetItemWithRarity(List<Rarity> Range, bool UseUnityRandom = false, bool RemoveAfterPull = false)
             {
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-                T result = (T)(object)null;
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+                T result = default(T);
                 if (Count == 1)
                 {
                     return Table[0].Object;
