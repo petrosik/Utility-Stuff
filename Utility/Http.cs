@@ -21,7 +21,7 @@ namespace Petrosik
             /// <param name="Content"></param>
             /// <returns></returns>
             /// <exception cref="ArgumentException"></exception>
-            public static async Task<(T? Result, bool Success)> Request<T>(this HttpClient _httpClient, string Uri, HttpMethodType Method = HttpMethodType.GET, object? Content = null)
+            public static async Task<(T? Result, bool Success)> Request<T>(this HttpClient _httpClient, string Uri, HttpMethodType Method = HttpMethodType.GET, object? Content = null, Action<int, string>? OnFail = null)
             {
                 HttpResponseMessage response;
 
@@ -50,15 +50,15 @@ namespace Petrosik
                 if (!response.IsSuccessStatusCode)
                 {
                     var error = await response.Content.ReadAsStringAsync();
-
                     Utility.ConsoleLog($"Request failed: {(int)response.StatusCode} {response.ReasonPhrase}\n{error}", Petrosik.Enums.InfoType.Error);
+                    if (OnFail != null) OnFail.Invoke((int)response.StatusCode, error);
                     return ((T)(object)null, false);
                 }
 
                 if (response.Content.Headers.ContentLength == 0)
                     return ((T)(object)null, true);
 
-                return (await response.Content.ReadFromJsonAsync<T>(), true); 
+                return (await response.Content.ReadFromJsonAsync<T>(), true);
             }
         }
     }

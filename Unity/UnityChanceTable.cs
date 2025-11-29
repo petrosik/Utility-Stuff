@@ -250,14 +250,14 @@ namespace Petrosik
                 if (Table.Where(p => p.Rarity != Rarity.None).Count() != 0)
                 {
                     var avrg = Table.Sum(p => (int)p.Rarity) / Table.Where(p => p.Rarity != Rarity.None).Count();
-                    var sorted = Petrosik.Utility.Utility.GetEnumTypes<Rarity>().OrderBy(num => Math.Abs((int)num - avrg));
+                    var sorted = Utility.GetEnumTypes<Rarity>().OrderBy(num => Math.Abs((int)num - avrg));
                     TableAvrgRarity = sorted.First();
                 }
             }
             private void InitRarsCount()
             {
                 _raritysCount = new();
-                foreach (var r in Petrosik.Utility.Utility.GetEnumTypes<Rarity>())
+                foreach (var r in Utility.GetEnumTypes<Rarity>())
                 {
                     _raritysCount.Add(r, 0);
                 }

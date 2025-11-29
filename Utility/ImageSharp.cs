@@ -61,6 +61,22 @@
                 image.Save(ms, encoder); //other encoders PngEncoder, JpegEncoder, BmpEncoder, etc
                 return ms.ToArray();
             }
+            /// <summary>
+            /// Creates a preview image of the specified size while keeping the original aspect ratio.
+            /// </summary>
+            /// <param name="image">The original ImageSharp image.</param>
+            /// <param name="Size">Maximum size of the preview.</param>
+            /// <returns>A resized preview image.</returns>
+            public static Image<TPixel> CreatePreview<TPixel>(Image<TPixel> image, int Size) where TPixel : unmanaged, IPixel<TPixel>
+            {
+                var resizeOptions = new ResizeOptions
+                {
+                    Mode = ResizeMode.Max, 
+                    Size = new Size(Size, Size)
+                };
+
+                return image.Clone(ctx => ctx.Resize(resizeOptions));
+            }
         }
         public static class Extensions
         {
@@ -201,6 +217,22 @@
                 using var ms = new MemoryStream();
                 image.Save(ms, encoder); //other encoders PngEncoder, JpegEncoder, BmpEncoder, etc
                 return ms.ToArray();
+            }
+            /// <summary>
+            /// Creates a preview image of the specified size while keeping the original aspect ratio.
+            /// </summary>
+            /// <param name="image">The original ImageSharp image.</param>
+            /// <param name="Size">Maximum size of the preview.</param>
+            /// <returns>A resized preview image.</returns>
+            public static Image<TPixel> CreatePreview<TPixel>(this Image<TPixel> image, int Size) where TPixel : unmanaged, IPixel<TPixel>
+            {
+                var resizeOptions = new ResizeOptions
+                {
+                    Mode = ResizeMode.Max,
+                    Size = new Size(Size, Size)
+                };
+
+                return image.Clone(ctx => ctx.Resize(resizeOptions));
             }
         }
     }
