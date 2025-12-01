@@ -559,9 +559,7 @@
             /// <param name="overwrite">A boolean value indicating whether to overwrite existing files in the destination directory. Defaults to
             /// <see langword="true"/>.</param>
             public static void CopyDirectory(string sourceDir, string destinationDir, bool overwrite = true)
-            {
-                destinationDir = SanitizeFileName(destinationDir);
-                sourceDir = SanitizeFileName(sourceDir);
+            { 
                 // Create destination directory if it doesn’t exist
                 Directory.CreateDirectory(destinationDir);
 
