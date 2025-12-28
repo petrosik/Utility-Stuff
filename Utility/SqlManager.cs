@@ -377,7 +377,7 @@
             }
         }
 
-        public static class SqlUtility 
+        public static class SqlUtility
         {
             /// <summary>
             /// Parses a string representation of order criteria and returns a list of key selector expressions and sort
@@ -390,7 +390,7 @@
             /// <typeparam name="TKey">The type of the key used for ordering.</typeparam>
             /// <param name="orderBy">A string containing property names and sort directions, formatted as "Property:asc" or "Property:desc".
             /// Multiple criteria can be separated by spaces. For example, "Name:asc CreatedAt:desc".</param>
-            /// <returns>A list of tuples, each containing a key selector expression and a boolean indicating descending order.
+            /// <returns>A list of tuples, each containing a key selector expression and a boolean indicating descending order. Also skips missing properties in the <typeparamref name="T"/> if after there are no valid order properties retuns <see langword="null"/>.
             /// Returns <see langword="null"/> if <paramref name="orderBy"/> is <see langword="null"/> or whitespace.</returns>
             public static List<(Expression<Func<T, TKey>> KeySelector, bool Descending)>? GetOrder<T, TKey>(string? orderBy) where T : class
             {
@@ -400,25 +400,28 @@
                 // Matches: "Property":asc|"Property":desc
                 // Example: "Name":asc "CreatedAt":desc
                 var matches = Regex.Matches(orderBy, @"""((?:\\.|[^""""])*)"":([aA]sc|[dD]esc)");
-                var orders = matches.Cast<Match>()
-                     .Select(m =>
-                     {
-                         var param = Expression.Parameter(typeof(T), "x");
-                         var property = Expression.Property(param, m.Groups[1].Value);
+                var orders = matches
+                    .Cast<Match>()
+                    .Where(m => typeof(T).GetProperty(m.Groups[1].Value, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance) != null)
+                    .Select(m =>
+                    {
+                        var param = Expression.Parameter(typeof(T), "x");
 
-                         // Convert to TKey if needed
-                         Expression body = typeof(TKey) == property.Type
-                             ? (Expression)property
-                             : Expression.Convert(property, typeof(TKey));
+                        var propInfo = typeof(T).GetProperty(m.Groups[1].Value, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance)!;
 
-                         var lambda = Expression.Lambda<Func<T, TKey>>(body, param);
+                        var property = Expression.Property(param, propInfo);
 
-                         return (
-                             KeySelector: (Expression<Func<T, TKey>>)lambda,
-                             Descending: string.Equals(m.Groups[2].Value, "desc", StringComparison.OrdinalIgnoreCase)
-                         );
-                     })
-                     .ToList();
+                        Expression body = typeof(TKey) == property.Type
+                            ? property
+                            : Expression.Convert(property, typeof(TKey));
+
+                        var lambda = Expression.Lambda<Func<T, TKey>>(body, param);
+
+                        return (KeySelector: lambda, Descending: string.Equals(m.Groups[2].Value, "desc", StringComparison.OrdinalIgnoreCase));
+                    })
+                    .ToList();
+                if (orders.Count == 0)
+                    return null;
                 return orders;
             }
         }
@@ -623,7 +626,7 @@
                 if (page < 0) page = 0;
                 if (pageSize == null || pageSize <= 0)
                 {
-                    pageSize = 100; 
+                    pageSize = 100;
                 }
 
                 int skip = page * (int)pageSize;
