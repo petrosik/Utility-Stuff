@@ -11,7 +11,7 @@
         public class SaveManager
         {
             public string SavesPath = null;
-            public Version CurrentSaveVersion = new Version(0, 0, 0, 0);
+            public Version CurrentSaveVersion = new Version(0, 0, 1, 0);
             public SaveManager(string SavesFolderPath)
             {
                 SavesPath = SavesFolderPath;
@@ -35,9 +35,10 @@
             /// <typeparam name="T"></typeparam>
             /// <param name="Name"></param>
             /// <param name="Save"></param>
-            public async void Save<T>(string Name, T Save) where T : notnull
+            /// <param name="settings"></param>
+            public async void Save<T>(string Name, T Save, JsonSerializerSettings? settings = null) where T : notnull
             {
-                SaveGeneral(Name, Save, true);
+                SaveGeneral(Name, Save, true, settings: settings);
             }
             /// <summary>
             /// If <paramref name="UpdateWrapper"/> is false it save the <paramref name="Save"/> as is, otherwise it tries to updates wrapper values (LastUpdated, Version, etc.) if the file already exists
@@ -46,20 +47,22 @@
             /// <param name="Name"></param>
             /// <param name="Save"></param>
             /// <param name="UpdateWrapper"></param>
-            public async void Save<T>(string Name, Save<T> Save, bool UpdateWrapper = false) where T : notnull
+            /// <param name="settings"></param>
+            public async void Save<T>(string Name, Save<T> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
             {
-                SaveGeneral(Name, Save, false, UpdateWrapper);
+                SaveGeneral(Name, Save, false, UpdateWrapper, settings: settings);
             }
             /// <summary>
             /// Works same as it's single counter part
             /// </summary>
             /// <typeparam name="T"></typeparam>
             /// <param name="Saves"></param>
-            public async void Save<T>(IEnumerable<KeyValuePair<string, T>> Saves) where T : notnull
+            /// <param name="settings"></param>
+            public async void Save<T>(IEnumerable<KeyValuePair<string, T>> Saves, JsonSerializerSettings? settings = null) where T : notnull
             {
                 foreach (var save in Saves)
                 {
-                    SaveGeneral(save.Key, save.Value, true);
+                    SaveGeneral(save.Key, save.Value, true, settings: settings);
                 }
             }
             /// <summary>
@@ -67,11 +70,12 @@
             /// </summary>
             /// <typeparam name="T"></typeparam>
             /// <param name="Saves"></param>
-            public async void Save<T>(IEnumerable<(string Name, Save<T> Save, bool UpdateWrapper)> Saves) where T : notnull
+            /// <param name="settings"></param>
+            public async void Save<T>(IEnumerable<(string Name, Save<T> Save, bool UpdateWrapper)> Saves, JsonSerializerSettings? settings = null) where T : notnull
             {
                 foreach (var save in Saves)
                 {
-                    SaveGeneral(save.Name, save.Save, false, save.UpdateWrapper);
+                    SaveGeneral(save.Name, save.Save, false, save.UpdateWrapper, settings: settings);
                 }
             }
             /// <summary>
@@ -80,10 +84,10 @@
             /// <typeparam name="T"></typeparam>
             /// <param name="Name"></param>
             /// <param name="InfoOnly">Specifies if to load only the Save&lt;<typeparamref name="T"/>> wrapper information</param>
-            /// <returns></returns>
-            public Save<T>? Load<T>(string Name, bool InfoOnly) where T : notnull
+            /// <param name="settings"></param>
+            public Save<T>? Load<T>(string Name, bool InfoOnly, JsonSerializerSettings? settings = null) where T : notnull
             {
-                return LoadGeneral<T>(Name, InfoOnly);
+                return LoadGeneral<T>(Name, InfoOnly, settings);
             }
 
             /// <summary>
@@ -94,9 +98,11 @@
             /// <typeparam name="TPreview"></typeparam>
             /// <param name="Name"></param>
             /// <param name="Save"></param>
-            public async void Save<T, TPreview>(string Name, T Save, TPreview CustomPreview) where T : notnull
+            /// <param name="CustomPreview"></param>
+            /// <param name="settings"></param>
+            public async void Save<T, TPreview>(string Name, T Save, TPreview CustomPreview, JsonSerializerSettings? settings = null) where T : notnull
             {
-                SaveGeneral(Name, Save, CustomPreview, true);
+                SaveGeneral(Name, Save, CustomPreview, true, settings: settings);
             }
             /// <summary>
             /// If <paramref name="UpdateWrapper"/> is false it save the <paramref name="Save"/> as is, otherwise it tries to updates wrapper values (LastUpdated, Version, etc.) if the file already exists
@@ -106,9 +112,10 @@
             /// <param name="Name"></param>
             /// <param name="Save"></param>
             /// <param name="UpdateWrapper"></param>
-            public async void Save<T, TPreview>(string Name, Save<T, TPreview> Save, bool UpdateWrapper = false) where T : notnull
+            /// <param name="settings"></param>
+            public async void Save<T, TPreview>(string Name, Save<T, TPreview> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
             {
-                SaveGeneral(Name, Save, false, UpdateWrapper);
+                SaveGeneral(Name, Save, false, UpdateWrapper, settings: settings);
             }
             /// <summary>
             /// Works same as it's single counter part
@@ -116,11 +123,12 @@
             /// <typeparam name="T"></typeparam>
             /// <typeparam name="TPreview"></typeparam>
             /// <param name="Saves"></param>
-            public async void Save<T, TPreview>(IEnumerable<(string Name, T Save, TPreview CustomPreview)> Saves) where T : notnull
+            /// <param name="settings"></param>
+            public async void Save<T, TPreview>(IEnumerable<(string Name, T Save, TPreview CustomPreview)> Saves, JsonSerializerSettings? settings = null) where T : notnull
             {
                 foreach (var save in Saves)
                 {
-                    SaveGeneral(save.Name, save.Save, save.CustomPreview, true);
+                    SaveGeneral(save.Name, save.Save, save.CustomPreview, true, settings: settings);
                 }
             }
             /// <summary>
@@ -129,11 +137,12 @@
             /// <typeparam name="T"></typeparam>
             /// <typeparam name="TPreview"></typeparam>
             /// <param name="Saves"></param>
-            public async void Save<T, TPreview>(IEnumerable<(string Name, Save<T, TPreview> Save, bool UpdateWrapper)> Saves) where T : notnull
+            /// <param name="settings"></param>
+            public async void Save<T, TPreview>(IEnumerable<(string Name, Save<T, TPreview> Save, bool UpdateWrapper)> Saves, JsonSerializerSettings? settings = null) where T : notnull
             {
                 foreach (var save in Saves)
                 {
-                    SaveGeneral(save.Name, save.Save, null, false, save.UpdateWrapper);
+                    SaveGeneral(save.Name, save.Save, null, false, save.UpdateWrapper, settings);
                 }
             }
             /// <summary>
@@ -143,10 +152,11 @@
             /// <typeparam name="TPreview"></typeparam>
             /// <param name="Name"></param>
             /// <param name="InfoOnly">Specifies if to load only the Save&lt;<typeparamref name="T"/>> wrapper information</param>
+            /// <param name="settings"></param>
             /// <returns></returns>
-            public Save<T, TPreview>? Load<T, TPreview>(string Name, bool InfoOnly) where T : notnull
+            public Save<T, TPreview>? Load<T, TPreview>(string Name, bool InfoOnly, JsonSerializerSettings? settings = null) where T : notnull
             {
-                return LoadGeneral<T, TPreview>(Name, InfoOnly);
+                return LoadGeneral<T, TPreview>(Name, InfoOnly, settings);
             }
             /// <summary>
             /// Tries to load all saves in the saves folder
@@ -154,16 +164,17 @@
             /// <typeparam name="T"></typeparam>
             /// <typeparam name="TPreview"></typeparam>
             /// <param name="InfoOnly">Specifies if to load only the Save&lt;<typeparamref name="T"/>,<typeparamref name="TPreview"/>> wrapper information</param>
+            /// <param name="settings"></param>
             /// <returns>
             /// Only valid parsable saves regards to supplied <typeparamref name="T"/> and <typeparamref name="TPreview"/>
             /// </returns>
-            public IEnumerable<Save<T, TPreview>?> Load<T, TPreview>(bool InfoOnly) where T : notnull
+            public IEnumerable<Save<T, TPreview>?> Load<T, TPreview>(bool InfoOnly, JsonSerializerSettings? settings = null) where T : notnull
             {
                 var saves = new List<Save<T, TPreview>?>();
                 var savefiles = Directory.GetFiles(SavesPath).Select(Path.GetFileName);
                 foreach (var save in savefiles)
                 {
-                    saves.Add(LoadGeneral<T, TPreview>(save, InfoOnly));
+                    saves.Add(LoadGeneral<T, TPreview>(save, InfoOnly, settings));
                 }
                 return saves.Where(x => x != null);
             }
@@ -172,20 +183,21 @@
             /// </summary>
             /// <typeparam name="T"></typeparam>
             /// <param name="InfoOnly">Specifies if to load only the Save&lt;<typeparamref name="T"/>> wrapper information</param>
+            /// <param name="settings"></param>
             /// <returns>
             /// Only valid parsable saves regards to supplied <typeparamref name="T"/>
             /// </returns>
-            public IEnumerable<Save<T>?> Load<T>(bool InfoOnly) where T : notnull
+            public IEnumerable<Save<T>?> Load<T>(bool InfoOnly, JsonSerializerSettings? settings = null) where T : notnull
             {
                 var saves = new List<Save<T>?>();
                 var savefiles = Directory.GetFiles(SavesPath).Select(Path.GetFileName);
                 foreach (var save in savefiles)
                 {
-                    saves.Add(LoadGeneral<T>(save, InfoOnly));
+                    saves.Add(LoadGeneral<T>(save, InfoOnly, settings));
                 }
                 return saves.Where(x => x != null);
             }
-            private void SaveGeneral(string Name, object SaveData, object CustomPreview, bool Strip, bool update = true)
+            private void SaveGeneral(string Name, object SaveData, object CustomPreview, bool Strip, bool update = true, JsonSerializerSettings? settings = null)
             {
                 Name = Name.SanitizeFileName();
                 if (string.IsNullOrEmpty(Name) || SaveData == null) return;
@@ -221,11 +233,11 @@
                             old.Version = CurrentSaveVersion;
                             old.Name = Name;
                         }
-                        File.WriteAllText(path, JsonConvert.SerializeObject(old));
+                        File.WriteAllText(path, JsonConvert.SerializeObject(old, settings));
                     }
                     else
                     {
-                        File.WriteAllText(path, JsonConvert.SerializeObject(SaveData));
+                        File.WriteAllText(path, JsonConvert.SerializeObject(SaveData, settings));
                     }
                 }
                 else
@@ -234,17 +246,17 @@
                     {
                         if (Strip)
                         {
-                            wr.Write(JsonConvert.SerializeObject(new Save<object, object>(SaveData) { Name = Name, Version = CurrentSaveVersion, CustomPreview = CustomPreview }));
+                            wr.Write(JsonConvert.SerializeObject(new Save<object, object>(SaveData) { Name = Name, Version = CurrentSaveVersion, CustomPreview = CustomPreview }, settings));
                         }
                         else
                         {
-                            wr.Write(JsonConvert.SerializeObject(SaveData));
+                            wr.Write(JsonConvert.SerializeObject(SaveData, settings));
                         }
                         wr.Flush();
                     }
                 }
             }
-            private void SaveGeneral(string Name, object SaveData, bool Strip, bool update = true)
+            private void SaveGeneral(string Name, object SaveData, bool Strip, bool update = true, JsonSerializerSettings? settings = null)
             {
                 Name = Name.SanitizeFileName();
                 if (string.IsNullOrEmpty(Name) || SaveData == null) return;
@@ -270,11 +282,11 @@
                             old.Version = CurrentSaveVersion;
                             old.Name = Name;
                         }
-                        File.WriteAllText(path, JsonConvert.SerializeObject(old));
+                        File.WriteAllText(path, JsonConvert.SerializeObject(old, settings));
                     }
                     else
                     {
-                        File.WriteAllText(path, JsonConvert.SerializeObject(SaveData));
+                        File.WriteAllText(path, JsonConvert.SerializeObject(SaveData, settings));
                     }
                 }
                 else
@@ -283,40 +295,40 @@
                     {
                         if (Strip)
                         {
-                            wr.Write(JsonConvert.SerializeObject(new Save<object>(SaveData) { Name = Name, Version = CurrentSaveVersion }));
+                            wr.Write(JsonConvert.SerializeObject(new Save<object>(SaveData) { Name = Name, Version = CurrentSaveVersion }, settings));
                         }
                         else
                         {
-                            wr.Write(JsonConvert.SerializeObject(SaveData));
+                            wr.Write(JsonConvert.SerializeObject(SaveData, settings));
                         }
                         wr.Flush();
                     }
                 }
             }
-            private Save<T, TPreview>? LoadGeneral<T, TPreview>(string Name, bool InfoOnly)
+            private Save<T, TPreview>? LoadGeneral<T, TPreview>(string Name, bool InfoOnly, JsonSerializerSettings? settings = null)
             {
                 var path = Path.Combine(SavesPath, Name.SanitizeFileName());
                 if (string.IsNullOrEmpty(Name) || !File.Exists(path)) return null;
                 if (InfoOnly)
                 {
-                    return LoadInfo<T, TPreview>(Name);
+                    return LoadInfo<T, TPreview>(Name, settings);
                 }
                 else
                 {
-                    return JsonConvert.DeserializeObject<Save<T, TPreview>>(File.ReadAllText(path));
+                    return JsonConvert.DeserializeObject<Save<T, TPreview>>(File.ReadAllText(path), settings);
                 }
             }
-            private Save<T>? LoadGeneral<T>(string Name, bool InfoOnly)
+            private Save<T>? LoadGeneral<T>(string Name, bool InfoOnly, JsonSerializerSettings? settings = null)
             {
                 var path = Path.Combine(SavesPath, Name.SanitizeFileName());
                 if (string.IsNullOrEmpty(Name) || !File.Exists(path)) return null;
                 if (InfoOnly)
                 {
-                    return LoadInfo<T>(Name);
+                    return LoadInfo<T>(Name, settings);
                 }
                 else
                 {
-                    return JsonConvert.DeserializeObject<Save<T>>(File.ReadAllText(path));
+                    return JsonConvert.DeserializeObject<Save<T>>(File.ReadAllText(path), settings);
                 }
             }
             /// <summary>
@@ -324,7 +336,7 @@
             /// </summary>
             /// <param name="Name"></param>
             /// <returns></returns>
-            public Save<T, TPreview>? LoadInfo<T, TPreview>(string Name)
+            public Save<T, TPreview>? LoadInfo<T, TPreview>(string Name, JsonSerializerSettings? settings = null)
             {
                 var path = Path.Combine(SavesPath, Name.SanitizeFileName());
                 if (string.IsNullOrEmpty(Name) || !File.Exists(path)) return null;
@@ -357,7 +369,7 @@
                     {
                         savetext = savetext.Substring(0, savetext.LastIndexOf(savedatastr));
                         savetext += '}';
-                        return JsonConvert.DeserializeObject<Save<T, TPreview>>(savetext);
+                        return JsonConvert.DeserializeObject<Save<T, TPreview>>(savetext, settings);
                     }
                     else
                     {
@@ -370,7 +382,7 @@
             /// </summary>
             /// <param name="Name"></param>
             /// <returns></returns>
-            public Save<T>? LoadInfo<T>(string Name)
+            public Save<T>? LoadInfo<T>(string Name, JsonSerializerSettings? settings = null)
             {
                 var path = Path.Combine(SavesPath, Name.SanitizeFileName());
                 if (string.IsNullOrEmpty(Name) || !File.Exists(path)) return null;
@@ -384,7 +396,7 @@
                     {
                         savetext = savetext.Substring(0, savetext.LastIndexOf(savedatastr));
                         savetext += '}';
-                        return JsonConvert.DeserializeObject<Save<T>>(savetext);
+                        return JsonConvert.DeserializeObject<Save<T>>(savetext, settings);
                     }
                     else
                     {
