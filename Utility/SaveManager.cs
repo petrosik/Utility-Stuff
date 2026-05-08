@@ -7,6 +7,7 @@
         using System.Collections.Generic;
         using System.IO;
         using System.Linq;
+        using System.Text.RegularExpressions;
 
         public class SaveManager
         {
@@ -225,6 +226,10 @@
                     if (Strip)
                     {
                         var old = LoadInfo<object, object>(Name);
+                        if (old == null)
+                        {
+                            old = new Save<object,object>();
+                        }
                         old.SaveData = SaveData;
                         old.CustomPreview = CustomPreview;
                         if (update)
@@ -275,6 +280,10 @@
                     if (Strip)
                     {
                         var old = LoadInfo<object>(Name);
+                        if (old == null)
+                        {
+                            old = new Save<object>();
+                        }
                         old.SaveData = SaveData;
                         if (update)
                         {
@@ -362,12 +371,10 @@
                     char[] buffer = new char[64 + 1024 + 160 + 10 + len];
                     int read = s.Read(buffer, 0, buffer.Length);
                     var savetext = new string(buffer, 0, read);
-
-
-                    var savedatastr = $",\"{nameof(Petrosik.Utility.Save<T, TPreview>.SaveData)}\":";
-                    if (savetext.Contains(savedatastr))
+                    var match = Regex.Match(savetext, @$",\s*""\s*{Regex.Escape(nameof(Petrosik.Utility.Save<T,TPreview>.SaveData))}""\s*:");
+                    if (match.Success)
                     {
-                        savetext = savetext.Substring(0, savetext.LastIndexOf(savedatastr));
+                        savetext = savetext.Substring(0, match.Index);
                         savetext += '}';
                         return JsonConvert.DeserializeObject<Save<T, TPreview>>(savetext, settings);
                     }
@@ -381,7 +388,7 @@
             /// Loads only Additional Info, if the file exists
             /// </summary>
             /// <param name="Name"></param>
-            /// <returns></returns>
+            /// <param name="settings"></param>
             public Save<T>? LoadInfo<T>(string Name, JsonSerializerSettings? settings = null)
             {
                 var path = Path.Combine(SavesPath, Name.SanitizeFileName());
@@ -391,10 +398,10 @@
                     char[] buffer = new char[64 + 1024 + 150];
                     int read = s.Read(buffer, 0, buffer.Length);
                     var savetext = new string(buffer, 0, read);
-                    var savedatastr = $",\"{nameof(Petrosik.Utility.Save<T>.SaveData)}\":";
-                    if (savetext.Contains(savedatastr))
+                    var match = Regex.Match(savetext, @$",\s*""\s*{Regex.Escape(nameof(Petrosik.Utility.Save<T>.SaveData))}""\s*:");
+                    if (match.Success)
                     {
-                        savetext = savetext.Substring(0, savetext.LastIndexOf(savedatastr));
+                        savetext = savetext.Substring(0, match.Index);
                         savetext += '}';
                         return JsonConvert.DeserializeObject<Save<T>>(savetext, settings);
                     }
