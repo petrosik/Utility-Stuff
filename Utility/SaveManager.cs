@@ -49,7 +49,7 @@
             /// <param name="Save"></param>
             /// <param name="UpdateWrapper"></param>
             /// <param name="settings"></param>
-            public async void Save<T>(string Name, Save<T> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
+            public async void Save<T>(string Name, Save<T> Save, bool UpdateWrapper = true, JsonSerializerSettings? settings = null) where T : notnull
             {
                 SaveGeneral(Name, Save, false, UpdateWrapper, settings: settings);
             }
@@ -60,7 +60,7 @@
             /// <param name="Save"></param>
             /// <param name="UpdateWrapper"></param>
             /// <param name="settings"></param>
-            public async void Save<T>(Save<T> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
+            public async void Save<T>(Save<T> Save, bool UpdateWrapper = true, JsonSerializerSettings? settings = null) where T : notnull
             {
                 SaveGeneral(Save.Name, Save, false, UpdateWrapper, settings: settings);
             }
@@ -125,7 +125,7 @@
             /// <param name="Save"></param>
             /// <param name="UpdateWrapper"></param>
             /// <param name="settings"></param>
-            public async void Save<T, TPreview>(string Name, Save<T, TPreview> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
+            public async void Save<T, TPreview>(string Name, Save<T, TPreview> Save, bool UpdateWrapper = true, JsonSerializerSettings? settings = null) where T : notnull
             {
                 SaveGeneral(Name, Save, false, UpdateWrapper, settings: settings);
             }
@@ -137,7 +137,7 @@
             /// <param name="Save"></param>
             /// <param name="UpdateWrapper"></param>
             /// <param name="settings"></param>
-            public async void Save<T, TPreview>(Save<T, TPreview> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
+            public async void Save<T, TPreview>(Save<T, TPreview> Save, bool UpdateWrapper = true, JsonSerializerSettings? settings = null) where T : notnull
             {
                 SaveGeneral(Save.Name, Save, false, UpdateWrapper, settings: settings);
             }
