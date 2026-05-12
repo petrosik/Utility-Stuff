@@ -54,6 +54,17 @@
                 SaveGeneral(Name, Save, false, UpdateWrapper, settings: settings);
             }
             /// <summary>
+            /// If <paramref name="UpdateWrapper"/> is false it save the <paramref name="Save"/> as is, otherwise it tries to updates wrapper values (LastUpdated, Version, etc.) if the file already exists
+            /// </summary>
+            /// <typeparam name="T"></typeparam>
+            /// <param name="Save"></param>
+            /// <param name="UpdateWrapper"></param>
+            /// <param name="settings"></param>
+            public async void Save<T>(Save<T> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
+            {
+                SaveGeneral(Save.Name, Save, false, UpdateWrapper, settings: settings);
+            }
+            /// <summary>
             /// Works same as it's single counter part
             /// </summary>
             /// <typeparam name="T"></typeparam>
@@ -117,6 +128,18 @@
             public async void Save<T, TPreview>(string Name, Save<T, TPreview> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
             {
                 SaveGeneral(Name, Save, false, UpdateWrapper, settings: settings);
+            }
+            /// <summary>
+            /// If <paramref name="UpdateWrapper"/> is false it save the <paramref name="Save"/> as is, otherwise it tries to updates wrapper values (LastUpdated, Version, etc.) if the file already exists
+            /// </summary>
+            /// <typeparam name="T"></typeparam>
+            /// <typeparam name="TPreview"></typeparam>
+            /// <param name="Save"></param>
+            /// <param name="UpdateWrapper"></param>
+            /// <param name="settings"></param>
+            public async void Save<T, TPreview>(Save<T, TPreview> Save, bool UpdateWrapper = false, JsonSerializerSettings? settings = null) where T : notnull
+            {
+                SaveGeneral(Save.Name, Save, false, UpdateWrapper, settings: settings);
             }
             /// <summary>
             /// Works same as it's single counter part
